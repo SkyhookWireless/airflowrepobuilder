@@ -3,13 +3,10 @@
 
 %global srcname alembic
 
-%define version 0.8.3
-%define release 0.1%{?dist}
-
 Summary: A database migration tool for SQLAlchemy.
 Name: %{?scl_prefix}python-alembic
-Version: %{version}
-Release: %{release}
+Version: 0.8.3
+Release: 0.1%{?dist}
 Source0: %{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -107,9 +104,6 @@ Documentation and status of Alembic is at http://alembic.readthedocs.org/
 %{__sed} -i 's/\r//' LICENSE
 
 %build
-echo scl: %{scl}
-echo __python: %{__python}
-
 %{?scl:scl enable %{scl} "}
 %{__python} setup.py build
 %{?scl:"}
@@ -127,10 +121,9 @@ echo __python: %{__python}
 %defattr(-,root,root,-)
 %attr(755,root,root) %{_bindir}/alembic
 %{python_sitelib}/*
-%doc LICENSE README.rst CHANGES
+%doc CHANGES LICENSE README.rst README.unittests.rst
 #%doc build/*
 
 %changelog
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
-- Build from tarball and "python setup.py bdist --format=rpm"
-- Revise for python27 build
+- Activate python2.7 build and dependenies
