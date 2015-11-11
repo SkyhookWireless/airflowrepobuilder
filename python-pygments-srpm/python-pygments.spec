@@ -9,7 +9,7 @@
 %define release 0.1
 
 Summary: Pygments is a syntax highlighting package written in Python.
-Name: %{?scl_prefix}python-alembic
+Name: %{?scl_prefix}python-pygments
 Version: 2.0.2
 Release: 0.1%{?dist}
 Source0: %{realname}-%{version}.tar.gz
