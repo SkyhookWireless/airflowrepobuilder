@@ -1,19 +1,24 @@
+%{?scl:%scl_package python-gunicorn}
+%{!?scl:%global pkg_name %{name}}
+
 %global srcname gunicorn
 
-Name:           python-gunicorn
+Name: %{?scl_prefix}python-gunicorn
 Version:        19.3.0
-Release:        0.1
+Release:        0.1%{?dist}
 Url:            http://gunicorn.org
 Summary:        WSGI HTTP Server for UNIX
 License:        MIT
 Group:          Development/Languages/Python
 Source:         %{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  python-devel
-BuildRequires:  python-distribute
-BuildRequires:  python-nose
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
+#BuildRequires:  python-devel
+#BuildRequires:  python-distribute
+#BuildRequires:  python-nose
 BuildArch:      noarch
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
+#%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 %description
 Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork
@@ -31,14 +36,25 @@ This package contains Gunicorn documentation in reST and HTML formats.
 
 %prep
 %setup -q -n %{srcname}-%{version}
+# coverage is disabled until pytest-cov in Fedora is updated to 1.7
+sed -i -e '/pytest-cov/d' requirements_dev.txt
+
+# need to remove gaiohttp worker from the Python 2 version, it is supported on 
+# Python 3 only and it fails byte compilation on 2.x due to using "yield from"
+rm gunicorn/workers/_gaiohttp.py*
 
 %build
-python setup.py build
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
-python setup.py install -O1 --skip-build --prefix=%{_prefix} --root=%{buildroot}
+%{__rm} -rf %{buildroot}
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 
-%check
+#%check
 #python setup.py test
 
 %files
@@ -53,3 +69,7 @@ python setup.py install -O1 --skip-build --prefix=%{_prefix} --root=%{buildroot}
 %doc examples
 
 %changelog
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 19.3.0-0.1
+- Activate python2.7 build and dependenies
+- Delete gunicorn/workers/_gaiohttp.py*, it requires python3.3 and is disabled
+  in Fedora RPMs
