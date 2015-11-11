@@ -17,8 +17,7 @@ BuildRoot:      %{_tmppath}/%{pkg_name}-%{version}-%{release}-root-%(%{__id_u} -
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-# Only used for doc building
-#BuildRequires:  %{?scl_prefix}python-sphinx
+BuildRequires:  %{?scl_prefix}python-sphinx
 
 %description
 Werkzeug
