@@ -1,22 +1,22 @@
-%define name python-SQLAlchemy
-%define realname SQLAlchemy
-%define version 1.0.9
-%define unmangled_version 1.0.9
-%define unmangled_version 1.0.9
-%define release 1
+%{?scl:%scl_package python-sqlalchemy}
+%{!?scl:%global pkg_name %{name}}
+
+%global srcname SQLAlchemy
 
 Summary: Database Abstraction Library
-Name: %{name}
-Version: %{version}
-Release: %{release}
-#Source0: %{name}-%{unmangled_version}.tar.gz
-Source0: %{realname}-%{unmangled_version}.tar.gz
+Name: %{?scl_prefix}python-sqlalchemy
+Version: 1.0.9
+Release: 0.1%{?dist}
+#Source0: %{name}-%{version}.tar.gz
+Source0: %{srcname}-%{version}.tar.gz
 License: MIT License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 Vendor: Mike Bayer <mike_mp@zzzcomputing.com>
 Url: http://www.sqlalchemy.org
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
 
 %description
 SQLAlchemy
@@ -157,24 +157,32 @@ SQLAlchemy is distributed under the `MIT license
 
 
 %prep
-#%setup -n %{name}-%{unmangled_version}
-%setup -n %{realname}-%{unmangled_version}
+#%setup -n %{name}-%{version}
+%setup -n %{srcname}-%{version}
 
 %build
-env CFLAGS="$RPM_OPT_FLAGS" python setup.py build
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
-python setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%{__rm} -rf %{buildroot}
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root)
+#%attr(755,root,root) %{_bindir}/*
+#%{python_sitelib}/*
+%{_libdir}/*
+%doc CHANGES LICENSE README.rst README.unittests.rst
+#%doc build/*
 
 %changelog
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.9-0.1
 - Build from tarball and "python setup.py bdist --format=rpm"
 - Rename to python-SQLAlchemry-1.0.9-0.1
-
-
