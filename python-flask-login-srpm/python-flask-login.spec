@@ -1,15 +1,20 @@
-%define name python-Flask-Login
-%define realname Flask-Login
-%define version 0.3.2
+%{?scl:%scl_package python-flask-login}
+%{!?scl:%global pkg_name %{name}}
+
+%global srcname Flask-Login
+
+%define name python27-python-Flask-Login
+%define srcname Flask-Login
+%define version
 %define unmangled_version 0.3.2
 %define unmangled_version 0.3.2
 %define release 0.1
 
 Summary: User session management for Flask
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{realname}-%{unmangled_version}.tar.gz
+Name: %{?scl_prefix}python-flask-login
+Version: 0.3.2
+Release: 0.1%{?dist}
+Source0: %{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -17,8 +22,12 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Matthew Frazier <leafstormrush@gmail.com>
 Url: https://github.com/maxcountryman/flask-login
-# Added for compilaton
-BuildRequires: python-setuptools
+# Add for python27 use and compilation
+BuildRequires: /opt/rh/python27/enable
+BuildRequires: python27
+BuildRequires: python27-python-setuptools
+Requires: /opt/rh/python27/enable
+Requires: python27
 
 %description
 
@@ -41,16 +50,27 @@ Links
 
 
 %prep
-%setup -n %{realname}-%{unmangled_version}
+%setup -q -n %{srcname}-%{version}
 
 %build
-python setup.py build
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
-python setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%{__rm} -rf %{buildroot}
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+%files
+%defattr(-,root,root,-)
+%{python_sitelib}/*
+%doc LICENSE README.md
+
+%changelog
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.1
+- Activate python2.7 build and dependenies

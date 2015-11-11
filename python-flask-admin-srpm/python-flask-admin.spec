@@ -1,15 +1,13 @@
-%define name python-Flask-Admin
-%define realname Flask-Admin
-%define version 1.3.0
-%define unmangled_version 1.3.0
-%define unmangled_version 1.3.0
-%define release 0.1
+%{?scl:%scl_package python-flask-admin}
+%{!?scl:%global pkg_name %{name}}
+
+%global srcname Flask-Admin
 
 Summary: Simple and extensible admin interface framework for Flask
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{realname}-%{unmangled_version}.tar.gz
+Name: %{?scl_prefix}python-flask-admin
+Version: 1.3.0
+Release: 0.1%{?dist}
+Source0: %{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -17,8 +15,12 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Serge S. Koval <serge.koval+github@gmail.com>
 Url: https://github.com/flask-admin/flask-admin/
-# Added for mock compilaiton
-BuildRequires: python-setuptools
+# Add for python27 use and compilation
+BuildRequires: /opt/rh/python27/enable
+BuildRequires: python27
+BuildRequires: python27-python-setuptools
+Requires: /opt/rh/python27/enable
+Requires: python27
 
 %description
 Flask-Admin
@@ -129,16 +131,27 @@ You can help improve Flask-Admin's translations through Crowdin: https://crowdin
 
 
 %prep
-%setup -n %{realname}-%{unmangled_version}
+%setup -q -n %{srcname}-%{version}
 
 %build
-python setup.py build
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
-python setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%{__rm} -rf %{buildroot}
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+%files
+%defattr(-,root,root,-)
+%{python_sitelib}/*
+%doc LICENSE README.rst
+
+%changelog
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.3.0-0.1
+- Activate python2.7 build and dependenies
