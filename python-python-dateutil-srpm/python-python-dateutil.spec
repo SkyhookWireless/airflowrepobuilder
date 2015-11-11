@@ -4,7 +4,7 @@
 %global srcname python-dateutil
 
 Summary: Extensions to the standard Python datetime module
-Name: %{?scl_prefix}python-dateutil
+Name: %{?scl_prefix}python-python-dateutil
 Version: 2.4.2
 Release: 0.1%{?dist}
 Source0: %{srcname}-%{version}.tar.gz
