@@ -1,14 +1,17 @@
+%{?scl:%scl_package python-markdown}
+%{!?scl:%global pkg_name %{name}}
+
+%global srcname markdown
+
 %define name python-Markdown
-%define realname Markdown
-%define version 2.6.4
-%define unmangled_version 2.6.4
+%define srcname Markdown
 %define release 0.1
 
 Summary: Python implementation of Markdown.
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{realname}-%{unmangled_version}.tar.gz
+Name: %{?scl_prefix}python-markdown
+Version: 2.6.4
+Release: 0.1%{?dist}
+Source0: %{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -16,15 +19,10 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Waylan Limberg <waylan.limberg [at] icloud.com>
 Url: https://pythonhosted.org/Markdown/
-# Added for compilation
-BuildRequires: python-setuptools
-# Added for poorly named RHEL module
-Obsoletes: python-markdown <= %{version}
-Conflicts: python-markdown
-Provides: python-markdown = %{name}-%{version}
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
 
 %description
-
 This is a Python implementation of John Gruber's Markdown_.
 It is almost completely compliant with the reference implementation,
 though there are a few known issues. See Features_ for information
@@ -46,16 +44,29 @@ You may ask for help and discuss various other issues on the
 
 
 %prep
-%setup -n %{realname}-%{unmangled_version}
+%setup -q -n %{srcname}-%{version}
 
 %build
-python setup.py build
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
-python setup.py install -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%{__rm} -rf %{buildroot}
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf %{buildroot}
 
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+%files
+%defattr(-,root,root,-)
+%attr(755,root,root) %{_bindir}/*
+%{python_sitelib}/*
+%doc INSTALL.md LICENSE.md README.md
+
+
+%changelog
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.1
+- Activate python2.7 build and dependenies
