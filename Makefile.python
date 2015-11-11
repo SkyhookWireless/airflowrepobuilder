@@ -11,12 +11,10 @@ RSYNCOPTS=-a --no-owner --no-group
 RSYNCSAFEOPTS=$(RSYNCOPTS) --ignore-existing 
 
 # "mock" configurations to build with, activate only as needed
-MOCKS+=pythonrepo-7-x86_64
-MOCKS+=pythonrepo-6-x86_64
-MOCKS+=pythonrepo-5-x86_64
+MOCKS+=airflowrepo-6-x86_64
 
 # Local yum compatible RPM repository
-REPOBASEDIR="`/bin/pwd | xargs dirname`/pythonrepo"
+REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
 
 # Deduce local package names and .spec files, for universe Makefile use
 SPEC := `ls *.spec | head -1`
@@ -49,6 +47,7 @@ $(MOCKS):: verifyspec FORCE
 		echo "	Building $(SPEC) SRPM in $@"; \
 		rm -rf $@; \
 		/usr/bin/mock -q -r $@ --sources=$(PWD) \
+		    --define 'scm 1' \
 		    --resultdir=$(PWD)/$@ \
 		    --buildsrpm --spec=$(SPEC); \
 		echo "Storing " $@/*.src.rpm "as $@.src.rpm"; \
@@ -56,8 +55,9 @@ $(MOCKS):: verifyspec FORCE
 		echo "Building $@.src.rpm in $@"; \
 		rm -rf $@; \
 		/usr/bin/mock -q -r $@ \
-		     --resultdir=$(PWD)/$@ \
-		     $@.src.rpm; \
+		    --define 'scm 1' \
+		    --resultdir=$(PWD)/$@ \
+		    $@.src.rpm; \
 	fi
 
 mock:: $(MOCKS)

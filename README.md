@@ -1,9 +1,14 @@
-pythonrepobuilder - Python Module builder RHEL 5, 6, and 7
+airflowrepobuilder - Python Module builder RHEL 5, 6, and 7
 
 License:  GPLv3
 	  (Except where noted in subpackages)
 Maintainer:   Nico Kadel-Garcia
 Maintainer Email: nkadel@gmail.com
+
+Many of the upsteam components for these, or for older versions of
+these, are available at:
+
+       http://vault.centos.org/cenots/6.7/SCL/Source/SPackages/
 
 Usage:
     make install - build, and install for local access, the
