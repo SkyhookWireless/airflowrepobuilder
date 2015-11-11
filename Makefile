@@ -11,6 +11,11 @@ REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/SRPMS
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/x86_64
 
 # These build with normal mock "epel-*" setups
+# Use short name, based on RHEL naming
+EPELPKGS+=pytz-srpm
+# This ons is from SuSE repo
+EPELPKGS+=python-gunicorn-srpm
+
 EPELPKGS+=python-alembic-srpm
 EPELPKGS+=python-chartkick-srpm
 EPELPKGS+=python-dill-srpm
@@ -19,22 +24,22 @@ EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
 EPELPKGS+=python-flask-srpm
 EPELPKGS+=python-future-srpm
+EPELPKGS+=python-itsdangerous-srpm
 EPELPKGS+=python-jinja2-srpm
+EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
-EPELPKGS+=python-pandas-srpm
 EPELPKGS+=python-pygments-srpm
+EPELPKGS+=python-python-dateutil-srpm
+EPELPKGS+=python-python-editor-srpm
+EPELPKGS+=python-requests-srpm
+EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
-# This ons is from SuSE repo
-EPELPKGS+=python-gunicorn-srpm
-
-# Require customized airflowrepo local repository for dependencies
+# These require customized airflowrepo local repository for compilation
 # Needed by various packages
-PYTHONPKGS+=
-
+PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-airflow-srpm
-PYTHONPKGS+=
 
 epel-install:: $(EPELOKGS)
 python-install:: $(PYTHONPKGS)
@@ -85,8 +90,30 @@ python-install:: FORCE
 		(cd $$name && $(MAKE) all install) || exit 1; \
 	done
 
-# Dependencies
-python26-awscli-srpm:: python26-setuptools
+# pandas will compile without pytz, but less effecieintly
+python-pandas-srpm:: pytz-srpm
+
+python-airflow-srpm:: python-alembic-srpm
+python-airflow-srpm:: python-chartkick-srpm
+python-airflow-srpm:: python-dill-srpm
+python-airflow-srpm:: python-flask-admin-srpm
+python-airflow-srpm:: python-flask-cache-srpm
+python-airflow-srpm:: python-flask-login-srpm
+python-airflow-srpm:: python-flask-srpm
+python-airflow-srpm:: python-future-srpm
+python-airflow-srpm:: python-gunicorn-srpm
+python-airflow-srpm:: python-itsdangerous-srpm
+python-airflow-srpm:: python-jinja2-srpm
+python-airflow-srpm:: python-mako-srpm
+python-airflow-srpm:: python-markdown-srpm
+python-airflow-srpm:: python-pandas-srpm
+python-airflow-srpm:: python-pygments-srpm
+python-airflow-srpm:: python-python-dateutil-srpm
+python-airflow-srpm:: python-python-editor-srpm
+python-airflow-srpm:: python-requests-srpm
+python-airflow-srpm:: python-six-srpm
+python-airflow-srpm:: python-sqlalchemy-srpm
+python-airflow-srpm:: python-werkzeug-srpm
 
 # Git clone operations, not normally required
 # Targets may change
