@@ -6,7 +6,7 @@
 
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
-Name: python-mako
+Name: %{?scl_prefix}python-mako
 Version: 1.0.3
 Release: 0.1%{?dist}
 Summary: Mako template library for Python
