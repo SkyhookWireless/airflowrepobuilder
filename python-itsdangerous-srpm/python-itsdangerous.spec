@@ -3,7 +3,7 @@
 
 %global srcname itsdangerous
 
-Name:           python-%{srcname}
+Name:           %{?scl_prefix}python-%{srcname}
 Version:        0.24
 Release:        0.1%{?dist}
 Summary:        Python library for passing trusted data to untrusted environments
