@@ -21,11 +21,11 @@ Url: http://pandas.pydata.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Added to reduce compilation time
-BuildRequires:       %{?scl_prefix}numpy
+BuildRequires:  %{?scl_prefix}numpy
 # Added from fedora 22
 #BuildRequires:  %{?scl_prefix}python-matplotlib
 #BuildRequires:  Cython
-#BuildRequires:  pytz
+BuildRequires:  %{?scl_prefix}pytz
 
 #Requires:       %{?scl_prefix}python-dateutil
 Requires:       %{?scl_prefix}numpy
