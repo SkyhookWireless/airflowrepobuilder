@@ -41,13 +41,18 @@ EPELPKGS+=python-werkzeug-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-airflow-srpm
 
-epel-install:: $(EPELOKGS)
-python-install:: $(PYTHONPKGS)
-
 # Populate airflowrepo with packages that require airflowrepo
+# Verify build setup first!
+all:: /usr/bin/createrepo
+all:: airflowrepo-6-x86_64.cfg
+all:: epel-6-sclpy27-x86_64.cfg
+
 all:: python-install
 
 install:: epel-install python-install
+
+epel-install:: $(EPELOKGS)
+python-install:: $(PYTHONPKGS)
 
 airflowrepo-6-x86_64.cfg:: airflowrepo-6-x86_64.cfg.in
 	sed "s|@@@REPOBASEDIR@@@|$(REPOBASEDIR)|g" $? > $@
