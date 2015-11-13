@@ -53,8 +53,8 @@ Requires:  %{?scl_prefix}python-requests < 3
 #Requires:  %{?scl_prefix}python-setproctitle < 2
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.8
 # Included in base python package
-Requires:  %{?scl_prefix}python-thrift >= 0.9.2
-Requires:  %{?scl_prefix}python-thrift < 0.10
+#Requires:  %{?scl_prefix}python-thrift >= 0.9.2
+#Requires:  %{?scl_prefix}python-thrift < 0.10
 
 # Manually added to ease installation
 Provides: airflow
