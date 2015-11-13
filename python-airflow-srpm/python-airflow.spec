@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.2
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: %{srcname}-%{version}.tar.gz
 License: UNKNOWN
 Group: Development/Libraries
@@ -98,5 +98,8 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Fri Nov 13 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.2-0.2
+- Reset dependencies for python-thrift, which is on 
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.2-0.1
 - Activate python2.7 build and dependenies
