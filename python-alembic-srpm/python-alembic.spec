@@ -119,7 +119,7 @@ Documentation and status of Alembic is at http://alembic.readthedocs.org/
 
 %files
 %defattr(-,root,root,-)
-%attr(755,root,root) %{_bindir}/alembic
+%attr(755,root,root) %{_bindir}/*
 %{python_sitelib}/*
 %doc CHANGES LICENSE README.rst README.unittests.rst
 #%doc build/*
@@ -127,6 +127,7 @@ Documentation and status of Alembic is at http://alembic.readthedocs.org/
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
+- Use wildcard for bindir files
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Activate python2.7 build and dependenies
