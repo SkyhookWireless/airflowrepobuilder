@@ -1,18 +1,13 @@
 %{?scl:%scl_package python-pygments}
 %{!?scl:%global pkg_name %{name}}
 
-%global srcname pygments
-
-%define name python-Pygments
-%define realname Pygments
-%define version 2.0.2
-%define release 0.1
+%global srcname Pygments
 
 Summary: Pygments is a syntax highlighting package written in Python.
 Name: %{?scl_prefix}python-pygments
 Version: 2.0.2
 Release: 0.1%{?dist}
-Source0: %{realname}-%{version}.tar.gz
+Source0: %{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -44,7 +39,7 @@ Pygments
 
 
 %prep
-%setup -n %{realname}-%{version}
+%setup -n %{srcname}-%{version}
 
 %build
 %{?scl:scl enable %{scl} "}
@@ -68,5 +63,8 @@ Pygments
 #%doc build/*
 
 %changelog
+* Mon Nov 16 2016 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.2
+- Replace "realname" with "srcname" for consistency
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.1
 - Activate python2.7 build and dependenies
