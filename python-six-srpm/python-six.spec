@@ -5,13 +5,13 @@
 
 Name:           %{?scl_prefix}python-six
 Version:        1.10.0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Python 2 and 3 compatibility utilities
 
 Group:          Development/Languages
 License:        MIT
-URL:            http://pypi.python.org/pypi/six/
-Source0:        http://pypi.python.org/packages/source/s/six/six-%{version}.tar.gz
+URL:            http://pypi.python.org/pypi/%{srcname}/
+Source0:        http://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
@@ -69,6 +69,10 @@ This is the Python 2 build of the module.
 %{python_sitelib}/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.2
+- Update to 1.10.0
+- Provide full URL for source
+
 * Thu Mar 12 2015 Matej Stuchlik <mstuchli@redhat.com> - 1.9.0-2
 - Rebuild for RHEL 6.7
 Resolves: rhbz#1183146
@@ -115,5 +119,3 @@ Resolves: rhbz#1183146
 
 * Thu Mar 24 2011 David Malcolm <dmalcolm@redhat.com> - 1.0.0-1
 - initial packaging
-
-

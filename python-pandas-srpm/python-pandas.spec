@@ -11,7 +11,7 @@ Summary: Powerful data structures for data analysis, time series,and statistics
 Name: %{?scl_prefix}python-pandas
 Version: 0.17.0
 Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -128,5 +128,8 @@ Windows binaries built against NumPy 1.8.1
 #%doc build/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.2
+- Provide full URL for source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.1
 - Activate python2.7 build and dependenies

@@ -6,8 +6,8 @@
 Summary: A microframework based on Werkzeug, Jinja2 and good intentions
 Name: %{?scl_prefix}python-flask
 Version: 0.10.1
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -87,5 +87,8 @@ Links
 #%doc build/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
+- Provide full URL for source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Activate python2.7 build and dependenies

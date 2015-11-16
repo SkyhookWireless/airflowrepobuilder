@@ -6,9 +6,8 @@
 Summary: Database Abstraction Library
 Name: %{?scl_prefix}python-sqlalchemy
 Version: 1.0.9
-Release: 0.1%{?dist}
-#Source0: %{name}-%{version}.tar.gz
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/s/%{name}/%{srcname}-%{version}.tar.gz
 License: MIT License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -183,6 +182,9 @@ SQLAlchemy is distributed under the `MIT license
 #%doc build/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.9-0.2
+- Update Source URL
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.9-0.1
 - Build from tarball and "python setup.py bdist --format=rpm"
 - Rename to python-SQLAlchemry-1.0.9-0.1

@@ -6,8 +6,8 @@
 Summary: Pygments is a syntax highlighting package written in Python.
 Name: %{?scl_prefix}python-pygments
 Version: 2.0.2
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -63,7 +63,8 @@ Pygments
 #%doc build/*
 
 %changelog
-* Mon Nov 16 2016 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.2
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.2
+- Provide full URL for source
 - Replace "realname" with "srcname" for consistency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.1

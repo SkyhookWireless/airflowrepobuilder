@@ -5,6 +5,8 @@
 # and python-sphinx:
 %global with_docs 1
 
+%define srcname Jinja2
+
 Name:		%{?scl_prefix}python-jinja2
 Version:	2.8
 Release:	0.1%{?dist}
@@ -12,7 +14,7 @@ Summary:	General purpose template engine
 Group:		Development/Languages
 License:	BSD
 URL:		http://jinja.pocoo.org/
-Source0:	http://pypi.python.org/packages/source/J/Jinja2/Jinja2-%{version}.tar.gz
+Source0:	http://pypi.python.org/packages/source/J/%{srcname}/%{srcname}-%{version}.tar.gz
 # This patch consists of two upstream patches merged and rebased for 2.2.1
 #  (the first upstream patch introduced CVE-2014-0012 and the second fixed it)
 #  https://github.com/mitsuhiko/jinja2/commit/acb672b6a179567632e032f547582f30fa2f4aa7
@@ -41,7 +43,7 @@ principles and adding functionality useful for templating
 environments.
 
 %prep
-%setup -q -n Jinja2-%{version}
+%setup -q -n %{srcname}-%{version}
 
 # cleanup
 find . -name '*.pyo' -o -name '*.pyc' -delete
@@ -99,6 +101,10 @@ rm -rf %{buildroot}
 #%exclude %{python_sitelib}/jinja2/_debugsupport.c
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.8-0.2
+- Update to 2.8
+- Use srcname consistently
+
 * Fri May 30 2014 Bohuslav Kabrda <bkabrda@redhat.com> - 2.6-10
 - Fix CVE-2014-1402
 Resolves: rhbz#1102891

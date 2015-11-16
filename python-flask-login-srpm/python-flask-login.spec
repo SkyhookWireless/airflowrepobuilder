@@ -3,18 +3,11 @@
 
 %global srcname Flask-Login
 
-%define name python27-python-Flask-Login
-%define srcname Flask-Login
-%define version
-%define unmangled_version 0.3.2
-%define unmangled_version 0.3.2
-%define release 0.1
-
 Summary: User session management for Flask
 Name: %{?scl_prefix}python-flask-login
 Version: 0.3.2
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -72,5 +65,8 @@ Links
 %doc LICENSE README.md
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.2
+- Provide full URL for source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.1
 - Activate python2.7 build and dependenies

@@ -2,15 +2,12 @@
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname chartkick
-%define version 0.4.2
-%define unmangled_version 0.4.2
-%define release 1
 
 Summary: Create beautiful Javascript charts with minimal code
 Name: %{?scl_prefix}python-chartkick
-Version: %{version}
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{unmangled_version}.tar.gz
+Version: 0.4.2
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -161,3 +158,10 @@ Load JS scripts:
 %defattr(-,root,root,-)
 %doc README.rst
 %{python_sitelib}/*
+
+%changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.2
+- Provide full URL for source
+
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.1
+- Activate python2.7 build and dependenies

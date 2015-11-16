@@ -11,7 +11,7 @@ Summary:        The Swiss Army knife of Python web development
 Group:          Development/Libraries
 License:        BSD
 URL:            http://werkzeug.pocoo.org/
-Source0:        http://pypi.python.org/packages/source/W/Werkzeug/%{srcname}-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/W/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{pkg_name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch

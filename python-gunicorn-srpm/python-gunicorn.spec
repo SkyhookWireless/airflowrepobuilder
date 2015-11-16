@@ -5,12 +5,12 @@
 
 Name: %{?scl_prefix}python-gunicorn
 Version:        19.3.0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Url:            http://gunicorn.org
 Summary:        WSGI HTTP Server for UNIX
 License:        MIT
 Group:          Development/Languages/Python
-Source:         %{srcname}-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
@@ -69,6 +69,9 @@ rm gunicorn/workers/_gaiohttp.py*
 %doc examples
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 19.3.0-0.2
+- Use full URL for Source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 19.3.0-0.1
 - Activate python2.7 build and dependenies
 - Delete gunicorn/workers/_gaiohttp.py*, it requires python3.3 and is disabled

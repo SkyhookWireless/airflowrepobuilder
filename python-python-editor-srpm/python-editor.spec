@@ -6,8 +6,8 @@
 Summary: Programmatically open an editor, capture the result.
 Name: %{?scl_prefix}python-python-editor
 Version: 0.4
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{srcname}-%{version}-%{release}-buildroot
@@ -62,3 +62,11 @@ editor.edit(file="README.txt")
 %{python_sitelib}/*
 %doc LICENSE README.md
 #%doc build/*
+
+%changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4-0.2
+- Provide full URL for source
+
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4-0.1
+- Build from setup.py
+

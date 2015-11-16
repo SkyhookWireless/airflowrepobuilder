@@ -3,15 +3,11 @@
 
 %global srcname dill
 
-%define srcname dill
-%define version 0.2.4
-%define release 0.1
-
 Summary: a utility for serialization of python objects
 Name: %{?scl_prefix}python-dill
 Version: 0.2.4
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/d/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -223,6 +219,9 @@ http://arxiv.org/pdf/1202.1056 for further information.
 
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.2
+- Provide full URL for source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.1
 - Build from tarball and "python setup.py bdist --format=rpm"
 - Revise for python27 build

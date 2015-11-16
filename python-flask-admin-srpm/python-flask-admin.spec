@@ -6,8 +6,8 @@
 Summary: Simple and extensible admin interface framework for Flask
 Name: %{?scl_prefix}python-flask-admin
 Version: 1.2.0
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -153,6 +153,9 @@ You can help improve Flask-Admin's translations through Crowdin: https://crowdin
 %doc LICENSE README.rst
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.0-0.2
+- Provide full URL for source
+
 * Wed Nov 11 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.0-0.1
 - Roll back to 1.2.0 for airflow compatibility
 

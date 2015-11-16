@@ -5,12 +5,12 @@
 
 Name:           %{?scl_prefix}python-requests
 Version:        2.8.1
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        HTTP library, written in Python, for human beings
 
 License:        ASL 2.0
-URL:            http://pypi.python.org/pypi/requests
-Source0:        http://pypi.python.org/packages/source/r/requests/requests-%{version}.tar.gz
+URL:            http://pypi.python.org/pypi/%{srcname}
+Source0:        http://pypi.python.org/packages/source/r/%{srcname}/%{srcname}-%{version}.tar.gz
 # Explicitly use the system certificates in ca-certificates.
 # https://bugzilla.redhat.com/show_bug.cgi?id=904614
 Patch0:         python-requests-system-cert-bundle.patch
@@ -77,6 +77,9 @@ rm -rf requests/cacert.pem
 %{python_sitelib}/requests/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.3
+- Provide full URL for source
+
 * Wed Nov 11 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.3
 - Update to 2.8.1
 - Migrate to python27

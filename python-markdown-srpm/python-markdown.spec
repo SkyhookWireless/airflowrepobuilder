@@ -1,17 +1,14 @@
 %{?scl:%scl_package python-markdown}
 %{!?scl:%global pkg_name %{name}}
 
-%global srcname markdown
-
 %define name python-Markdown
 %define srcname Markdown
-%define release 0.1
 
 Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown
 Version: 2.6.4
-Release: 0.1%{?dist}
-Source0: %{srcname}-%{version}.tar.gz
+Release: 0.2%{?dist}
+Source0: http://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -68,5 +65,8 @@ You may ask for help and discuss various other issues on the
 
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.2
+- Provide full URL for Source
+
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.1
 - Activate python2.7 build and dependenies
