@@ -138,7 +138,7 @@ Load JS scripts:
 
 
 %prep
-%setup -n %{srcname}-%{unmangled_version}
+%setup -q -n %{srcname}-%{version}
 
 %build
 %{?scl:scl enable %{scl} "}
