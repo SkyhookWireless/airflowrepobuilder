@@ -5,8 +5,8 @@
 
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
-Version: 1.5.2
-Release: 0.2%{?dist}
+Version: 1.5.1
+Release: 0.3%{?dist}
 Source0: http://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -98,6 +98,9 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.3
+- Roll back to 1.5.1 for compatibility reasons
+
 * Fri Nov 13 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.2-0.2
 - Reset dependencies for python-thrift, which is on 
 
