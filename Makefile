@@ -36,6 +36,11 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
+# Optional add-ons for airflow
+EPELPKGS+=python-cm-api-srpm
+EPELPKGS+=python-happybase-srpm
+EPELPKGS+=python-keyring-srpm
+
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
 PYTHONPKGS+=python-pandas-srpm
