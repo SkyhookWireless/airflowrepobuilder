@@ -8,7 +8,7 @@
 %define release 1
 
 Summary: A developer-friendly Python library to interact with Apache HBase
-Name: %{?scl_prefix}python-alembic
+Name: %{?scl_prefix}python-happybase
 Version: 0.9
 Release: 0.1%{?dist}
 Source0: http://pypi.python.org/packages/source/h/%{srcname}/%{srcname}-%{version}.tar.gz
