@@ -40,14 +40,15 @@ EPELPKGS+=python-werkzeug-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-thrift-srpm
+EPELPKGS+=python-unicodecsv-srpm
 
 # Cloudera integration and access tools
 EPELPKGS+=python-cm-api-srpm
 EPELPKGS+=python-pyhs2-srpm
 EPELPKGS+=python-sasl-srpm
 
-# Potentially dangerous add-on, encourages non-RPM deployment
-EPELPKGS+=python-pip-srpm
+# Discarded: python-pip and python27-python-pip are available from upstream
+#EPELPKGS+=python-pip-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
