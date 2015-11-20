@@ -3,14 +3,10 @@
 
 %global srcname pandas
 
-%define name python-pandas
-%define version 0.17.0
-%define release 0.1
-
 Summary: Powerful data structures for data analysis, time series,and statistics
 Name: %{?scl_prefix}python-pandas
 Version: 0.17.0
-Release: 0.1%{?dist}
+Release: 0.3%{?dist}
 Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -128,6 +124,9 @@ Windows binaries built against NumPy 1.8.1
 #%doc build/*
 
 %changelog
+* Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.3
+- Discard unneeded .spec attributes
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.2
 - Provide full URL for source
 
