@@ -39,7 +39,7 @@ EPELPKGS+=python-werkzeug-srpm
 # Optional add-ons
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
-EPELPKGS+=python-thrift
+EPELPKGS+=python-thrift-srpm
 
 # Potentially dangerous add-on, encourages non-RPM deployment
 EPELPKGS+=python-pip
