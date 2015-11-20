@@ -36,14 +36,18 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
-# Hive access requirements, not in airflow module requirements.txt
-EPELPKGS+=python-pyhs2-srpm
-EPELPKGS+=python-sasl-srpm
-
-# Optional add-ons for airflow
-EPELPKGS+=python-cm-api-srpm
+# Optional add-ons
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
+EPELPKGS+=python-thrift
+
+# Potentially dangerous add-on, encourages non-RPM deployment
+EPELPKGS+=python-pip
+
+# Cloudera integration and access tools
+EPELPKGS+=python-cm-api-srpm
+EPELPKGS+=python-pyhs2-srpm
+EPELPKGS+=python-sasl-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
