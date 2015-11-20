@@ -36,6 +36,10 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
+# Hive access requirements, not in airflow module requirements.txt
+EPELPKGS+=python-pyhs2-srpm
+EPELPKGS+=python-sasl-srpm
+
 # Optional add-ons for airflow
 EPELPKGS+=python-cm-api-srpm
 EPELPKGS+=python-happybase-srpm
