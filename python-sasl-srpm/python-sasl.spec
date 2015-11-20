@@ -18,6 +18,7 @@ Url: http://github.com/toddlipcon/python-sasl/tree/master
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Added manually for full SASL capability
+BuildRequires: cyrus-sasl-devel
 Requires: cyrus-sasl-lib
 Requires: cyrus-sasl-plain
 Requires: cyrus-sasl-gssapi
