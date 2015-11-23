@@ -19,7 +19,7 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Activate as enabled
 Requires:  %{?scl_prefix}python-celery >= 2.5.0
-#Requirements:  %{?scl_prefix}python-tornado >= 4.5.0
+Requires:  %{?scl_prefix}python-tornado >= 4.5.0
 Requires:  %{?scl_prefix}python-babel
 Requires:  %{?scl_prefix}python-pytz
 
@@ -202,5 +202,7 @@ If you are interested in maintaining the project please contact.
 #%doc build/*
 
 %changelog
-* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
+* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Build RPM from setup.py
+- Add dependencies form requirements/default.txt
+
