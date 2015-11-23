@@ -182,6 +182,7 @@ to keep boto compatible with Python 2.5.x but no guarantees are made.
 %doc README.rst
 #%doc build/*
 
+%changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.38.0.0.1
 - Provide full URL for source
 - Use wildcard for bindir files
