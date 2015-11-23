@@ -37,6 +37,8 @@ EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
 # Optional add-ons
+EPELPKGS+=python-backports-srpm
+EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-thrift-srpm
