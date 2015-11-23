@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.4%{?dist}
+Release: 0.5%{?dist}
 Source0: http://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -52,9 +52,8 @@ Requires:  %{?scl_prefix}python-requests < 3
 #Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
 #Requires:  %{?scl_prefix}python-setproctitle < 2
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.8
-# Included in base python package
-#Requires:  %{?scl_prefix}python-thrift >= 0.9.2
-#Requires:  %{?scl_prefix}python-thrift < 0.10
+Requires:  %{?scl_prefix}python-thrift >= 0.9.2
+Requires:  %{?scl_prefix}python-thrift < 0.10
 
 # Manually added to ease installation
 Provides: airflow
@@ -98,6 +97,9 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
+- Activate python-thrift dependency
+
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
 - Introduce python-pyhs2 dependency
 
