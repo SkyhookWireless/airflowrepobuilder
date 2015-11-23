@@ -97,8 +97,6 @@ The goals of Alembic are:
 
 Documentation and status of Alembic is at http://alembic.readthedocs.org/
 
-
-
 %prep
 %setup -q -n %{srcname}-%{version}
 %{__sed} -i 's/\r//' LICENSE
@@ -128,6 +126,5 @@ Documentation and status of Alembic is at http://alembic.readthedocs.org/
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
 - Use wildcard for bindir files
-
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Activate python2.7 build and dependenies
