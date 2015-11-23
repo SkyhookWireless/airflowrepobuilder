@@ -36,15 +36,23 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
-# Optional add-ons
+# useful airflow components not from airflow/requirements.txt
 EPELPKGS+=python-alabaster-srpm
 EPELPKGS+=python-amqp-srpm
+EPELPKGS+=python-anyjson-srpm
 EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
+EPELPKGS+=python-boto-srpm
+EPELPKGS+=python-celery-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
+EPELPKGS+=python-pycparser-srpm
 EPELPKGS+=python-thrift-srpm
 EPELPKGS+=python-unicodecsv-srpm
+
+# awscli critical components
+EPELPKGS+=python-certifi-srpm
+EPELPKGS+=python-awscli-srpm
 
 # Cloudera integration and access tools
 EPELPKGS+=python-cm-api-srpm
