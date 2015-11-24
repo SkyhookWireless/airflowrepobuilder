@@ -7,7 +7,7 @@ Summary: Programmatically open an editor, capture the result.
 Name: %{?scl_prefix}python-python-editor
 Version: 0.4
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{srcname}-%{version}-%{release}-buildroot

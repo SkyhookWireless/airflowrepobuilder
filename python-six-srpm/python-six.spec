@@ -10,8 +10,8 @@ Summary:        Python 2 and 3 compatibility utilities
 
 Group:          Development/Languages
 License:        MIT
-URL:            http://pypi.python.org/pypi/%{srcname}/
-Source0:        http://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
+URL:            https://pypi.python.org/pypi/%{srcname}/
+Source0:        https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel

@@ -8,7 +8,7 @@ Summary: Distributed Task Queue
 Name: %{?scl_prefix}python-celery
 Version: 3.1.19
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

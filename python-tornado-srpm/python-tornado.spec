@@ -7,8 +7,8 @@ Summary: Tornado is a Python web framework and asynchronous networking library, 
 Name: %{?scl_prefix}python-tornado
 Version: 4.3
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/t/%{srcname}/%{srcname}-%{version}.tar.gz
-License: http://www.apache.org/licenses/LICENSE-2.0
+Source0: https://pypi.python.org/packages/source/t/%{srcname}/%{srcname}-%{version}.tar.gz
+License: https://www.apache.org/licenses/LICENSE-2.0
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}

@@ -13,7 +13,7 @@ Summary:        World Timezone Definitions for Python
 Group:          Development/Languages
 License:        MIT
 URL:            http://pytz.sourceforge.net/
-Source0:        http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 #Patch0:         pytz-2010h_zoneinfo.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 

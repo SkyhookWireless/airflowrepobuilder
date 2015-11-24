@@ -7,7 +7,7 @@ Summary: A database migration tool for SQLAlchemy.
 Name: %{?scl_prefix}python-alembic
 Version: 0.8.3
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

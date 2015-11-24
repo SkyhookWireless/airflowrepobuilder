@@ -3,17 +3,11 @@
 
 %global srcname websocket
 
-%define name websocket
-%define version 0.2.1
-%define version 0.2.1
-%define version 0.2.1
-%define release 1
-
 Summary: Websocket implementation for gevent
 Name: %{?scl_prefix}python-websocket
 Version: 0.2.1
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
 License: UNKNOWN
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

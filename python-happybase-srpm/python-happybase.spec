@@ -3,15 +3,11 @@
 
 %global srcname happybase
 
-%define name happybase
-%define version 0.9
-%define release 1
-
 Summary: A developer-friendly Python library to interact with Apache HBase
 Name: %{?scl_prefix}python-happybase
 Version: 0.9
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/h/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/h/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

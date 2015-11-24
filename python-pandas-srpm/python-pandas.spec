@@ -7,7 +7,7 @@ Summary: Powerful data structures for data analysis, time series,and statistics
 Name: %{?scl_prefix}python-pandas
 Version: 0.17.0
 Release: 0.3%{?dist}
-Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

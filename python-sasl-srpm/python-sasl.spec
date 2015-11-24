@@ -7,14 +7,14 @@ Summary: Cyrus-SASL bindings for Python
 Name: %{?scl_prefix}python-sasl
 Version: 0.1.3
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 
 License: Apache
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 Vendor: Todd Lipcon <todd@cloudera.com>
-Url: http://github.com/toddlipcon/python-sasl/tree/master
+Url: https://github.com/toddlipcon/python-sasl/tree/master
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Added manually for full SASL capability

@@ -10,7 +10,7 @@ Summary: Low-level AMQP client for Python (fork of amqplib)
 Name: %{?scl_prefix}python-amqp
 Version: 1.4.7
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: LGPL
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

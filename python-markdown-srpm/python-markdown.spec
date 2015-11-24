@@ -8,7 +8,7 @@ Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown
 Version: 2.6.4
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

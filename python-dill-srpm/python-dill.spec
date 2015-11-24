@@ -7,7 +7,7 @@ Summary: a utility for serialization of python objects
 Name: %{?scl_prefix}python-dill
 Version: 0.2.4
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/d/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/d/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

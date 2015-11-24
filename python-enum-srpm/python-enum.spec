@@ -7,7 +7,7 @@ Summary: Robust enumerated type support in Python.
 Name: %{?scl_prefix}python-enum
 Version: 0.4.6
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Choice of GPL or Python license
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

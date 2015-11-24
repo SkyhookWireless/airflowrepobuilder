@@ -7,7 +7,7 @@ Summary: Python2's stdlib csv module is nice, but it doesn't support unicode. Th
 Name: %{?scl_prefix}python-unicodecsv
 Version: 0.14.1
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/u/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/u/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

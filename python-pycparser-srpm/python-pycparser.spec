@@ -7,7 +7,7 @@ Name: %{?scl_prefix}python-pycparser
 Summary: C parser in Python
 Version: 2.14
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

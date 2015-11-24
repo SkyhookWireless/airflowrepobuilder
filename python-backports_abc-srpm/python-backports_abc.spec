@@ -9,7 +9,7 @@ Summary: A backport of recent additions to the 'collections.abc' module.
 Name: %{?scl_prefix}python-backports_abc
 Version: 0.4
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/b/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/b/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Python
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

@@ -7,7 +7,7 @@ Summary: Adds cache support to your Flask application
 Name: %{?scl_prefix}python-flask-cache
 Version: 0.13.1
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

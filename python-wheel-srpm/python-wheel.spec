@@ -7,7 +7,7 @@ Summary: A built-package format for Python.
 Name: %{?scl_prefix}python-wheel
 Version: 0.26.0
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

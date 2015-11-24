@@ -7,7 +7,7 @@ Summary: Clean single-source support for Python 3 and 2
 Name: %{?scl_prefix}python-future
 Version: 0.15.2
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

@@ -7,7 +7,7 @@ Summary: Extensions to the standard Python datetime module
 Name: %{?scl_prefix}python-python-dateutil
 Version: 2.4.2
 Release: 0.2%{?dist}
-Source0: http://pypi.python.org/packages/source/p/%{name}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/p/%{name}/%{srcname}-%{version}.tar.gz
 License: Simplified BSD
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

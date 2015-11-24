@@ -10,7 +10,7 @@ Url:            http://gunicorn.org
 Summary:        WSGI HTTP Server for UNIX
 License:        MIT
 Group:          Development/Languages/Python
-Source0:        http://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools

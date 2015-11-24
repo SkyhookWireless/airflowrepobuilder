@@ -7,7 +7,7 @@ Summary: Store and access your passwords safely.
 Name: %{?scl_prefix}python-keyring
 Version: 5.6
 Release: 0.1%{?dist}
-Source0: http://pypi.python.org/packages/source/k/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/k/%{srcname}/%{srcname}-%{version}.tar.gz
 License: PSF and MIT
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
