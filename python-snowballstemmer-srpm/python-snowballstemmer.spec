@@ -15,6 +15,8 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Yoshiki Shibukawa <yoshiki at shibu.jp>
 Url: https://github.com/shibukawa/snowball_py
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
 
 %description
 
