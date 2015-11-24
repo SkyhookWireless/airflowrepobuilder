@@ -7,7 +7,7 @@
 Summary: Distributed Task Queue
 Name: %{?scl_prefix}python-celery
 Version: 3.1.19
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -15,10 +15,16 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Ask Solem <ask@celeryproject.org>
-Requires: pytz >= 2011b billiard >= 3.3.0.20 kombu >= 3.0.25
+#Requires: pytz >= 2011b billiard >= 3.3.0.20 kombu >= 3.0.25
 Url: http://celeryproject.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+# Included from requirements/default.txt
+Requires:  %{?scl_prefix}python-pytz
+Requires:  %{?scl_prefix}python-billiard >= 3.3.0.21
+Requires:  %{?scl_prefix}python-billiard < 3.4
+Requires:  %{?scl_prefix}python-kombu >= 3.0.29
+Requires:  %{?scl_prefix}python-kombu < 3.1
 
 %description
 =================================
@@ -452,6 +458,8 @@ file in the top distribution directory for the full license text.
 
 %prep
 %setup -n %{srcname}-%{version}
+cp -a requirements/default.txt requirements/default.txt.orig
+echo '' >  requirements/default.txt
 
 %build
 %{?scl:scl enable %{scl} "}
@@ -476,6 +484,7 @@ rm -rf $RPM_BUILD_ROOT
 #%doc build/*
 
 %changelog
-* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.1.19-0.1
+* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.1.19-0.2
 - Build RPM with setup.py
 - Adopt for python27
+- Disable requirements/default.txt, replace with python-[component] in .spec
