@@ -34,9 +34,6 @@ UNKNOWN
 %{?scl:scl enable %{scl} "}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 %{?scl:"}
-# Move bash completion file to standard bash location
-mv %{?_scl_root}/usr/etc/bash_completion.d/snakebite-completion.bash \
-    %{?_scl_root}/etc/bash_completion.d/snakebite-completion.bash
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -46,7 +43,7 @@ mv %{?_scl_root}/usr/etc/bash_completion.d/snakebite-completion.bash \
 %attr(755,root,root) %{_bindir}/*
 %{python_sitelib}/*
 # Extra shell configuration file
-%{?_scl_root}/etc/bash_completion.d/snakebite-completion.bash
+%{?_scl_root}/usr/etc/bash_completion.d/snakebite-completion.bash
 # Misinstalled LICENSE file, rely on doc below
 %exclude %{_prefix}/LICENSE
 %doc LICENSE
@@ -57,4 +54,3 @@ mv %{?_scl_root}/usr/etc/bash_completion.d/snakebite-completion.bash \
 - Build SRPM with setup.py
 - Modify for python27  build
 - Handle bash_completion.d file and spurious LICENSE file
-
