@@ -4,7 +4,7 @@
 %define srcname certifi
 
 Summary: Python package for providing Mozilla's CA Bundle.
-Name: %{?scl_prefix}python-alembic
+Name: %{?scl_prefix}python-certifi
 # Lock old version for AWS compatibility!
 Version: 2015.04.28
 Release: 0.1%{?dist}
