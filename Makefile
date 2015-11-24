@@ -1,4 +1,4 @@
- #
+#
 # Makefile - build wrapper for airflow specific python modules on RHEL 6
 #
 #	git clone RHEL 6 SRPM building tools from
@@ -46,11 +46,16 @@ EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-celery-srpm
 EPELPKGS+=python-enum-srpm
+EPELPKGS+=python-flower-srpm
+EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-pycparser-srpm
 EPELPKGS+=python-thrift-srpm
+EPELPKGS+=python-tornado-srpm
 EPELPKGS+=python-unicodecsv-srpm
+EPELPKGS+=python-websocket-srpm
+EPELPKGS+=python-wheel-srpm
 
 # awscli critical components
 EPELPKGS+=python-certifi-srpm
