@@ -51,6 +51,7 @@ EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-pycparser-srpm
+EPELPKGS+=python-statsd-srpm
 EPELPKGS+=python-thrift-srpm
 EPELPKGS+=python-tornado-srpm
 EPELPKGS+=python-unicodecsv-srpm
