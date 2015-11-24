@@ -37,28 +37,27 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
 
-# useful airflow components not from airflow/requirements.txt
+# useful airflow components and dependencies, not from airflow/requirements.txt
 EPELPKGS+=python-alabaster-srpm
 EPELPKGS+=python-amqp-srpm
 EPELPKGS+=python-anyjson-srpm
 EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
+EPELPKGS+=python-billiard-srpm
 EPELPKGS+=python-boto-srpm
-EPELPKGS+=python-celery-srpm
 EPELPKGS+=python-enum-srpm
 EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-idna-srpm
 EPELPKGS+=python-keyring-srpm
-EPELPKGS+=python-kombu-srpm
 EPELPKGS+=python-mock-srpm
+EPELPKGS+=python-ordereddict-srpm
 EPELPKGS+=python-pyasn1-srpm
 EPELPKGS+=python-pycparser-srpm
 EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
-EPELPKGS+=python-sphinx-srpm
 EPELPKGS+=python-sphinx_rtd_theme-srpm
 EPELPKGS+=python-statsd-srpm
 EPELPKGS+=python-tornado-srpm
@@ -80,8 +79,11 @@ EPELPKGS+=python-sasl-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
-PYTHONPKGS+=python-sphinx-srpm
+PYTHONPKGS+=python-kombu-srpm
 PYTHONPKGS+=python-pandas-srpm
+PYTHONPKGS+=python-sphinx-srpm
+PYTHONPKGS+=python-celery-srpm
+
 PYTHONPKGS+=python-airflow-srpm
 
 # Populate airflowrepo with packages that require airflowrepo
@@ -140,12 +142,17 @@ python-install:: FORCE
 
 # pandas will compile without pytz, but far less effecieintly
 python-pandas-srpm:: pytz-srpm
+python-celery-srpm:: python-kombu-srpm
 # Upstream python27-python-sphinx is not recent enough
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
+
+python-kombu-srpm:: pyton-ordereddict-srpm
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-python-sphinx
+
+
 
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-chartkick-srpm
@@ -174,13 +181,13 @@ python-airflow-srpm:: python-werkzeug-srpm
 
 # Build EPEL compatible softwaer in place
 $(EPELPKGS):: FORCE
-	(cd $@ && $(MAKE) $(MLAGS)) || exit 1
+	(cd $@ && $(MAKE) $(MLAGS) all install) || exit 1
 
 $(PYTHONPKGS):: airflowrepo-6-x86_64.cfg
 $(PYTHONPKGS):: epel-6-sclpy27-x86_64.cfg
 
 $(PYTHONPKGS):: FORCE
-	(cd $@ && $(MAKE) $(MLAGS)) || exit 1
+	(cd $@ && $(MAKE) $(MLAGS) all install) || exit 1
 
 # Needed for local compilation, only use for dev environments
 build:: airflowrepo.repo
