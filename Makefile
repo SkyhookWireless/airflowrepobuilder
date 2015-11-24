@@ -49,14 +49,17 @@ EPELPKGS+=python-enum-srpm
 EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
+EPELPKGS+=python-idna-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-kombu-srpm
+EPELPKGS+=python-mock-srpm
 EPELPKGS+=python-pyasn1-srpm
 EPELPKGS+=python-pycparser-srpm
 EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
-EPELPKGS+=python-sphinx_rtd-srpm
+EPELPKGS+=python-sphinx-srpm
+EPELPKGS+=python-sphinx_rtd_theme-srpm
 EPELPKGS+=python-statsd-srpm
 EPELPKGS+=python-tornado-srpm
 EPELPKGS+=python-unicodecsv-srpm
@@ -77,6 +80,7 @@ EPELPKGS+=python-sasl-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
+PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-airflow-srpm
 
@@ -134,8 +138,14 @@ python-install:: FORCE
 		(cd $$name && $(MAKE) all install) || exit 1; \
 	done
 
-# pandas will compile without pytz, but less effecieintly
+# pandas will compile without pytz, but far less effecieintly
 python-pandas-srpm:: pytz-srpm
+# Upstream python27-python-sphinx is not recent enough
+python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
+python-sphinx-srpm:: python-alabaster-srpm
+python-sphinx-srpm:: python-mock-srpm
+# Current sphinx has dependency loop with sphinx_rtd_theme
+#python-sphinx_rtd_theme-srpm:: python-python-sphinx
 
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-chartkick-srpm
