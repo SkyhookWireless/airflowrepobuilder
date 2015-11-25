@@ -41,7 +41,7 @@ Requires:      %{?scl_prefix}python-jinja2
 Requires:      %{?scl_prefix}python-pygments
 # Added for 1.3.0
 Requires:      %{?scl_prefix}python-mock
-Requires:      %{?scl_prefix}python-snowbalstemmer
+Requires:      %{?scl_prefix}python-snowballstemmer
 
 %description
 Sphinx is a tool that makes it easy to create intelligent and
