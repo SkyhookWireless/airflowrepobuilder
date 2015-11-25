@@ -1,0 +1,54 @@
+# HG changeset patch -- Bitbucket.org
+# Project beaker
+# URL http://bitbucket.org/bbangert/beaker/overview/
+# User Ben Bangert <ben@groovie.org>
+# Date 1245698939 25200
+# Node ID 403ef7c82d328c7c0057cde5510a387d830e1595
+# Parent 9d0c12f93b4d65771e243fd96e81b40e137843cd
+* Fixed bug with CacheMiddleware overwriting configuration with default
+  arguments despite prior setting.
+
+--- a/beaker/util.py
++++ b/beaker/util.py
+@@ -304,12 +304,15 @@ def coerce_cache_params(params):
+     return verify_rules(params, rules)
+ 
+ 
+-def parse_cache_config_options(config):
++def parse_cache_config_options(config, include_defaults=True):
+     """Parse configuration options and validate for use with the
+     CacheManager"""
+     # Load default cache options
+-    options= dict(type='memory', data_dir=None, expire=None, 
+-                       log_file=None)
++    if include_defaults:
++        options= dict(type='memory', data_dir=None, expire=None, 
++                           log_file=None)
++    else:
++        options = {}
+     for key, val in config.iteritems():
+         if key.startswith('beaker.cache.'):
+             options[key[13:]] = val
+
+--- a/beaker/middleware.py
++++ b/beaker/middleware.py
+@@ -47,11 +47,14 @@ class CacheMiddleware(object):
+         
+         self.options = {}
+         
+-        # Pull out any config args starting with beaker cache. if there are any
+-        for dct in [config, kwargs]:
+-            parsed_opts = parse_cache_config_options(dct)
+-            self.options.update(parsed_opts)
++        # Update the options with the parsed config
++        self.options.update(parse_cache_config_options(config))
+         
++        # Add any options from kwargs, but leave out the defaults this
++        # time
++        self.options.update(
++            parse_cache_config_options(kwargs, include_defaults=False))
++                
+         # Assume all keys are intended for cache if none are prefixed with
+         # 'cache.'
+         if not self.options and config:
+

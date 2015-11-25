@@ -1,0 +1,106 @@
+From 1f2ae866a4df8f49f7ae7d8519c54a1461280ec0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Pokorn=C3=BD?= <jpokorny@redhat.com>
+Date: Wed, 10 Jul 2013 19:12:22 +0200
+Subject: [PATCH] Session: id based on sha1/base64 instead of md5^2 in non-uuid
+ fallback
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+This can prevent issues when Python uses hashes implemented by OpenSSL
+library and is run in FIPS mode [*] (i.e., md5 not allowed by default),
+at least if for some reason (incl. future removal, see note below)
+the uuid variant is not used.
+
+Also I consider using single iteration of sha1 to still maintain better
+properties security-wise than two iterations of md5.
+
+Because hexdigest of sha1 hash is 40-32=8 characters longer and hence
+new "cannot store the session data, path too long" regression (in case
+of file backend, additionaly amplified by "initial segmentation depth"
+of 3, but perhaps similarly with other backends) might appear, the raw
+digest (20  bytes) is being base64 encoded (ala urlsafe_b64encode),
+and the suffix padding (single '=' in this case) is being removed,
+leading to 27 characters.  This also means higher information density
+of the identifier (20 effective bytes represented by 27 characters
+rather than 16 bytes represented by 32 characters as with md5 hexdigest)
+and in turn in more powerful "initial segmentation" in case of file
+backend with up to 64 sibling directories as opposed to former 16).
+
+Furthermore, such change should be unobtrusive in any case as the code
+path only affects newly created sessions...
+
+Note: based on a test on 2 machines and using Python v2.7.3 and
+v3.2.3/v3.3.0, uuid4 variant (default for Python 2.5+) appears to be
+twice as slow as the fallback variant incl. this changeset, which
+in turn is slower than original double md5 version by about 30%.
+Just that the randomness/complexity tradeoff of uuid4 might be
+worth reconsidering.
+
+[*] for instance, FIPS mode in Fedora:
+    https://bugzilla.redhat.com/show_bug.cgi?id=805538#c0
+
+Signed-off-by: Jan Pokorný <jpokorny@redhat.com>
+Backport-of: <https://github.com/bbangert/beaker/pull/49>
+---
+
+--- a/beaker/session.py.orig	2013-07-15 23:13:12.136482197 +0200
++++ b/beaker/session.py	2013-07-15 23:14:10.496481945 +0200
+@@ -6,12 +6,9 @@
+ import time
+ from datetime import datetime, timedelta
+ try:
+-    from hashlib import md5
+-except ImportError:
+-    from md5 import md5
+-try:
+     # Use PyCrypto (if available)
+     from Crypto.Hash import HMAC, SHA as SHA1
++    sha1 = SHA1.new
+ 
+ except ImportError:
+     # PyCrypto not available.  Use the Python standard library.
+@@ -22,10 +19,12 @@
+     if sys.version_info[0:2] <= (2,4):
+         # hmac in python2.4 or less require the sha module
+         import sha as SHA1
++        from sha import sha as sha1
+     else:
+         # NOTE: We have to use the callable with hashlib (hashlib.sha1),
+         # otherwise hmac only accepts the sha module object itself
+-        from hashlib import sha1 as SHA1
++        from hashlib import sha1
++        SHA1 = sha1
+ 
+ # Check for pycryptopp encryption for AES
+ try:
+@@ -122,10 +121,10 @@
+                     raise
+         
+     def _create_id(self):
+-        self.id = md5(
+-            md5("%f%s%f%s" % (time.time(), id({}), random.random(),
+-                              getpid())).hexdigest(), 
+-        ).hexdigest()
++        self.id = b64encode(
++            sha1("%f%s%f%s" % (time.time(), id({}), random.random(),
++                               getpid())).digest()
++        ).replace('+', '-').replace('/', '_').rstrip('=')
+         self.is_new = True
+         self.last_accessed = None
+         if self.use_cookies:
+@@ -403,10 +402,10 @@
+             return cPickle.loads(data)
+     
+     def _make_id(self):
+-        return md5(md5(
+-            "%f%s%f%d" % (time.time(), id({}), random.random(), getpid())
+-            ).hexdigest()
+-        ).hexdigest()
++        return b64encode(
++            sha1("%f%s%f%s" % (time.time(), id({}), random.random(),
++                               getpid())).digest()
++        ).replace('+', '-').replace('/', '_').rstrip('=')
+     
+     def save(self, accessed_only=False):
+         """Saves the data for this session to persistent storage"""

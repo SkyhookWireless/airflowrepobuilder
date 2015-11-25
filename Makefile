@@ -42,6 +42,7 @@ EPELPKGS+=python-amqp-srpm
 EPELPKGS+=python-anyjson-srpm
 EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
+EPELPKGS+=python-beaker-srpm
 EPELPKGS+=python-billiard-srpm
 EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-enum-srpm
