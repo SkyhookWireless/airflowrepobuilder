@@ -14,10 +14,19 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Ask Solem <ask@celeryproject.org>
-Requires: anyjson >= 0.3.3 amqp >= 1.4.6 importlib ordereddict
+#Requires: anyjson >= 0.3.3
+#Requires: amqp >= 1.4.6
+#Requires: importlib
+#Requires:  ordereddict
 Url: http://kombu.readthedocs.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+# Added manually, for reported dependencies
+Requires: %{?scl_prefix}python-amqp >= 1.4.6
+Requires: %{?scl_prefix}python-anyjson >= 0.3.3
+Requires: %{?scl_prefix}python-ordereddict
+# Allegedly embedded in python2.7
+#Requires: %{?scl_prefix}python-importlib
 
 %description
 .. _kombu-index:

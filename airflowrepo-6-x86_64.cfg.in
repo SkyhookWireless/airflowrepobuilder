@@ -1,9 +1,11 @@
 config_opts['root'] = 'airflowrepo-6-x86_64'
 config_opts['target_arch'] = 'x86_64'
 config_opts['legal_host_arches'] = ('x86_64',)
-#config_opts['chroot_setup_cmd'] = 'groupinstall buildsys-build'
+#config_opts['chroot_setup_cmd'] = 'install @buildsys-build'
 config_opts['chroot_setup_cmd'] = 'install @buildsys-build scl-utils-build python27-build centos-release-SCL'
 config_opts['dist'] = 'el6'  # only useful for --resultdir variable subst
+# beware RHEL use 6Server or 6Client
+config_opts['releasever'] = '6'
 
 config_opts['yum.conf'] = """
 [main]
@@ -18,28 +20,24 @@ assumeyes=1
 syslog_ident=mock
 syslog_device=
 
+# repos
 [base]
 name=BaseOS
 enabled=1
 #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os
-baseurl=http://localhost/centos/6/os/x86_64
+baseurl=http://127.0.0.1/centos/6/os/x86_64
 failovermethod=priority
 gpgkey=file:///etc/pki/mock/RPM-GPG-KEY-CentOS-6
 gpgcheck=1
 
-[updates-security]
-name=updates-security
+[updates]
+name=updates
 enabled=1
-#mirrorlist=http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates
-baseurl=http://localhost/centos/6/updates/x86_64
-failovermethod=priority
-
-[updates-fastbugs]
-name=updates-fastbugs
-enabled=0
 #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates
 baseurl=http://127.0.0.1/centos/6/updates/x86_64
 failovermethod=priority
+gpgkey=file:///etc/pki/mock/RPM-GPG-KEY-CentOS-6
+gpgcheck=1
 
 [epel]
 name=epel

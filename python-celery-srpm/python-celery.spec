@@ -20,7 +20,8 @@ Url: http://celeryproject.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Included from requirements/default.txt
-Requires:  %{?scl_prefix}python-pytz
+#Requires:  %{?scl_prefix}python-pytz
+Requires:  %{?scl_prefix}pytz
 Requires:  %{?scl_prefix}python-billiard >= 3.3.0.21
 Requires:  %{?scl_prefix}python-billiard < 3.4
 Requires:  %{?scl_prefix}python-kombu >= 3.0.29

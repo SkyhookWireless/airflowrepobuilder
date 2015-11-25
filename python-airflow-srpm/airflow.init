@@ -1,0 +1,85 @@
+#!/bin/bash
+#
+# airflow        Startup script for the Airflow task manager
+#
+# chkconfig: - 91 09
+# description: The Airflow GUI progromatically authors, schedules,
+#              and monitors data pipelines
+# processname: airflow
+# config: /etc/airflow/conf/airflow.conf
+# config: /etc/sysconfig/airflow
+# pidfile: /var/run/airflow/airflow.pid
+#
+### BEGIN INIT INFO
+# Provides: airflow
+# Required-Start: $local_fs $remote_fs $network $named
+# Required-Stop: $local_fs $remote_fs $network
+# Should-Start: distcache
+# Short-Description: start and stop Airflow server
+# Description: The Airflow GUI progromatically authors, schedules,
+#              and monitors data pipelines
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+if [ -f /etc/sysconfig/airflow ]; then
+        . /etc/sysconfig/airflow
+fi
+
+# Start airflow in the C locale by default.
+AIRFLOW_LANG=${AIRFLOW_LANG-"C"}
+
+# Path to the apachectl script, server binary, and short-form for messages.
+airflow=${AIRFLOW-/usr/sbin/airflow}
+prog=airflow
+pidfile=${PIDFILE-/var/run/airflow/airflow.pid}
+lockfile=${LOCKFILE-/var/lock/subsys/airflow}
+RETVAL=0
+STOP_TIMEOUT=${STOP_TIMEOUT-10}
+
+start() {
+        echo -n $"Starting $prog: "
+        LANG=$AIRFLOW_LANG daemon --pidfile=${pidfile} $airflow $OPTIONS
+        RETVAL=$?
+        echo
+        [ $RETVAL = 0 ] && touch ${lockfile}
+        return $RETVAL
+}
+
+stop() {
+	echo -n $"Stopping $prog: "
+	killproc -p ${pidfile} -d ${STOP_TIMEOUT} $airflow
+	RETVAL=$?
+	echo
+	[ $RETVAL = 0 ] && rm -f ${lockfile} ${pidfile}
+}
+
+# See how we were called.
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  status)
+        status -p ${pidfile} $airflow
+	RETVAL=$?
+	;;
+  restart)
+	stop
+	start
+	;;
+  condrestart|try-restart)
+	if status -p ${pidfile} $airflow >&/dev/null; then
+		stop
+		start
+	fi
+	;;
+  *)
+	echo $"Usage: $prog {start|stop|restart|condrestart|try-restart|status|help}"
+	RETVAL=2
+esac
+
+exit $RETVAL

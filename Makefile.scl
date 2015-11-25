@@ -11,7 +11,7 @@ RSYNCOPTS=-a --no-owner --no-group
 RSYNCSAFEOPTS=$(RSYNCOPTS) --ignore-existing 
 
 # "mock" configurations to build with, activate only as needed
-MOCKS+=epel-6-sclpy27-x86_64
+MOCKS+=sclpy27-6-x86_64
 
 # Local yum compatible RPM repository
 REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
@@ -47,6 +47,7 @@ $(MOCKS):: verifyspec FORCE
 		echo "	Building $(SPEC) SRPM in $@"; \
 		rm -rf $@; \
 		/usr/bin/mock -q -r $@ --sources=$(PWD) \
+		    --define 'scm 1' \
 		    --resultdir=$(PWD)/$@ \
 		    --buildsrpm --spec=$(SPEC); \
 		echo "Storing " $@/*.src.rpm "as $@.src.rpm"; \
@@ -54,8 +55,9 @@ $(MOCKS):: verifyspec FORCE
 		echo "Building $@.src.rpm in $@"; \
 		rm -rf $@; \
 		/usr/bin/mock -q -r $@ \
-		     --resultdir=$(PWD)/$@ \
-		     $@.src.rpm; \
+		    --define 'scm 1' \
+		    --resultdir=$(PWD)/$@ \
+		    $@.src.rpm; \
 	fi
 
 mock:: $(MOCKS)
@@ -63,7 +65,7 @@ mock:: $(MOCKS)
 install:: $(MOCKS)
 	@for repo in $(MOCKS); do \
 	    echo Installing $$repo; \
-	    echo "$$repo" | awk -F- '{print $$2,$$NF}' | while read yumrelease yumarch; do \
+	    echo "$$repo" | awk -F- '{print $$2,$$3}' | while read yumrelease yumarch; do \
 		rpmdir=$(REPOBASEDIR)/$$yumrelease/$$yumarch; \
 		srpmdir=$(REPOBASEDIR)/$$yumrelease/SRPMS; \
 		echo "	Pusning SRPMS to $$srpmdir"; \
@@ -73,6 +75,8 @@ install:: $(MOCKS)
 		rsync $(RSYNCSAFEOPTS) --exclude=*.src.rpm --exclude=*debuginfo*.rpm $$repo/*.rpm $$rpmdir/. || exit 1; \
 		createrepo -q $$rpmdir/.; \
 	    done; \
+	    echo "	Touching /etc/mock/$$repo.cfg to force cache rebuild"; \
+	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
 
 clean::

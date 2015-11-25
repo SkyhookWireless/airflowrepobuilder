@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.5%{?dist}
+Release: 0.6%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -54,6 +54,10 @@ Requires:  %{?scl_prefix}python-requests < 3
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.8
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
 Requires:  %{?scl_prefix}python-thrift < 0.10
+# Added for authentication
+Requires:  cyrus-sasl-gssapi
+Requires:  cyrus-sasl-plain
+
 
 # Manually added to ease installation
 Provides: airflow
@@ -97,8 +101,9 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
-* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
+* Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.6
 - Activate python-thrift dependency
+- Add cyrus-sasl-gssapi and cyrus-sasl-plain dependencies
 
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
 - Introduce python-pyhs2 dependency

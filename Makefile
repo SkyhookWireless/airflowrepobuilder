@@ -51,6 +51,7 @@ EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-idna-srpm
 EPELPKGS+=python-keyring-srpm
+EPELPKGS+=python-kombu-srpm
 EPELPKGS+=python-mock-srpm
 EPELPKGS+=python-ordereddict-srpm
 EPELPKGS+=python-pyasn1-srpm
@@ -79,7 +80,6 @@ EPELPKGS+=python-sasl-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
-PYTHONPKGS+=python-kombu-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
@@ -90,7 +90,7 @@ PYTHONPKGS+=python-airflow-srpm
 # Verify build setup first!
 all:: /usr/bin/createrepo
 all:: airflowrepo-6-x86_64.cfg
-all:: epel-6-sclpy27-x86_64.cfg
+all:: sclpy27-6-x86_64.cfg
 
 all:: python-install
 
@@ -106,10 +106,10 @@ airflowrepo-6-x86_64.cfg:: FORCE
 	@cmp -s $@ /etc/mock/$@ || \
 		(echo Warning: /etc/mock/$@ does not match $@, exiting; exit 1)
 
-epel-6-sclpy27-x86_64.cfg:: epel-6-sclpy27-x86_64.cfg.in
+sclpy27-6-x86_64.cfg:: sclpy27-6-x86_64.cfg.in
 	sed "s|@@@REPOBASEDIR@@@|$(REPOBASEDIR)|g" $? > $@
 
-epel-6-sclpy27-x86_64.cfg:: FORCE
+sclpy27-6-x86_64.cfg:: FORCE
 	@cmp -s $@ /etc/mock/$@ || \
 		(echo Warning: /etc/mock/$@ does not match $@, exiting; exit 1)
 
@@ -148,7 +148,7 @@ python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
 
-python-kombu-srpm:: pyton-ordereddict-srpm
+python-kombu-srpm:: python-ordereddict-srpm
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-python-sphinx
 
@@ -184,7 +184,7 @@ $(EPELPKGS):: FORCE
 	(cd $@ && $(MAKE) $(MLAGS) all install) || exit 1
 
 $(PYTHONPKGS):: airflowrepo-6-x86_64.cfg
-$(PYTHONPKGS):: epel-6-sclpy27-x86_64.cfg
+$(PYTHONPKGS):: sclpy27-6-x86_64.cfg
 
 $(PYTHONPKGS):: FORCE
 	(cd $@ && $(MAKE) $(MLAGS) all install) || exit 1
