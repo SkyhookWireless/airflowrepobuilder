@@ -28,6 +28,8 @@ BuildRequires: %{?scl_prefix}python-docutils
 BuildRequires: %{?scl_prefix}python-jinja2
 BuildRequires: %{?scl_prefix}python-nose
 BuildRequires: %{?scl_prefix}python-alabaster
+BuildRequires: %{?scl_prefix}python-six
+BuildRequires: %{?scl_prefix}python-pygments
 # Note circular dependency between sphinx and sphinx_rtd_theme
 BuildRequires: %{?scl_prefix}python-sphinx_rtd_theme
 # Test dependencies
