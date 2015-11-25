@@ -3,6 +3,7 @@ config_opts['target_arch'] = 'x86_64'
 config_opts['legal_host_arches'] = ('x86_64',)
 #config_opts['chroot_setup_cmd'] = 'install @buildsys-build'
 config_opts['chroot_setup_cmd'] = 'install @buildsys-build scl-utils-build python27-build centos-release-SCL'
+# Activate and use local SCL repo in cfg file
 config_opts['dist'] = 'el6'  # only useful for --resultdir variable subst
 # beware RHEL use 6Server or 6Client
 config_opts['releasever'] = '6'
@@ -69,6 +70,12 @@ enabled=0
 [scl]
 name=CentOS-6 - SCL
 baseurl=http://mirror.centos.org/centos/6/SCL/x86_64/
+enabled=1
+
+[scl]
+name=CentOS-6 - SCL
+#baseurl=http://mirror.centos.org/centos/6/SCL/x86_64/
+baseurl=http://127.0.0.1/centos/6/SCL/x86_64/
 enabled=1
 
 [airflowrepo]
