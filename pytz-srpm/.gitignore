@@ -2,6 +2,7 @@
 *.rpm
 *[0-9]
 *~
+airflowrepo-*
 epel-*
 rpmbuild
-airflowrepo-*
+sclpy27-*-x86_64

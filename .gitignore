@@ -1,8 +1,8 @@
+*-x86_64
+*-x86_64.cfg
 *.out
 *.rpm
 *~
-airflowrepo-*-x86_64.cfg
-airflowrepo-*-x86_64
 airflowrepo.repo
 airflowrepo/5/SRPMS/*
 airflowrepo/5/x86_64/*
@@ -12,6 +12,3 @@ airflowrepo/7/SRPMS/*
 airflowrepo/7/x86_64/*
 repodata
 rpmbuild
-epel-*-x86_64.cfg
-epel-*-x86_64
-
