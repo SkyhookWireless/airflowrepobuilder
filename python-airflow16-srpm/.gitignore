@@ -1,0 +1,7 @@
+*-x86_64
+*.log
+*.out
+*.rpm
+*[0-9]
+*~
+rpmbuild
