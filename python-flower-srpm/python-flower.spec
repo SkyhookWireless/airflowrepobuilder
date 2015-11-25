@@ -19,9 +19,11 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 Requires:  %{?scl_prefix}python-celery >= 2.5.0
-Requires:  %{?scl_prefix}python-tornado >= 4.5.0
+Requires:  %{?scl_prefix}python-tornado >= 4.0.0
 Requires:  %{?scl_prefix}python-babel
-Requires:  %{?scl_prefix}python-pytz
+# Named oddly
+#Requires:  %{?scl_prefix}python-pytz
+Requires:  %{?scl_prefix}pytz
 
 %description
 Celery Flower
@@ -202,8 +204,11 @@ If you are interested in maintaining the project please contact.
 #%doc build/*
 
 %changelog
+* Wed Nov 25 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
+- Add python(abi) dependency
+- Lower python-tornado dependency to 4.0.0
+
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Build RPM from setup.py
 - Add dependencies form requirements/default.txt
-- Add python(abi) dependency
 
