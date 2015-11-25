@@ -78,11 +78,9 @@ install:: $(MOCKS)
 		rsync $(RSYNCSAFEOPTS) --exclude=*.src.rpm --exclude=*debuginfo*.rpm $$repo/*.rpm $$rpmdir/. || exit 1; \
 		createrepo -q $$rpmdir/.; \
 	    done; \
-	    echo "	Force mock cache rebuild by touching /etc/mock/$$repo.cfg"; \
-	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
 	@for repo in $(CLIENTMOCKS); do \
-	    echo "	  Also touching /etc/mock/$$repo.cfg"; \
+	    echo "	  Forcing mock cache rebuild by: /etc/mock/$$repo.cfg"; \
 	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
 	  
