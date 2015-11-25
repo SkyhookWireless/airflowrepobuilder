@@ -21,7 +21,7 @@ Patch1:         python-requests-remove-nested-bundling-dep.patch
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-Requires: %{?scl_prefix}python
+Requires: %{?scl_prefix}python(abi)
 
 #BuildRequires:  python-chardet >= 2.2.1-1
 #BuildRequires:  python-urllib3 >= 1.10.2-1
@@ -80,6 +80,7 @@ rm -rf requests/cacert.pem
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.3
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Wed Nov 11 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.3
 - Update to 2.8.1

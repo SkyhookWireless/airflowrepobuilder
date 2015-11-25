@@ -5,7 +5,7 @@
 
 Name: %{?scl_prefix}python-billiard
 Version:        3.3.0.21
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Multiprocessing Pool Extensions
 
 Group:          Development/Languages
@@ -17,6 +17,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Former releases were noarch, report conflict
+Requires: %{?scl_prefix}python(abi)
 Conflicts: %{name}.noarch
 
 %description
@@ -50,6 +51,7 @@ Python multiprocessing fork with improvements and bugfixes.
 - Port to python27
 - Update to 3.3.0.21
 - Switch from sitelib to sitearch
+- Add python(abi) dependency
 
 * Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild

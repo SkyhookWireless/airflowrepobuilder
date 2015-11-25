@@ -6,7 +6,7 @@
 Summary: Universal Command Line Environment for AWS.
 Name: %{?scl_prefix}python-awscli
 Version: 1.9.7
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 # Actual download URL
 Source0: https://pypi.python.org/packages/source/a/awscli/awscli-%{version}.tar.gz
 License: Apache License 2.0
@@ -19,6 +19,7 @@ Url: http://aws.amazon.com/cli/
 # Deal with python 2.6 or greater requirements
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 =======
@@ -417,6 +418,7 @@ for each repository::
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.9.5-0.3
 - Import pythonrepobuilder verson to airflowrepo
 - Use python27, discard RHEL 5 suport
+- Add python(abi) dependency
 
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@gmail.com> - 1.9.5-0.2
 - Use build and clena steps consistent with EPEL modules

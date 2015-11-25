@@ -6,7 +6,7 @@
 Summary: A configurable sidebar-enabled Sphinx theme
 Name: %{?scl_prefix}python-alabaster
 Version: 0.7.6
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: UNKNOWN
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Jeff Forcier <jeff@bitprophet.org>
 Url: https://github.com/bitprophet/alabaster
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 =========================
@@ -476,3 +477,4 @@ Changelog
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.7.6-0.1
 - Build RPM from setup.py.
+- Add python(abi) dependency

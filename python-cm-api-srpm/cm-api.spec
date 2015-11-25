@@ -6,7 +6,7 @@
 Summary: Cloudera Manager API client
 Name: %{?scl_prefix}python-cm-api
 Version: 10.0.0
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache License 2.0
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Cloudera, Inc. <scm-users@cloudera.org>
 Url: http://cloudera.github.com/cm_api/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 UNKNOWN
@@ -49,3 +50,4 @@ UNKNOWN
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.10.0-0.1
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency

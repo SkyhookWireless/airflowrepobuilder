@@ -9,7 +9,7 @@
 Summary: Python bindings for the Apache Thrift RPC system
 Name: %{?scl_prefix}python-thrift
 Version: 0.9.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache License 2.0
 Group: Development/Libraries
@@ -19,6 +19,7 @@ Vendor: Thrift Developers <dev@thrift.apache.org>
 Url: http://thrift.apache.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 The Apache Thrift software framework, for scalable cross-language
@@ -57,3 +58,4 @@ JavaScript, Node.js, Smalltalk, OCaml and Delphi and other languages.
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.9.3-0.1
 - Activate python2.7 build and dependenies
 - Add description manually from website
+- Add python(abi) dependency

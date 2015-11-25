@@ -6,7 +6,7 @@
 Summary: a utility for serialization of python objects
 Name: %{?scl_prefix}python-dill
 Version: 0.2.4
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/d/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Mike McKerns <mmckerns@caltech.edu>
 Url: http://www.cacr.caltech.edu/~mmckerns
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 
 %description
@@ -221,6 +222,7 @@ http://arxiv.org/pdf/1202.1056 for further information.
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.2
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.2-0.1
 - Build from tarball and "python setup.py bdist --format=rpm"

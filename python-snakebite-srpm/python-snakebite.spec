@@ -6,7 +6,7 @@
 Summary: Pure Python HDFS client
 Name: %{?scl_prefix}python-snakebite
 Version: 2.7.2
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache License 2.0
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Wouter de Bie <wouter@spotify.com>
 Url: http://github.com/spotify/snakebite
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 UNKNOWN
@@ -54,3 +55,4 @@ UNKNOWN
 - Build SRPM with setup.py
 - Modify for python27  build
 - Handle bash_completion.d file and spurious LICENSE file
+- Add python(abi) dependency

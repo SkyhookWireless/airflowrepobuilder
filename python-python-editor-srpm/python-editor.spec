@@ -6,7 +6,7 @@
 Summary: Programmatically open an editor, capture the result.
 Name: %{?scl_prefix}python-python-editor
 Version: 0.4
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Peter Ruibal <ruibalp@gmail.com>
 Url: https://github.com/fmoo/python-editor
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 `python-editor` is a library that provides the `editor` module for programmatically
@@ -66,6 +67,7 @@ editor.edit(file="README.txt")
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4-0.2
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4-0.1
 - Build from setup.py

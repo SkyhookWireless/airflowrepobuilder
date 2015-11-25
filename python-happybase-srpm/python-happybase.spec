@@ -6,7 +6,7 @@
 Summary: A developer-friendly Python library to interact with Apache HBase
 Name: %{?scl_prefix}python-happybase
 Version: 0.9
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/h/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,8 +17,9 @@ Vendor: Wouter Bolsterlee <uws@xs4all.nl>
 Url: https://github.com/wbolster/happybase
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-# Included in base python27 package
-#Requires: %{?scl_prefix}python-thrift
+# Included in base python27 package, but requires update for airflow
+Requires: %{?scl_prefix}python-thrift
+Requires: %{?scl_prefix}python(abi)
 
 %description
 HappyBase
@@ -71,3 +72,4 @@ HBase_.
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Gar1cia <nkadel@skyhookireless.com> - 0.9-0.1
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency

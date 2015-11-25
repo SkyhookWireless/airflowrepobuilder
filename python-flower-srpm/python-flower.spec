@@ -6,7 +6,7 @@
 Summary: Celery Flower
 Name: %{?scl_prefix}python-flower
 Version: 0.8.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,7 +17,7 @@ Vendor: Mher Movsisyan <mher.movsisyan@gmail.com>
 Url: https://github.com/mher/flower
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-# Activate as enabled
+Requires: %{?scl_prefix}python(abi)
 Requires:  %{?scl_prefix}python-celery >= 2.5.0
 Requires:  %{?scl_prefix}python-tornado >= 4.5.0
 Requires:  %{?scl_prefix}python-babel
@@ -205,4 +205,5 @@ If you are interested in maintaining the project please contact.
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Build RPM from setup.py
 - Add dependencies form requirements/default.txt
+- Add python(abi) dependency
 

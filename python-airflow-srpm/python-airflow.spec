@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.6%{?dist}
+Release: 0.7%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Maxime Beauchemin <maximebeauchemin@gmail.com>
 Url: https://github.com/airbnb/airflow
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 # Manually added from setup.py
 Requires:  %{?scl_prefix}python-alembic >= 0.8.0
@@ -104,6 +105,7 @@ production, monitor progress, and troubleshoot issues when needed.
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.6
 - Activate python-thrift dependency
 - Add cyrus-sasl-gssapi and cyrus-sasl-plain dependencies
+- Add python(abi) dependency
 
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
 - Introduce python-pyhs2 dependency

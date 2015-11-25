@@ -19,6 +19,7 @@ Vendor: Ask Solem <ask@celeryproject.org>
 Url: http://celeryproject.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 # Included from requirements/default.txt
 #Requires:  %{?scl_prefix}python-pytz
 Requires:  %{?scl_prefix}pytz
@@ -489,3 +490,4 @@ rm -rf $RPM_BUILD_ROOT
 - Build RPM with setup.py
 - Adopt for python27
 - Disable requirements/default.txt, replace with python-[component] in .spec
+- Add python(abi) dependency

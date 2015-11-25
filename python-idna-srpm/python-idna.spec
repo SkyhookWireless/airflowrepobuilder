@@ -6,7 +6,7 @@
 Summary: Internationalized Domain Names in Applications (IDNA)
 Name: %{?scl_prefix}python-idna
 Version: 2.0
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/i/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD-like
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Kim Davies <kim@cynosure.com.au>
 Url: https://github.com/kjd/idna
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Internationalized Domain Names in Applications (IDNA)
@@ -191,4 +192,5 @@ idna git repository at Travis CI:
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0-0.1
 - Build SRPM with setup.py
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency
 

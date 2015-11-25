@@ -6,7 +6,7 @@
 Summary: Amazon Web Services Library
 Name: %{?scl_prefix}python-boto
 Version: 2.38.0
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https//pypi.python.org/packages/source/b/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Mitch Garnaat <mitch@garnaat.com>
 Url: https://github.com/boto/boto/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 ####
@@ -186,3 +187,4 @@ to keep boto compatible with Python 2.5.x but no guarantees are made.
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.38.0.0.1
 - Provide full URL for source
 - Use wildcard for bindir files
+- Add python(abi) dependency

@@ -8,7 +8,7 @@
 
 Name: %{?scl_prefix}python-mako
 Version: 1.0.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Summary: Mako template library for Python
 
 Group: Development/Languages
@@ -22,8 +22,9 @@ BuildRequires: %{?scl_prefix}python-setuptools-devel
 BuildRequires: %{?scl_prefix}python-nose
 BuildRequires: %{?scl_prefix}python-markupsafe
 
-Requires: python-beaker
-Requires: python-markupsafe
+Requires: %{?scl_prefix}python-beaker
+Requires: %{?scl_prefix}python-markupsafe
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML
@@ -70,6 +71,7 @@ calling and scoping semantics.
 * Wed Nov 14 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.0.3-0.1
 - Update to 1.0.3 and enable python27 builds
 - Disable %%check stanza
+- Add python(abi) dependency
 
 * Wed Jul 14 2010 David Malcolm <dmalcolm@redhat.com> - 0.3.4-1
 - rebase to 0.3.4; add requirement on python-markupsafe

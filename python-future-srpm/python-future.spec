@@ -6,7 +6,7 @@
 Summary: Clean single-source support for Python 3 and 2
 Name: %{?scl_prefix}python-future
 Version: 0.15.2
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Ed Schofield <ed@pythoncharmers.com>
 Url: https://python-future.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 future: Easy, safe support for Python 2/3 compatibility
@@ -127,6 +128,7 @@ The software is distributed under an MIT licence. See LICENSE.txt.
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.15.2-0.2
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.15.2-0.1
 - Activate python2.7 build and dependenies

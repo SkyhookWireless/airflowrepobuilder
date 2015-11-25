@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}python-six
 Version:        1.10.0
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        Python 2 and 3 compatibility utilities
 
 Group:          Development/Languages
@@ -16,6 +16,7 @@ Source0:        https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 # For use by selftests:
 #BuildRequires:  pytest
@@ -72,6 +73,7 @@ This is the Python 2 build of the module.
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.2
 - Update to 1.10.0
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Thu Mar 12 2015 Matej Stuchlik <mstuchli@redhat.com> - 1.9.0-2
 - Rebuild for RHEL 6.7

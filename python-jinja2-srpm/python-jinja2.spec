@@ -9,7 +9,7 @@
 
 Name:		%{?scl_prefix}python-jinja2
 Version:	2.8
-Release:	0.1%{?dist}
+Release:	0.2%{?dist}
 Summary:	General purpose template engine
 Group:		Development/Languages
 License:	BSD
@@ -30,6 +30,7 @@ BuildRequires:	%{?scl_prefix}python-sphinx
 %endif # with_docs
 Requires:	%{?scl_prefix}python-babel >= 0.8
 Requires:	%{?scl_prefix}python-markupsafe
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Jinja2 is a template engine written in pure Python.  It provides a
@@ -104,6 +105,7 @@ rm -rf %{buildroot}
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.8-0.2
 - Update to 2.8
 - Use srcname consistently
+- Add python(abi) dependency
 
 * Fri May 30 2014 Bohuslav Kabrda <bkabrda@redhat.com> - 2.6-10
 - Fix CVE-2014-1402

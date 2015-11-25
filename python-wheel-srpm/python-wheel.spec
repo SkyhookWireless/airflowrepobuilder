@@ -6,7 +6,7 @@
 Summary: A built-package format for Python.
 Name: %{?scl_prefix}python-wheel
 Version: 0.26.0
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Daniel Holth <dholth@fastmail.fm>
 Url: https://bitbucket.org/pypa/wheel/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Wheel
@@ -335,4 +336,5 @@ reference implementation.
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.26.0-0.1
 - Build RPM with setup.py
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency
 

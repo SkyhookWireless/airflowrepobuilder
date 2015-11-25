@@ -6,8 +6,11 @@
 Summary: Cyrus-SASL bindings for Python
 Name: %{?scl_prefix}python-sasl
 Version: 0.1.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 License: Apache
 Group: Development/Libraries
@@ -60,3 +63,4 @@ Required for python-pyhs2
 - Build initial RPM from setup.py
 - Activate python2.7 build and dependenies
 - Add suite of cyrus-sasl libraries for full capability
+- Add python(abi) dependency

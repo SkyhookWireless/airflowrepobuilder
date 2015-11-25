@@ -6,7 +6,7 @@
 Summary: Pygments is a syntax highlighting package written in Python.
 Name: %{?scl_prefix}python-pygments
 Version: 2.0.2
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Georg Brandl <georg@python.org>
 Url: http://pygments.org/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Pygments
@@ -66,6 +67,7 @@ Pygments
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.2
 - Provide full URL for source
 - Replace "realname" with "srcname" for consistency
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.0.2-0.1
 - Activate python2.7 build and dependenies

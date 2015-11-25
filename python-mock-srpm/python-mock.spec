@@ -5,7 +5,7 @@
 
 Name: %{?scl_prefix}python-mock
 Version:        0.8.0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        A Python Mocking and Patching Library for Testing
 
 Group:          Development/Libraries
@@ -17,6 +17,7 @@ Source1:        LICENSE.txt
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Mock is a Python module that provides a core mock class. It removes the need
@@ -52,6 +53,7 @@ cp -p %{SOURCE1} .
 %changelog
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0,8.0-0.1
 - Update to python27 build
+- Add python(abi) dependency
 
 * Mon Jul 09 2012 Ralph Bean <rbean@redhat.com> - 0.8.0-2
 - Python3 support

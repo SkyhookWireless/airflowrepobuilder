@@ -6,7 +6,7 @@
 Summary: Robust enumerated type support in Python.
 Name: %{?scl_prefix}python-enum
 Version: 0.4.6
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Choice of GPL or Python license
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Ben Finney <ben+python@benfinney.id.au>
 Url: http://pypi.python.org/pypi/enum/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 ..  Important:: Superseded by Python standard library.
@@ -92,3 +93,4 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4.6-0.1
 - Build RPM with setup.py
+- Add python(abi) dependency

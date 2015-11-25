@@ -6,7 +6,7 @@
 Summary: ReadTheDocs.org theme for Sphinx, 2013 version.
 Name: %{?scl_prefix}python-sphinx_rtd_theme
 Version: 0.1.9
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Dave Snider <dave.snider@gmail.com>
 Url: https://github.com/snide/sphinx_rtd_theme/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 # Ignore dependency to allow python-sphinx to BuildRequires with this
 #Requires: %{?scl_prefix}python-sphinx >= 1.3
 
@@ -260,3 +261,4 @@ TODO
 - Build SRPM with setup.py
 - Modify for python27
 - List, but ignore, dependency on python-sphinx to avoid dependency loop
+- Add python(abi) dependency

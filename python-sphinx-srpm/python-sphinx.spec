@@ -5,7 +5,7 @@
 
 Name:       %{?scl_prefix}python-sphinx
 Version:    1.3.1
-Release:    0.1%{?dist}
+Release:    0.2%{?dist}
 Summary:    Python documentation generator
 
 Group:      Development/Tools
@@ -20,6 +20,7 @@ Source0:    https://pypi.python.org/packages/source/S/%{upstream_name}/%{upstrea
 #Patch0: sphinx-docutils-0.10.patch
 Patch0:     Sphinx-1.2.1-mantarget.patch
 Patch1:     Sphinx-1.3.1-verbosetests.patch
+Requires: %{?scl_prefix}python(abi)
 
 BuildArch:     noarch
 BuildRequires: %{?scl_prefix}python2-devel >= 2.4
@@ -183,6 +184,7 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 - Disable Patch0
 - Add BuildReuqires for python-alabaster and python-sphinx_rtd-srpm
 - Disable check until latex error is fixed
+- Add python(abi) dependency
 
 * Tue May 07 2013 Bohuslav Kabrda <bkabrda@redhat.com> - 1.1.3-7
 - Rebuild to generate bytecode properly after fixing rhbz#956289

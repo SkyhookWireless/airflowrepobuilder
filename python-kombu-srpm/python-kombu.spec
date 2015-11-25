@@ -6,7 +6,7 @@
 Summary: Messaging library for Python
 Name: %{?scl_prefix}python-kombu
 Version: 3.0.29
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/k/%{srcname}/%{srcname}-%{version}.tar.gz
 License: UNKNOWN
 Group: Development/Libraries
@@ -27,6 +27,7 @@ Requires: %{?scl_prefix}python-anyjson >= 0.3.3
 Requires: %{?scl_prefix}python-ordereddict
 # Allegedly embedded in python2.7
 #Requires: %{?scl_prefix}python-importlib
+Requires: %{?scl_prefix}python(abi)
 
 %description
 .. _kombu-index:
@@ -389,4 +390,4 @@ file in the top distribution directory for the full license text.
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
 - Use wildcard for bindir files
-
+- Add python(abi) dependency

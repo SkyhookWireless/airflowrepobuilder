@@ -6,7 +6,7 @@
 Summary: This package provides 16 stemmer algorithms (15 + Poerter English stemmer) generated from Snowball algorithms.
 Name: %{?scl_prefix}python-snowballstemmer
 Version: 1.2.0
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Yoshiki Shibukawa <yoshiki at shibu.jp>
 Url: https://github.com/shibukawa/snowball_py
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 
@@ -70,3 +71,4 @@ echo __python_sitelib: %{__pythonsitelib}
 %changelog
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
 - Activate python-thrift dependency
+- Add python(abi) dependency

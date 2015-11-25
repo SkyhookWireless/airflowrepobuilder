@@ -6,7 +6,7 @@
 Summary: Wraps the best available JSON implementation available in a common interface
 Name: %{?scl_prefix}python-anyjson
 Version: 0.3.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Rune Halvorsen <runefh@gmail.com>
 Url: http://bitbucket.org/runeh/anyjson/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 ##############################
@@ -108,3 +109,4 @@ see the LICENSE file
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
 - Use wildcard for bindir files
+- Add python(abi) dependency

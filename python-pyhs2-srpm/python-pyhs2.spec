@@ -6,7 +6,7 @@
 Summary: Python Hive Server 2 Client Driver
 Name: %{?scl_prefix}python-pyhs2
 Version: 0.6.0
-Release: 0.1%?{dist}
+Release: 0.2%?{dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Brad Ruderman <bradruderman@gmail.com>
 Url: https://github.com/BradRuderman/pyhs2
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-sasl
 
 %description
@@ -64,3 +65,4 @@ Enjoy
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.0-0.4
 - Build initial RPM from setup.py
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency

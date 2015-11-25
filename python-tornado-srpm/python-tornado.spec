@@ -6,7 +6,7 @@
 Summary: Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.
 Name: %{?scl_prefix}python-tornado
 Version: 4.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/t/%{srcname}/%{srcname}-%{version}.tar.gz
 License: https://www.apache.org/licenses/LICENSE-2.0
 Group: Development/Libraries
@@ -16,6 +16,7 @@ Vendor: Facebook <python-tornado@googlegroups.com>
 Url: http://www.tornadoweb.org/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Tornado Web Server
@@ -94,4 +95,5 @@ export CLAGS="$RPM_OPT_FLAGS"
 %changelog
 * Tue Nov 24  2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 4.3-0.1
 - Build RPM from setup.py
-- Adapt for python27
+- Adapt for python2
+- Add python(abi) dependency

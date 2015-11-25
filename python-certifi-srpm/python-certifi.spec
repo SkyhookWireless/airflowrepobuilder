@@ -7,7 +7,7 @@ Summary: Python package for providing Mozilla's CA Bundle.
 Name: %{?scl_prefix}python-certifi
 # Lock old version for AWS compatibility!
 Version: 2015.04.28
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 License: ISC
 Group: Development/Libraries
@@ -18,6 +18,7 @@ Vendor: Kenneth Reitz <me@kennethreitz.com>
 Url: http://certifi.io/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Certifi: Python SSL Certificates
@@ -96,4 +97,5 @@ other option, this may work for you.
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2015.04.28-0.1
 - Build from setup.py
 - Lock version to AWS compatible 2015.04.28
+- Add python(abi) dependency
 

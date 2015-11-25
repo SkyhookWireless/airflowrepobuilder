@@ -7,7 +7,7 @@
 
 Name: %{?scl_prefix}python-backports
 Version:        1.0
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Namespace for backported Python features
 
 # Only code is sourced from http://www.python.org/dev/peps/pep-0382/
@@ -17,6 +17,7 @@ Source0:        backports.py
 
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 The backports namespace is a namespace reserved for features backported from
@@ -55,6 +56,7 @@ install -pm 644 %{SOURCE0} %{buildroot}%{python_sitearch}/backports/__init__.py
 %changelog
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0-0.1
 - Port to python27
+- Add python(abi) dependency
 
 * Mon Aug 19 2013 Ian Weller <iweller@redhat.com> - 1.0-3
 - Install to both python_sitelib and python_sitearch

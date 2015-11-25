@@ -6,7 +6,7 @@
 Summary: A microframework based on Werkzeug, Jinja2 and good intentions
 Name: %{?scl_prefix}python-flask
 Version: 0.10.1
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -18,6 +18,7 @@ Url: http://github.com/mitsuhiko/flask/
 # Added for compilation
 BuildRequires: %{?scl_prefix}python-devel
 BuildRequires: %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Flask
@@ -89,6 +90,7 @@ Links
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Activate python2.7 build and dependenies

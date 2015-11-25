@@ -6,7 +6,7 @@
 Summary: A database migration tool for SQLAlchemy.
 Name: %{?scl_prefix}python-alembic
 Version: 0.8.3
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Mike Bayer <mike@zzzcomputing.com>
 Url: http://bitbucket.org/zzzeek/alembic
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Alembic is a database migrations tool written by the author

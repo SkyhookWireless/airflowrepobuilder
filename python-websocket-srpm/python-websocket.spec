@@ -6,7 +6,7 @@
 Summary: Websocket implementation for gevent
 Name: %{?scl_prefix}python-websocket
 Version: 0.2.1
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/w/%{srcname}/%{srcname}-%{version}.tar.gz
 License: UNKNOWN
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: UNKNOWN <UNKNOWN>
 Url: http://pypi.python.org/pypi/websocket
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 UNKNOWN
@@ -48,3 +49,4 @@ UNKNOWN
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.2.1-0.1
 - Build RPM from setup.py
+- Add python(abi) dependency

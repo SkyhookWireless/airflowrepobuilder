@@ -6,7 +6,7 @@
 Summary: Adds cache support to your Flask application
 Name: %{?scl_prefix}python-flask-cache
 Version: 0.13.1
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -18,6 +18,7 @@ Url: http://github.com/thadeusb/flask-cache
 # Add for python27 use and compilation
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 
@@ -54,6 +55,7 @@ Adds cache support to your Flask application
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.13.11-0.2
 - Provide full URL for source
 - Replace "realname" with "srcname" for consistency
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.13.1l-0.1
 - Activate python2.7 build and dependenies

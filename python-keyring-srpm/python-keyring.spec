@@ -6,7 +6,7 @@
 Summary: Store and access your passwords safely.
 Name: %{?scl_prefix}python-keyring
 Version: 5.6
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/k/%{srcname}/%{srcname}-%{version}.tar.gz
 License: PSF and MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Jason R. Coombs <jaraco@jaraco.com>
 Url: http://bitbucket.org/kang/python-keyring-lib
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 =======================================
@@ -965,3 +966,4 @@ will be removed.
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 5.6-0.1
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency

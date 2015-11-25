@@ -6,7 +6,7 @@
 Summary: Powerful data structures for data analysis, time series,and statistics
 Name: %{?scl_prefix}python-pandas
 Version: 0.17.0
-Release: 0.3%{?dist}
+Release: 0.4%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -22,6 +22,7 @@ BuildRequires:  %{?scl_prefix}numpy
 #BuildRequires:  %{?scl_prefix}python-matplotlib
 #BuildRequires:  Cython
 BuildRequires:  %{?scl_prefix}pytz
+Requires: %{?scl_prefix}python(abi)
 
 #Requires:       %{?scl_prefix}python-dateutil
 Requires:       %{?scl_prefix}numpy
@@ -126,6 +127,7 @@ Windows binaries built against NumPy 1.8.1
 %changelog
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.3
 - Discard unneeded .spec attributes
+- Add python(abi) dependency
 
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.17.0-0.2
 - Provide full URL for source

@@ -6,7 +6,7 @@
 Name: %{?scl_prefix}python-pycparser
 Summary: C parser in Python
 Version: 2.14
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Eli Bendersky <eliben@gmail.com>
 Url: https://github.com/eliben/pycparser
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
         pycparser is a complete parser of the C language, written in
@@ -52,3 +53,4 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.14-0.1
 - Provide full URL for source
 - Use wildcard for bindir files
+- Add python(abi) dependency

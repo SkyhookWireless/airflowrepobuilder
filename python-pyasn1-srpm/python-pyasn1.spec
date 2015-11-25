@@ -8,7 +8,7 @@
 
 Name: %{?scl_prefix}python-pyasn1
 Version:        0.1.9
-Release:        1%{?dist}
+Release:        0.2%{?dist}
 Summary:        ASN.1 tools for Python
 License:        BSD
 Group:          System Environment/Libraries
@@ -18,6 +18,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 This project is dedicated to implementation of ASN.1 types (concrete syntax)
@@ -52,6 +53,7 @@ compiler is planned for implementation in the future.
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.1.9-0.1
 - Update to 0.1.9, for python27
 - Discard pyasn1-any.patch
+- Add python(abi) dependency
 
 * Wed Dec 22 2010 Rob Crittenden <rcritten@redhat.com> - 0.0.12a-1
 - Update to upstream version 0.0.12a (#643555)
@@ -93,4 +95,3 @@ compiler is planned for implementation in the future.
 + Revision: 31989
 - fixed (build)requires
 - Import pyasn1
-

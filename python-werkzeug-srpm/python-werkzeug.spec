@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}python-werkzeug
 Version:        0.11
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        The Swiss Army knife of Python web development 
 
 Group:          Development/Libraries
@@ -18,6 +18,7 @@ BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python-sphinx
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Werkzeug
@@ -93,6 +94,7 @@ find examples/ -name '*.png' -executable | xargs chmod -x
 * Tue Nov 10 2015 Nico Kadel-Garcia <nkadel@skyhookwireles.com> - 0.11-0.1
 - Update to 0.11
 - Discard "doc" building, list as "Provides" to avoid dependency  issues
+- Add python(abi) dependency
 
 * Wed May 15 2013 Matej Stuchlik <mstuchli@redhat.com> - 0.8.3-5
 - Improved error messages in FIPS

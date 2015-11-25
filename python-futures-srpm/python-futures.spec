@@ -6,7 +6,7 @@
 Summary: Backport of the concurrent.futures package from Python 3.2
 Name: %{?scl_prefix}python-futures
 Version: 3.0.3
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Alex Gronholm <alex.gronholm+pypi@nextday.fi>
 Url: https://github.com/agronholm/pythonfutures
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 UNKNOWN
@@ -48,3 +49,4 @@ UNKNOWN
 %changelog
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.8.3-0.1
 - Build RPM with setup.py
+- Add python(abi) dependency

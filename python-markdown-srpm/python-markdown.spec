@@ -7,7 +7,7 @@
 Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown
 Version: 2.6.4
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
@@ -18,6 +18,7 @@ Vendor: Waylan Limberg <waylan.limberg [at] icloud.com>
 Url: https://pythonhosted.org/Markdown/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 This is a Python implementation of John Gruber's Markdown_.
@@ -67,6 +68,7 @@ You may ask for help and discuss various other issues on the
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.2
 - Provide full URL for Source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.1
 - Activate python2.7 build and dependenies

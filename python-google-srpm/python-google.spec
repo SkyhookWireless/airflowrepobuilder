@@ -17,6 +17,7 @@ Vendor: Mario Vilas <mvilas@gmail.com>
 Url: http://breakingcode.wordpress.com/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 #Requires:  %{?scl_prefix}python-beautifulsoup4 >= 4.0
 
 %description
@@ -54,4 +55,5 @@ https://breakingcode.wordpress.com/2010/06/29/google-search-python/
 %changelog
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.7-0.1
 - Build RPM with setup.py
+- Add python(abi) dependency
 

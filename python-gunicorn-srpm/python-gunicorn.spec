@@ -14,9 +14,10 @@ Source0:        https://pypi.python.org/packages/source/g/%{srcname}/%{srcname}-
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-#BuildRequires:  python-devel
-#BuildRequires:  python-distribute
-#BuildRequires:  python-nose
+#BuildRequires:  %{?scl_prefix}python-devel
+#BuildRequires:  %{?scl_prefix}python-distribute
+#BuildRequires:  %{?scl_prefix}python-nose
+Requires: %{?scl_prefix}python(abi)
 BuildArch:      noarch
 #%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
@@ -71,6 +72,7 @@ rm gunicorn/workers/_gaiohttp.py*
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 19.3.0-0.2
 - Use full URL for Source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 19.3.0-0.1
 - Activate python2.7 build and dependenies

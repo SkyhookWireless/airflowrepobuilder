@@ -9,7 +9,7 @@
 Summary: Low-level AMQP client for Python (fork of amqplib)
 Name: %{?scl_prefix}python-amqp
 Version: 1.4.7
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: LGPL
 Group: Development/Libraries
@@ -20,6 +20,7 @@ Vendor: Ask Solem <pyamqp@celeryproject.org>
 Url: http://github.com/celery/py-amqp
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 =====================================================================
@@ -157,3 +158,4 @@ Further
 %changelog
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.4.7-0.1
 - Build from setup.py
+- Add python(abi) dependency

@@ -6,7 +6,7 @@
 Summary: User session management for Flask
 Name: %{?scl_prefix}python-flask-login
 Version: 0.3.2
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -21,6 +21,7 @@ BuildRequires: python27
 BuildRequires: python27-python-setuptools
 Requires: /opt/rh/python27/enable
 Requires: python27
+Requires: %{?scl_prefix}python(abi)
 
 %description
 
@@ -67,6 +68,7 @@ Links
 %changelog
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.2
 - Provide full URL for source
+- Add python(abi) dependency
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.1
 - Activate python2.7 build and dependenies

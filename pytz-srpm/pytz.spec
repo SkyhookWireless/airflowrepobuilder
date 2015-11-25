@@ -7,7 +7,7 @@
 
 Name: %{?scl_prefix}pytz
 Version:        2015.7
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        World Timezone Definitions for Python
 
 Group:          Development/Languages
@@ -20,6 +20,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 Requires: tzdata
 
@@ -63,6 +64,7 @@ rm -rf  $RPM_BUILD_ROOT%{python_sitelib}/pytz/zoneinfo
 - Activate python2.7 build and dependenies
 - Update to 2015.7
 - Discard obsolete patches
+- Add python(abi) dependency
 
 * Wed Jun 30 2010 David Malcolm <dmalcolm@redhat.com> - 2010h-2
 - rebuild

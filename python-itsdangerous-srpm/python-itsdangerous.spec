@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}python-%{srcname}
 Version:        0.24
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Python library for passing trusted data to untrusted environments
 License:        BSD
 URL:            http://pythonhosted.org/itsdangerous/
@@ -15,6 +15,7 @@ Source0:        https://pypi.python.org/packages/source/i/%{srcname}/%{srcname}-
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Itsdangerous is a Python library for passing data through untrusted 
@@ -55,6 +56,7 @@ rm -r *.egg-info
 - update to 0.24
 - Activate python2.7 build and dependenies
 - Use tarball versions of LICENSE, CHANGES, and test.py
+- Add python(abi) dependency
 
 * Tue Jul 09 2013 Dan Callaghan <dcallagh@redhat.com> - 0.22-1
 - new upstream release 0.22

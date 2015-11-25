@@ -6,7 +6,7 @@
 Summary: Python2's stdlib csv module is nice, but it doesn't support unicode. This module is a drop-in replacement which *does*.
 Name: %{?scl_prefix}python-unicodecsv
 Version: 0.14.1
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/u/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: Jeremy Dunck <jdunck@gmail.com>
 Url: https://github.com/jdunck/python-unicodecsv
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 unicodecsv
@@ -76,3 +77,4 @@ Note that unicodecsv expects a bytestream, not unicode -- so there's no need to 
 * Fri Nov 20 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.14.1-0.2
 - Create base RPM from setup.py
 - Activate python2.7 build and dependenies
+- Add python(abi) dependency

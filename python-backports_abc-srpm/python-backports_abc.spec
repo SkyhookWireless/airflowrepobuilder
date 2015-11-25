@@ -8,7 +8,7 @@
 Summary: A backport of recent additions to the 'collections.abc' module.
 Name: %{?scl_prefix}python-backports_abc
 Version: 0.4
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/b/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Python
 Group: Development/Libraries
@@ -19,6 +19,7 @@ Vendor: Stefan Behnel et al. <cython-devel@python.org>
 Url: https://github.com/cython/backports_abc
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 =============
@@ -128,3 +129,8 @@ Changelog
 %{python_sitelib}/*
 %doc CHANGES.rst README.rst
 #%doc build/*
+
+%changelog
+* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.4-0.1
+- Activate python2.7 build and dependenies
+- Add python(abi) dependency

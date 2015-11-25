@@ -6,7 +6,7 @@
 Summary: A simple statsd client.
 Name: %{?scl_prefix}python-statsd
 Version: 3.2.1
-Release: 0.1%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -17,6 +17,7 @@ Vendor: James Socol <james@mozilla.com>
 Url: https://github.com/jsocol/pystatsd
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 ======================
@@ -124,3 +125,4 @@ There are lots of docs in the ``docs/`` directory and on ReadTheDocs_.
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.2.1-0.1
 - Build RPM from setup.py
 - Adapt for python27
+- Add python(abi) dependency
