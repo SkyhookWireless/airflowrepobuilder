@@ -82,7 +82,7 @@ install:: $(MOCKS)
 	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
 	@for repo in $(CLIENTMOCKS); do \
-	    echo "	Also touching client config /etc/mock/$$repo.cfg"; 
+	    echo "	  Also touching client config /etc/mock/$$repo.cfg"; \
 	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
 	  
