@@ -20,7 +20,6 @@ BuildRequires: /opt/rh/python27/enable
 BuildRequires: python27
 BuildRequires: python27-python-setuptools
 Requires: /opt/rh/python27/enable
-Requires: python27
 Requires: %{?scl_prefix}python(abi)
 
 %description
