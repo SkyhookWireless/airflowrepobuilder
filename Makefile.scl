@@ -13,6 +13,9 @@ RSYNCSAFEOPTS=$(RSYNCOPTS) --ignore-existing
 # "mock" configurations to build with, activate only as needed
 MOCKS+=sclpy27-6-x86_64
 
+# "mock" configurations to also touch
+CLIENTMOCKS+=airflowrepo-6-x86_64
+
 # Local yum compatible RPM repository
 REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
 
@@ -78,6 +81,11 @@ install:: $(MOCKS)
 	    echo "	Touching /etc/mock/$$repo.cfg to force cache rebuild"; \
 	    sudo /bin/touch /etc/mock/$$repo.cfg; \
 	done
+	@for repo in $(CLIENTMOCKS); do \
+	    echo "	Also touching client config /etc/mock/$$repo.cfg"; 
+	    sudo /bin/touch /etc/mock/$$repo.cfg; \
+	done
+	  
 
 clean::
 	rm -rf $(MOCKS)
