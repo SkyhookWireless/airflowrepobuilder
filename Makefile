@@ -32,7 +32,6 @@ EPELPKGS+=python-markdown-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
-EPELPKGS+=python-requests-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
@@ -83,6 +82,7 @@ EPELPKGS+=python-sasl-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
+PYTHONPKGS+=python-requests-srpm
 
 PYTHONPKGS+=python-airflow-srpm
 
@@ -148,6 +148,7 @@ python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
 
+python-requests-srpm:: python-ordereddict-srpm
 python-kombu-srpm:: python-ordereddict-srpm
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-python-sphinx

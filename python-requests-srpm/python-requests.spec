@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}python-requests
 Version:        2.8.1
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        HTTP library, written in Python, for human beings
 
 License:        ASL 2.0
@@ -21,6 +21,7 @@ Patch1:         python-requests-remove-nested-bundling-dep.patch
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python
 
 #BuildRequires:  python-chardet >= 2.2.1-1
 #BuildRequires:  python-urllib3 >= 1.10.2-1
@@ -29,10 +30,10 @@ Requires:       ca-certificates
 #Requires:       python-chardet >= 2.2.1-1
 #Requires:       python-urllib3 >= 1.10.2-1
 
-#%if 0%{?rhel} && 0%{?rhel} <= 6
-#BuildRequires:  python-ordereddict >= 1.1
-#Requires:       python-ordereddict >= 1.1
-#%endif
+%if 0%{?rhel} && 0%{?rhel} <= 6
+BuildRequires:  python-ordereddict >= 1.1
+Requires:       python-ordereddict >= 1.1
+%endif
 
 %description
 Most existing Python modules for sending HTTP requests are extremely verbose and 
