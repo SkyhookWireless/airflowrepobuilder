@@ -1,10 +1,10 @@
-%{?scl:%scl_package python-flask}
+%{?scl:%scl_package python-flask-wtf}
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname Flask-WTF
 
 Summary: Simple integration of Flask and WTForms
-Name: %{?scl_prefix}python-flask
+Name: %{?scl_prefix}python-flask-wtf
 Version: 0.12
 Release: 0.1%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
