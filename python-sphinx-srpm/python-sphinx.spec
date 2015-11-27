@@ -28,20 +28,28 @@ BuildRequires: %{?scl_prefix}python-setuptools
 BuildRequires: %{?scl_prefix}python-docutils
 BuildRequires: %{?scl_prefix}python-jinja2
 BuildRequires: %{?scl_prefix}python-nose
-BuildRequires: %{?scl_prefix}python-alabaster
-BuildRequires: %{?scl_prefix}python-six
+BuildRequires: %{?scl_prefix}python-alabaster < 0.8
+BuildRequires: %{?scl_prefix}python-alabaster >= 0.7
+BuildRequires: %{?scl_prefix}python-six >= 1.4
 BuildRequires: %{?scl_prefix}python-pygments
 # Note circular dependency between sphinx and sphinx_rtd_theme
-BuildRequires: %{?scl_prefix}python-sphinx_rtd_theme
+BuildRequires: %{?scl_prefix}python-sphinx_rtd_theme >= 0.1
+BuildRequires: %{?scl_prefix}python-sphinx_rtd_theme <= 0.2
 # Test dependencies
 BuildRequires: texlive-latex
+# For testing
+Requires:      %{?scl_prefix}python-simplejson
 
 Requires:      %{?scl_prefix}python-docutils
-Requires:      %{?scl_prefix}python-jinja2
-Requires:      %{?scl_prefix}python-pygments
+Requires:      %{?scl_prefix}python-jinja2 >= 2.3
+Requires:      %{?scl_prefix}python-pygments >= 2.0
 # Added for 1.3.0
 Requires:      %{?scl_prefix}python-mock
-Requires:      %{?scl_prefix}python-snowballstemmer
+Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
+Requires:      %{?scl_prefix}python-six >= 1.4
+Requires:      %{?scl_prefix}python-babel >= 1.3
+# For win32 features
+#Requires:      %{?scl_prefix}python-colorama
 
 %description
 Sphinx is a tool that makes it easy to create intelligent and
