@@ -28,8 +28,6 @@ enabled=1
 #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os
 baseurl=http://127.0.0.1/centos/6/os/x86_64
 failovermethod=priority
-gpgkey=file:///etc/pki/mock/RPM-GPG-KEY-CentOS-6
-gpgcheck=1
 
 [updates]
 name=updates
@@ -37,17 +35,11 @@ enabled=1
 #mirrorlist=http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates
 baseurl=http://127.0.0.1/centos/6/updates/x86_64
 failovermethod=priority
-gpgkey=file:///etc/pki/mock/RPM-GPG-KEY-CentOS-6
-gpgcheck=1
 
 [epel]
 name=epel
 #mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=x86_64
 baseurl=http://127.0.0.1/epel/6/x86_64/
-
-failovermethod=priority
-gpgkey=file:///etc/pki/mock/RPM-GPG-KEY-EPEL-6
-gpgcheck=1
 
 [testing]
 name=epel-testing
