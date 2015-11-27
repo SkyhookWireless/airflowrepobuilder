@@ -26,6 +26,7 @@ EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
 EPELPKGS+=python-flask-srpm
 EPELPKGS+=python-flask-wtf-srpm
+EPELPKGS+=python-flask-wtforms-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
 EPELPKGS+=python-itsdangerous-srpm
