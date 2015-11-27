@@ -178,13 +178,16 @@ to keep boto compatible with Python 2.5.x but no guarantees are made.
 %{__rm} -rf %{buildroot}
 
 %files
-#%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{python_sitelib}/*
 %doc README.rst
 #%doc build/*
 
 %changelog
-* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.38.0.0.1
+* Fri Nov 27 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.38.0-0.2
+- Add bindir files
+
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.38.0-0.1
 - Provide full URL for source
 - Use wildcard for bindir files
 - Add python(abi) dependency
