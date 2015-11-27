@@ -60,6 +60,7 @@ EPELPKGS+=python-mock-srpm
 EPELPKGS+=python-ordereddict-srpm
 EPELPKGS+=python-pyasn1-srpm
 EPELPKGS+=python-pycparser-srpm
+EPELPKGS+=python-python-tox
 EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
