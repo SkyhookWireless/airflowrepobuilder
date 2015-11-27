@@ -26,7 +26,6 @@ EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
 EPELPKGS+=python-flask-srpm
 EPELPKGS+=python-flask-wtf-srpm
-EPELPKGS+=python-flask-wtforms-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
 EPELPKGS+=python-itsdangerous-srpm
@@ -39,6 +38,7 @@ EPELPKGS+=python-python-editor-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-werkzeug-srpm
+EPELPKGS+=python-wtforms-srpm
 
 # useful airflow components and dependencies, not from airflow/requirements.txt
 EPELPKGS+=python-alabaster-srpm
@@ -89,6 +89,7 @@ PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
 PYTHONPKGS+=python-requests-srpm
+PYTHONPKGS+=python-croniter-srpm
 
 PYTHONPKGS+=python-airflow-srpm
 
@@ -153,6 +154,8 @@ python-celery-srpm:: python-kombu-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
+
+python-croniter-srpm:: python-python-dateutil-srpm
 
 python-requests-srpm:: python-ordereddict-srpm
 python-kombu-srpm:: python-ordereddict-srpm
