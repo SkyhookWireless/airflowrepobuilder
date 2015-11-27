@@ -63,9 +63,6 @@ Links
 
 %prep
 %setup -q -n %{srcname}-%{version}
-%{?scl:scl enable %{scl} "}
-%{__python} setup.py build
-%{?scl:"}
 
 %build
 %{?scl:scl enable %{scl} "}
