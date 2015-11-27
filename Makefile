@@ -25,6 +25,7 @@ EPELPKGS+=python-flask-admin-srpm
 EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
 EPELPKGS+=python-flask-srpm
+EPELPKGS+=python-flask-wtf-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
 EPELPKGS+=python-itsdangerous-srpm
@@ -67,6 +68,7 @@ EPELPKGS+=python-tornado-srpm
 EPELPKGS+=python-unicodecsv-srpm
 EPELPKGS+=python-websocket-srpm
 EPELPKGS+=python-wheel-srpm
+EPELPKGS+=python-wtforms-srpm
 
 # awscli critical components
 EPELPKGS+=python-certifi-srpm
