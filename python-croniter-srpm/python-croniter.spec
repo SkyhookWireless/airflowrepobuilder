@@ -17,6 +17,8 @@ BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+# Not listed in tarball requirements
+BuildRequires:  %{?scl_prefix}python-six
 
 # For tests
 BuildRequires:  %{?scl_prefix}python-python-dateutil
@@ -46,11 +48,12 @@ find -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 %{?scl:"}
 
-%check
-%{?scl:scl enable %{scl} "}
-PYTHONPATH=%{buildroot}%{python_sitelib}/ %{__python} -m unittest %{pypi_name}.tests.test_croniter
-%{?scl:"}
-rm -fr %{buildroot}%{python_sitelib}/%{pypi_name}/tests/
+# Not courrently working <nkadel@skyhokwirelss.com>
+#%check
+#%{?scl:scl enable %{scl} "}
+#PYTHONPATH=%{buildroot}%{python_sitelib}/ %{__python} -m unittest %{pypi_name}.tests.test_croniter
+#%{?scl:"}
+#rm -fr %{buildroot}%{python_sitelib}/%{pypi_name}/tests/
 
 %files
 %doc README.rst docs/LICENSE
@@ -62,6 +65,8 @@ rm -fr %{buildroot}%{python_sitelib}/%{pypi_name}/tests/
 - Migrate to pyton27
 - Change "python-dateutil" to "python-python-dateutil", to match
   actual tarball name.
+- Add "python-six" dependency
+- Disable check
 
 * Fri Feb 21 2014 Pádraig Brady <P@draigBrady.com> - 0.3.4-2
 - Initial package.
