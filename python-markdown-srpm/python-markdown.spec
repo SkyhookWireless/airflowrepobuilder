@@ -6,8 +6,8 @@
 
 Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown
-Version: 2.6.4
-Release: 0.3%{?dist}
+Version: 2.6.5
+Release: 0.1%{?dist}
 Source0: https://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD License
 Group: Development/Libraries
@@ -64,8 +64,10 @@ You may ask for help and discuss various other issues on the
 %{python_sitelib}/*
 %doc INSTALL.md LICENSE.md README.md
 
-
 %changelog
+* Sat Nov 28 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.5-0.1
+- Update tto 2.6.5 for airflow 1.6.1 dependencies
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.6.4-0.2
 - Provide full URL for Source
 - Add python(abi) dependency

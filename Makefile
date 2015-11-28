@@ -17,8 +17,6 @@ EPELPKGS+=python-py2pack-srpm
 EPELPKGS+=pytz-srpm
 # This ons is from SuSE repo
 EPELPKGS+=python-gunicorn-srpm
-# Differs from lower case markdown
-EPELPKGS+=python-Markdown-srpm
 
 EPELPKGS+=python-alembic-srpm
 EPELPKGS+=python-chartkick-srpm
