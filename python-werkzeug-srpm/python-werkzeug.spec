@@ -4,7 +4,7 @@
 %global srcname Werkzeug
 
 Name:           %{?scl_prefix}python-werkzeug
-Version:        0.11
+Version:        0.11.2
 Release:        0.2%{?dist}
 Summary:        The Swiss Army knife of Python web development 
 
@@ -91,6 +91,9 @@ find examples/ -name '*.png' -executable | xargs chmod -x
 #%doc docs/_build/html examples
 
 %changelog
+* Sat Nov 28 2015 Nico Kadel-Garcia <nkadel@skyhookwireles.com> - 0.11.2-0.1
+- Update to 0.11.2
+
 * Tue Nov 10 2015 Nico Kadel-Garcia <nkadel@skyhookwireles.com> - 0.11-0.1
 - Update to 0.11
 - Discard "doc" building, list as "Provides" to avoid dependency  issues
