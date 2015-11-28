@@ -37,6 +37,7 @@ EPELPKGS+=python-python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
+EPELPKGS+=python-thrift-srpm
 EPELPKGS+=python-werkzeug-srpm
 EPELPKGS+=python-wtforms-srpm
 
@@ -60,7 +61,7 @@ EPELPKGS+=python-mock-srpm
 EPELPKGS+=python-ordereddict-srpm
 EPELPKGS+=python-pyasn1-srpm
 EPELPKGS+=python-pycparser-srpm
-EPELPKGS+=python-python-tox
+EPELPKGS+=python-tox-srpm
 EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
