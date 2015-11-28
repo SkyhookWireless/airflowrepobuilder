@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow16
 Version: 1.6.1
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -20,60 +20,79 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 
 # Manually added from setup.py
-Requires:  %{?scl_prefix}python-alembic
-Requires:  %{?scl_prefix}python-boto
-Requires:  %{?scl_prefix}python-chartkick
+Requires:  %{?scl_prefix}python-alembic >= 0.8.3
+Requires:  %{?scl_prefix}python-alembic < 0.2
+Requires:  %{?scl_prefix}python-boto = 2.36.0
+Requires:  %{?scl_prefix}python-celery >= 3.1.17
+Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
+Requires:  %{?scl_prefix}python-chartkick < 0.4
+Requires:  %{?scl_prefix}python-croniter >= 0.9.3
+Requires:  %{?scl_prefix}python-cx_oracle >= 5.1.2
 Requires:  %{?scl_prefix}python-cryptography
 Requires:  %{?scl_prefix}python-coverage
 Requires:  %{?scl_prefix}python-coveralls
 Requires:  %{?scl_prefix}python-croniter
-Requires:  %{?scl_prefix}python-dill
-Requires:  %{?scl_prefix}python-filechunkio
+Requires:  %{?scl_prefix}python-dill >= 0.2.2
+Requires:  %{?scl_prefix}python-dill < 0.3
+Requires:  %{?scl_prefix}python-eventlet > 0.9.7
+Requires:  %{?scl_prefix}python-filechunkio >= 1.6
 Requires:  %{?scl_prefix}python-flake8
-Requires:  %{?scl_prefix}python-flask
-Requires:  %{?scl_prefix}python-flask-admin
-Requires:  %{?scl_prefix}python-flask-cache
-Requires:  %{?scl_prefix}python-flask-login
-Requires:  %{?scl_prefix}python-flower
-Requires:  %{?scl_prefix}python-future
-Requires:  %{?scl_prefix}python-gunicorn
-Requires:  %{?scl_prefix}python-hive-thrift-py
-Requires:  %{?scl_prefix}python-ipython
-Requires:  %{?scl_prefix}python-jinja2
-Requires:  %{?scl_prefix}python-markdown
+Requires:  %{?scl_prefix}python-flask >= 0.10.1
+Requires:  %{?scl_prefix}python-flask < 0.11
+Requires:  %{?scl_prefix}python-flask-admin >= 1.2.0
+Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
+Requires:  %{?scl_prefix}python-flask-cache < 014
+Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
+Requires:  %{?scl_prefix}python-flower >= 0.7.3
+Requires:  %{?scl_prefix}python-future >= 0.15.0
+Requires:  %{?scl_prefix}python-future < 0.16
+Requires:  %{?scl_prefix}python-gevent >= 0.13
+Requires:  %{?scl_prefix}python-gunicorn >= 19.3.0
+Requires:  %{?scl_prefix}python-gunicorn < 20.0
+Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
+Requires:  %{?scl_prefix}python-jaydebeapi >= 0.2.0
+Requires:  %{?scl_prefix}python-jinja2 >= 2.7.3
+Requires:  %{?scl_prefix}python-jinja2 < 3.0
+Requires:  %{?scl_prefix}python-librabbitm1 >= 1.6.1
+Requires:  %{?scl_prefix}python-ldap3 >= 0.9.9.1
+Requires:  %{?scl_prefix}python-markdown >= 2.5.2
+Requires:  %{?scl_prefix}python-markdown < 3.0
+Requires:  %{?scl_prefix}python-mysqlclient >= 1.3.6
 Requires:  %{?scl_prefix}python-nose
-Requires:  %{?scl_prefix}python-nose-exclude
-Requires:  %{?scl_prefix}python-pandas
-Requires:  %{?scl_prefix}python-pygments
-Requires:  %{?scl_prefix}python-pyhive
-Requires:  %{?scl_prefix}python-pydruid
-Requires:  %{?scl_prefix}python-pysmbclient
-Requires:  %{?scl_prefix}python-psycogp2
+Requires:  %{?scl_prefix}python-pandas >= 0.15.2
+Requires:  %{?scl_prefix}python-pandas < 1.0.0
+Requires:  %{?scl_prefix}python-psygcopy2 >= 2.6
+Requires:  %{?scl_prefix}python-pydruid >= 0.2.1
+Requires:  %{?scl_prefix}python-pygments >= 2.0.1
+Requires:  %{?scl_prefix}python-pygments < 3.0
+Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
+Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
+Requires:  %{?scl_prefix}python-pykerberos >= 1.1.0
+Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
+Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 Requires:  %{?scl_prefix}python-python-dateutil >= 2.3
 Requires:  %{?scl_prefix}python-python-dateutil < 3
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
 Requires:  %{?scl_prefix}python-requests < 3
-Requires:  %{?scl_prefix}python-redis
-Requires:  %{?scl_prefix}python-setproctitle
-Requires:  %{?scl_prefix}python-statsd
-Requires:  %{?scl_prefix}python-sphinx
-Requires:  %{?scl_prefix}python-sphinx-argparse
-Requires:  %{?scl_prefix}python-sphinx_rtd_theme
-Requires:  %{?scl_prefix}python-sphinx-pypi-upload
 # Included in base python package
 #Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
 #Requires:  %{?scl_prefix}python-setproctitle < 2
-Requires:  %{?scl_prefix}python-sqlalchemy
-Requires:  %{?scl_prefix}python-thrift
-Requires:  %{?scl_prefix}python-thrift
-Requires:  %{?scl_prefix}python-jaydebeapi
-Requires:  %{?scl_prefix}python-mysqlclient
-Requires:  %{?scl_prefix}python-unicodecsv
-Requires:  %{?scl_prefix}python-slackclient
-Requires:  %{?scl_prefix}python-ldap3
 Requires:  %{?scl_prefix}python-flask-wtf
-Requires:  %{?scl_prefix}python-lxml
-Requires:  %{?scl_prefix}python-pykerberos
+Requires:  %{?scl_prefix}python-ldap3
+Requires:  %{?scl_prefix}python-mysqlclient
+Requires:  %{?scl_prefix}python-slackclient >= 0.14
+Requires:  %{?scl_prefix}python-snakebite >= 2.4.13
+Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
+Requires:  %{?scl_prefix}python-sphinx-argparse >= 0.1.13
+Requires:  %{?scl_prefix}python-sphinx-pypi-upload
+Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
+Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.0
+Requires:  %{?scl_prefix}python-statsd < 4.0
+Requires:  %{?scl_prefix}python-statsd >= 3.0.1
+Requires:  %{?scl_prefix}python-thrift < 0.10 0.9.2
+Requires:  %{?scl_prefix}python-thrift >= 0.9.2
+Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
+Requires:  %{?scl_prefix}python-vertica-python >= 0.5.1
 
 # Manually added to ease installation
 Provides: airflow
@@ -120,6 +139,10 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Sat Nov 28 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.1
+- Update to 1.1.6
+- List all dependencies from requires.txt
+
 * Mon Nov 23 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.4
 - Activate python-thrift dependency
 - Add python(abi) dependency
