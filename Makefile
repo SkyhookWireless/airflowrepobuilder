@@ -19,6 +19,7 @@ EPELPKGS+=python-gunicorn-srpm
 EPELPKGS+=python-alembic-srpm
 EPELPKGS+=python-chartkick-srpm
 EPELPKGS+=python-dill-srpm
+EPELPKGS+=python-filechunkio-srpm
 EPELPKGS+=python-flask-admin-srpm
 EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
