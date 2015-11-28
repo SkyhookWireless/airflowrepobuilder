@@ -10,6 +10,8 @@ REPOBASEDIR="`/bin/pwd`"
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/SRPMS
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/x86_64
 
+# Useful python RPM building tool, updated for new pypi.org URL
+EPELPKGS+=python-py2pack-srpm
 # These build with normal mock "epel-*" setups
 # Use short name, based on RHEL naming
 EPELPKGS+=pytz-srpm

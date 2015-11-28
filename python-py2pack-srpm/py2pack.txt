@@ -1,0 +1,7 @@
+This module is not part of the airflow work, but is *very* useful
+for building new modules. It does not require and should not use the
+fascinating python27 setups.
+
+                      Nico Kadel-Garcia
+                      <nkadel@skyhookwireless.com>
+
