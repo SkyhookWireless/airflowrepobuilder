@@ -30,6 +30,7 @@ EPELPKGS+=python-flask-wtf-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
 EPELPKGS+=python-itsdangerous-srpm
+EPELPKGS+=python-jaydebeapi-srpm
 EPELPKGS+=python-jinja2-srpm
 EPELPKGS+=python-librabbitmq-srpm
 EPELPKGS+=python-mako-srpm
@@ -189,7 +190,6 @@ python-py2pack-srpm:: python-lxml-srpm
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-chartkick-srpm
 python-airflow-srpm:: python-dill-srpm
-python-airflow-srpm:: python-librabbitmq-srpm
 python-airflow-srpm:: python-flask-admin-srpm
 python-airflow-srpm:: python-flask-cache-srpm
 python-airflow-srpm:: python-flask-login-srpm
@@ -197,7 +197,9 @@ python-airflow-srpm:: python-flask-srpm
 python-airflow-srpm:: python-future-srpm
 python-airflow-srpm:: python-gunicorn-srpm
 python-airflow-srpm:: python-itsdangerous-srpm
+python-airflow-srpm:: python-jaydebeapi-srpm
 python-airflow-srpm:: python-jinja2-srpm
+python-airflow-srpm:: python-librabbitmq-srpm
 python-airflow-srpm:: python-mako-srpm
 python-airflow-srpm:: python-markdown-srpm
 python-airflow-srpm:: python-mysql-python-srpm
