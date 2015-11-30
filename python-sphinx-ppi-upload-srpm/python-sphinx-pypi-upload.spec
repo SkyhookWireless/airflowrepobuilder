@@ -4,7 +4,7 @@
 %global srcname Sphinx-PyPI-upload
 
 Summary: setuptools command for uploading Sphinx documentation to PyPI
-Name: %{?scl_prefix}python-sphinx-pypi-uplaod
+Name: %{?scl_prefix}python-sphinx-pypi-upload
 Version: 0.2.1
 Release: 0.1%{?dist}
 Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
