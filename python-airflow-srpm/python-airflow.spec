@@ -60,89 +60,89 @@ Requires:  %{?scl_prefix}python-statsd >= 3.0.1
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
 Requires:  %{?scl_prefix}python-thrift < 0.10
 # From [all] stanza
-Requires:  %{?scl_prefix}python-psycopy2 >= 2.6
+Requires:  %{?scl_prefix}python-argparse >= 0.1.3
+Requires:  %{?scl_prefix}python-boto >= 2.36.0
+Requires:  %{?scl_prefix}python-cryptography >= 0.9.3
 Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
-Requires:  %{?scl_prefix}python-psyhive >= 0.1.2
+Requires:  %{?scl_prefix}python-librabbitmq >= 1.6.1
+Requires:  %{?scl_prefix}python-nose
+Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
+Requires:  %{?scl_prefix}python-pyhive >= 0.1.2
+Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
+Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
+Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
+Requires:  %{?scl_prefix}python-slackclient >= 0.15
+Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
+Requires:  %{?scl_prefix}python-sphinx-pypi-upload >= 0.2.1
+Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
+Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
+# Added from requirements.txt for [alldbs]
+Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
+Requires:  %{?scl_prefix}python-mysql-python >= 1.2.5
+Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
+Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
 Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
-Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
-Requires:  %{?scl_prefix}python-argparse >= 0.1.3
-Requires:  %{?scl_prefix}sphinx-rtd-theme >= 0.1.6
-Requires:  %{?scl_prefix}sphinx-pypi-upload >= 0.2.1
-Requires:  %{?scl_prefix}pysmbclient >= 0.1.3
-Requires:  %{?scl_prefix}boto >= 2.36.0
-Requires:  %{?scl_prefix}nose
-Requires:  %{?scl_prefix}slackclient >= 0.15
-Requires:  %{?scl_prefix}cryptography >= 0.9.3
-Requires:  %{?scl_prefix}librabbitmq >= 1.6.1
-# Added from requirements.txt for [alldbs]
-Requires:  %{?scl_prefix}psycopg2 >= 2.6
-Requires:  %{?scl_prefix}mysql-python >= 1.2.5
-Requires:  %{?scl_prefix}hive-thrift-py >= 0.0.1
-Requires:  %{?scl_prefix}pyhive >= 0.1.3
-Requires:  %{?scl_prefix}pyhs2 >= 0.6.0
-Requires:  %{?scl_prefix}pymssql >= 2.1.1
-Requires:  %{?scl_prefix}unicodecsv >= 0.13.0
-Requires:  %{?scl_prefix}snakebite >= 2.4.13
+Requires:  %{?scl_prefix}python-snakebite >= 2.4.13
 # Added from requirements.txt for [crypto]
-Requires:  %{?scl_prefix}cryptography>=0.9.3
+Requires:  %{?scl_prefix}python-cryptography >= 0.9.3
 # Added from requirements.txt for [development]
-Requires:  %{?scl_prefix}Sphinx-PyPI-upload >= 0.2.1
-Requires:  %{?scl_prefix}boto >= 2.36.0
-Requires:  %{?scl_prefix}cryptography >= 0.9.3
-Requires:  %{?scl_prefix}hive-thrift-py >= 0.0.1
-Requires:  %{?scl_prefix}mysql-python >= 1.2.5
-Requires:  %{?scl_prefix}nose
-Requires:  %{?scl_prefix}psycopg2 >= 2.6
-Requires:  %{?scl_prefix}pyhive >= 0.1.3
-Requires:  %{?scl_prefix}pyhs2 >= 0.6.0
-Requires:  %{?scl_prefix}pymssql >= 2.1.1
-Requires:  %{?scl_prefix}pysmbclient >= 0.1.3
-Requires:  %{?scl_prefix}slackclient >= 0.15
-Requires:  %{?scl_prefix}snakebite >= 2.4.13
-Requires:  %{?scl_prefix}sphinx-argparse >= 0.1.13
-Requires:  %{?scl_prefix}sphinx-rtd-theme >= 0.1.6
-Requires:  %{?scl_prefix}sphinx >= 1.2.3
-Requires:  %{?scl_prefix}unicodecsv >= 0.13.0
+Requires:  %{?scl_prefix}python-sphinx-pypi-upload >= 0.2.1
+Requires:  %{?scl_prefix}python-boto >= 2.36.0
+Requires:  %{?scl_prefix}python-cryptography >= 0.9.3
+Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
+Requires:  %{?scl_prefix}python-mysql-python >= 1.2.5
+Requires:  %{?scl_prefix}python-nose
+Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
+Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
+Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
+Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
+Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
+Requires:  %{?scl_prefix}python-slackclient >= 0.15
+Requires:  %{?scl_prefix}python-snakebite >= 2.4.13
+Requires:  %{?scl_prefix}python-sphinx-argparse >= 0.1.13
+Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
+Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
+Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 # Added from requirements.txt for [doc]
-Requires:  %{?scl_prefix}sphinx >= 1.2.3
-Requires:  %{?scl_prefix}sphinx-argparse >= 0.1.13
-Requires:  %{?scl_prefix}sphinx-rtd-theme >= 0.1.6
-Requires:  %{?scl_prefix}Sphinx-PyPI-upload >= 0.2.1
+Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
+Requires:  %{?scl_prefix}python-sphinx-argparse >= 0.1.13
+Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
+Requires:  %{?scl_prefix}python-sphinx-pypi-upload >= 0.2.1
 
 # Added from requirements.txt for [druid]
-Requires:  %{?scl_prefix}pydruid >= 0.2.1
+Requires:  %{?scl_prefix}python-pydruid >= 0.2.1
 
 # Added from requirements.txt for [hdfs]
-Requires:  %{?scl_prefix}snakebite >= 2.4.13
+Requires:  %{?scl_prefix}python-snakebite >= 2.4.13
 
 # Added from requirements.txt for [hive]
-Requires:  %{?scl_prefix}hive-thrift-py >= 0.0.1
-Requires:  %{?scl_prefix}pyhive >= 0.1.3
-Requires:  %{?scl_prefix}pyhs2 >= 0.6.0
+Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
+Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
+Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 
 # Added from requirements.txt for [jdbc]
-Requires:  %{?scl_prefix}jaydebeapi >= 0.2.0
+Requires:  %{?scl_prefix}python-jaydebeapi >= 0.2.0
 
 # Added from requirements.txt for [mssql]
-Requires:  %{?scl_prefix}pymssql >= 2.1.1
-Requires:  %{?scl_prefix}unicodecsv >= 0.13.0
+Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
+Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 
 # Added from requirements.txt for [mysql-python]
-Requires:  %{?scl_prefix}mysql-python >= 1.2.5
+Requires:  %{?scl_prefix}python-mysql-python >= 1.2.5
 
 # Added from requirements.txt for [postgres]
-Requires:  %{?scl_prefix}psycopg2 >= 2.6
+Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
 
 # Added from requirements.txt for [s3]
-Requires:  %{?scl_prefix}boto >= 2.36.0
+Requires:  %{?scl_prefix}python-boto >= 2.36.0
 
 # Added from requirements.txt for [samba]
-Requires:  %{?scl_prefix}pysmbclient >= 0.1.3
+Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 
 # Added from requirements.txt for [slack]
-Requires:  %{?scl_prefix}slackclient >= 0.15
+Requires:  %{?scl_prefix}python-slackclient >= 0.15
 
 # Added for authentication modules
 Requires: cyrus-sasl-gssapi
