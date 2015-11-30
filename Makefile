@@ -17,7 +17,9 @@ EPELPKGS+=pytz-srpm
 EPELPKGS+=python-gunicorn-srpm
 
 EPELPKGS+=python-alembic-srpm
+EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-chartkick-srpm
+EPELPKGS+=python-cryptography-srpm
 EPELPKGS+=python-dill-srpm
 EPELPKGS+=python-filechunkio-srpm
 EPELPKGS+=python-flask-admin-srpm
@@ -48,7 +50,6 @@ EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-beaker-srpm
 EPELPKGS+=python-billiard-srpm
-EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-enum-srpm
 EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
@@ -60,13 +61,15 @@ EPELPKGS+=python-mock-srpm
 EPELPKGS+=python-ordereddict-srpm
 EPELPKGS+=python-pyasn1-srpm
 EPELPKGS+=python-pycparser-srpm
-EPELPKGS+=python-tox-srpm
 EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
 EPELPKGS+=python-sphinx_rtd_theme-srpm
+EPELPKGS+=python-sphinx-argparse-srpm
+EPELPKGS+=python-sphinx-ppy-upload-srpm
 EPELPKGS+=python-statsd-srpm
 EPELPKGS+=python-tornado-srpm
+EPELPKGS+=python-tox-srpm
 EPELPKGS+=python-unicodecsv-srpm
 EPELPKGS+=python-websocket-srpm
 EPELPKGS+=python-wheel-srpm
@@ -197,6 +200,8 @@ python-airflow-srpm:: python-python-dateutil-srpm
 python-airflow-srpm:: python-python-editor-srpm
 python-airflow-srpm:: python-requests-srpm
 python-airflow-srpm:: python-six-srpm
+python-airflow-srpm:: python-sphinx-argparse-srpm
+python-airflow-srpm:: python-sphinx-ppy-upload-srpm
 python-airflow-srpm:: python-sqlalchemy-srpm
 python-airflow-srpm:: python-werkzeug-srpm
 
