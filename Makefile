@@ -10,8 +10,6 @@ REPOBASEDIR="`/bin/pwd`"
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/SRPMS
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/x86_64
 
-# Useful python RPM building tool, updated for new pypi.org URL
-EPELPKGS+=python-py2pack-srpm
 # These build with normal mock "epel-*" setups
 # Use short name, based on RHEL naming
 EPELPKGS+=pytz-srpm
@@ -77,6 +75,9 @@ EPELPKGS+=python-wtforms-srpm
 EPELPKGS+=python-certifi-srpm
 EPELPKGS+=python-awscli-srpm
 
+# py2pack critical component
+EPELPKGS+=python-lxml-srpm
+
 # Cloudera integration and access tools
 EPELPKGS+=python-cm-api-srpm
 EPELPKGS+=python-pyhs2-srpm
@@ -84,6 +85,9 @@ EPELPKGS+=python-sasl-srpm
 
 # Discarded: python-pip and python27-python-pip are available from upstream
 #EPELPKGS+=python-pip-srpm
+
+# Useful python RPM building tool, updated for new pypi.org URL
+PYTHONPKGS+=python-py2pack-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
@@ -152,19 +156,20 @@ python-install:: FORCE
 # pandas will compile without pytz, but far less effecieintly
 python-pandas-srpm:: pytz-srpm
 python-celery-srpm:: python-kombu-srpm
-# Upstream python27-python-sphinx is not recent enough
+# upstream python27-python-sphinx is not recent enough
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
 
 python-croniter-srpm:: python-python-dateutil-srpm
 
-python-requests-srpm:: python-ordereddict-srpm
 python-kombu-srpm:: python-ordereddict-srpm
+python-requests-srpm:: python-ordereddict-srpm
+
+python-py2pack-srpm:: python-lxml-srpm
+
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-python-sphinx
-
-
 
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-chartkick-srpm
