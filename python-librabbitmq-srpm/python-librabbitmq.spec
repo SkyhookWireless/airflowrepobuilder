@@ -59,13 +59,14 @@ Supported by Kombu and Celery.
 %defattr(-,root,root,-)
 #%attr(755,root,root) %{_bindir}/*
 %{python_sitearch}/*
+%exclude %{python_sitearch}/funtests
 #%{python_sitelib}/*
 %doc AUTHORS Changelog LICENSE-GPL-2.0 LICENSE-MPL-RabbitMQ README.rst TODO
 #%doc build/*
 
 %changelog
-* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
+* Mon Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.10-01
 - Provide full URL for source
-- Use wildcard for bindir files
-* Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.1
 - Activate python2.7 build and dependenies
+- Exclude funtests, which comes from python-billiards
+
