@@ -1,4 +1,4 @@
-s%{?scl:%scl_package python-airflow}
+%{?scl:%scl_package python-airflow}
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname airflow
@@ -22,6 +22,7 @@ Requires: %{?scl_prefix}python(abi)
 # Manually added from setup.py
 Requires:  %{?scl_prefix}python-alembic >= 0.8.0
 Requires:  %{?scl_prefix}python-alembic < 0.9
+Requires:  %{?scl_prefix}python-boto
 Requires:  %{?scl_prefix}python-celery >= 3.1.17
 Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
 Requires:  %{?scl_prefix}python-chartkick < 0.5
@@ -65,7 +66,7 @@ Requires:  %{?scl_prefix}python-psyhive >= 0.1.2
 Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
-Requires:  %{?scl_prefix}python-phinx >= 1.2.3
+Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
 Requires:  %{?scl_prefix}python-argparse >= 0.1.3
 Requires:  %{?scl_prefix}sphinx-rtd-theme >= 0.1.6
 Requires:  %{?scl_prefix}sphinx-pypi-upload >= 0.2.1
