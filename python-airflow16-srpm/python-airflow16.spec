@@ -22,19 +22,21 @@ Requires: %{?scl_prefix}python(abi)
 
 # Manually added from setup.py
 Requires:  %{?scl_prefix}python-alembic >= 0.8.3
-Requires:  %{?scl_prefix}python-alembic < 0.2
-Requires:  %{?scl_prefix}python-boto = 2.36.0
+Requires:  %{?scl_prefix}python-alembic < 0.9
+# Update from 2.36.0, roll back if needed
+#Requires:  %{?scl_prefix}python-boto = 2.36.0
+Requires:  %{?scl_prefix}python-boto >= 2.36.0
 Requires:  %{?scl_prefix}python-celery >= 3.1.17
 Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
-Requires:  %{?scl_prefix}python-chartkick < 0.4
-Requires:  %{?scl_prefix}python-croniter >= 0.9.3
+Requires:  %{?scl_prefix}python-chartkick < 0.5
+Requires:  %{?scl_prefix}python-croniter >= 0.3.8
+Requires:  %{?scl_prefix}python-croniter < 0.4
+Requires:  %{?scl_prefix}python-coverage
+Requires:  %{?scl_prefix}python-coveralls
+Requires:  %{?scl_prefix}python-cryptography
 # Disabled and patched out of devel submodule
 # cx_Oracle requires local Oracle to build
 #Requires:  %{?scl_prefix}python-cx_oracle >= 5.1.2
-Requires:  %{?scl_prefix}python-cryptography
-Requires:  %{?scl_prefix}python-coverage
-Requires:  %{?scl_prefix}python-coveralls
-Requires:  %{?scl_prefix}python-croniter
 Requires:  %{?scl_prefix}python-dill >= 0.2.2
 Requires:  %{?scl_prefix}python-dill < 0.3
 Requires:  %{?scl_prefix}python-eventlet > 0.9.7
@@ -56,7 +58,7 @@ Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
 Requires:  %{?scl_prefix}python-jaydebeapi >= 0.2.0
 Requires:  %{?scl_prefix}python-jinja2 >= 2.7.3
 Requires:  %{?scl_prefix}python-jinja2 < 3.0
-Requires:  %{?scl_prefix}python-librabbitm1 >= 1.6.1
+Requires:  %{?scl_prefix}python-librabbitmq >= 1.6.1
 Requires:  %{?scl_prefix}python-ldap3 >= 0.9.9.1
 Requires:  %{?scl_prefix}python-markdown >= 2.5.2
 Requires:  %{?scl_prefix}python-markdown < 3.0
@@ -64,7 +66,7 @@ Requires:  %{?scl_prefix}python-mysqlclient >= 1.3.6
 Requires:  %{?scl_prefix}python-nose
 Requires:  %{?scl_prefix}python-pandas >= 0.15.2
 Requires:  %{?scl_prefix}python-pandas < 1.0.0
-Requires:  %{?scl_prefix}python-psygcopy2 >= 2.6
+Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
 Requires:  %{?scl_prefix}python-pydruid >= 0.2.1
 Requires:  %{?scl_prefix}python-pygments >= 2.0.1
 Requires:  %{?scl_prefix}python-pygments < 3.0
