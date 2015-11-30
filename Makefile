@@ -87,6 +87,7 @@ EPELPKGS+=python-sasl-srpm
 #EPELPKGS+=python-pip-srpm
 
 # Useful python RPM building tool, updated for new pypi.org URL
+# Warning: not yet python27 enabled due to compilation issues
 PYTHONPKGS+=python-py2pack-srpm
 
 # These require customized airflowrepo local repository for compilation
