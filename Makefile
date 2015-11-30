@@ -33,6 +33,7 @@ EPELPKGS+=python-itsdangerous-srpm
 EPELPKGS+=python-jinja2-srpm
 EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
+EPELPKGS+=python-pydroid-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-pyhive-srpm
 EPELPKGS+=python-python-dateutil-srpm
@@ -196,6 +197,7 @@ python-airflow-srpm:: python-jinja2-srpm
 python-airflow-srpm:: python-mako-srpm
 python-airflow-srpm:: python-markdown-srpm
 python-airflow-srpm:: python-pandas-srpm
+python-airflow-srpm:: python-pydroid-srpm
 python-airflow-srpm:: python-pygments-srpm
 python-airflow-srpm:: python-pyhive-srpm
 python-airflow-srpm:: python-python-dateutil-srpm
