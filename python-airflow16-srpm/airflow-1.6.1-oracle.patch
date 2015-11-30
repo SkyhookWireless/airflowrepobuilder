@@ -1,0 +1,10 @@
+--- airflow-1.6.1/airflow.egg-info/requires.txt.oracle	2015-11-30 08:51:58.393867183 -0500
++++ airflow-1.6.1/airflow.egg-info/requires.txt	2015-11-30 08:52:16.273843980 -0500
+@@ -39,7 +39,6 @@
+ nose
+ slackclient>=0.15
+ cryptography>=0.9.3
+-cx_Oracle>=5.1.2
+ librabbitmq>=1.6.1
+ 
+ [mysql]

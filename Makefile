@@ -97,8 +97,13 @@ PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
 PYTHONPKGS+=python-requests-srpm
 PYTHONPKGS+=python-croniter-srpm
+# Disabled, requires locally installed Oracle
+#PYTHONPKGS+=python-cx_oracle-srpm
 
+# These do not really require all the packages for compilaiton,
+# but reuqie them all for isntallation, so put them last
 PYTHONPKGS+=python-airflow-srpm
+PYTHONPKGS+=python-airflow16-srpm
 
 # Populate airflowrepo with packages that require airflowrepo
 # Verify build setup first!

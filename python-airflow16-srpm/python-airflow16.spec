@@ -6,8 +6,9 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow16
 Version: 1.6.1
-Release: 0.3%{?dist}
+Release: 0.6%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
+Patch1: airflow-1.6.1-oracle.patch
 License: Apache
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{srcname}-%{version}-%{release}-buildroot
@@ -27,7 +28,9 @@ Requires:  %{?scl_prefix}python-celery >= 3.1.17
 Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
 Requires:  %{?scl_prefix}python-chartkick < 0.4
 Requires:  %{?scl_prefix}python-croniter >= 0.9.3
-Requires:  %{?scl_prefix}python-cx_oracle >= 5.1.2
+# Disabled and patched out of devel submodule
+# cx_Oracle requires local Oracle to build
+#Requires:  %{?scl_prefix}python-cx_oracle >= 5.1.2
 Requires:  %{?scl_prefix}python-cryptography
 Requires:  %{?scl_prefix}python-coverage
 Requires:  %{?scl_prefix}python-coveralls
@@ -115,6 +118,7 @@ production, monitor progress, and troubleshoot issues when needed.
 
 %prep
 %setup -q -n %{srcname}-%{version}
+%patch1 -p1 -b .oracle
 
 %build
 %{?scl:scl enable %{scl} "}
@@ -139,6 +143,11 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.5
+- Update to 1.6.1
+- List all dependencies from requires.txt
+- Disable cx_Oracle dependency, too difficult to use
+
 * Sat Nov 28 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.1
 - Update to 1.1.6
 - List all dependencies from requires.txt
