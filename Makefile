@@ -20,6 +20,7 @@ EPELPKGS+=python-alembic-srpm
 EPELPKGS+=python-argparse-srpm
 EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-chartkick-srpm
+EPELPKGS+=python-coveralls-srpm
 EPELPKGS+=python-cryptography-srpm
 EPELPKGS+=python-dill-srpm
 EPELPKGS+=python-filechunkio-srpm
@@ -195,6 +196,7 @@ python-py2pack-srpm:: python-lxml-srpm
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-argparse-srpm
 python-airflow-srpm:: python-chartkick-srpm
+python-airflow-srpm:: python-coveralls-srpm
 python-airflow-srpm:: python-dill-srpm
 python-airflow-srpm:: python-flask-admin-srpm
 python-airflow-srpm:: python-flask-cache-srpm
