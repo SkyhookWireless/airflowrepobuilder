@@ -42,20 +42,23 @@ EPELPKGS+=python-ldap3-srpm
 EPELPKGS+=python-librabbitmq-srpm
 EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
+
 # For airflow 1.5.x
 EPELPKGS+=python-mysql-python-srpm
 # For airflow 1.6.x
 EPELPKGS+=python-mysqlclient-srpm
+
 EPELPKGS+=python-psycopg2-srpm
 EPELPKGS+=python-pydroid-srpm
-EPELPKGS+=python-pykerberos-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-pyhive-srpm
+EPELPKGS+=python-pykerberos-srpm
 EPELPKGS+=python-python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-thrift-srpm
+EPELPKGS+=python-vertica-python-srpm
 EPELPKGS+=python-werkzeug-srpm
 
 # useful airflow components and dependencies, not from airflow/requirements.txt
