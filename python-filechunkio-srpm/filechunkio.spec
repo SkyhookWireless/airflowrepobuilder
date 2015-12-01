@@ -4,7 +4,7 @@
 %global srcname filechunkio
 
 Summary: FileChunkIO represents a chunk of an OS-level file containing bytes data
-Name: python-%{srcname}
+Name: %{?scl_prefix}python-%{srcname}
 Version: 1.6
 Release: 0.1%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
