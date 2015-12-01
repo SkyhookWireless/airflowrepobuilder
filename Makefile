@@ -133,14 +133,14 @@ airflowrepo-6-x86_64.cfg:: airflowrepo-6-x86_64.cfg.in
 	sed "s|@@@REPOBASEDIR@@@|$(REPOBASEDIR)|g" $? > $@
 
 airflowrepo-6-x86_64.cfg:: FORCE
-	@cmp -s $@ /etc/mock/$@ || \
+	@diff -u $@ /etc/mock/$@ || \
 		(echo Warning: /etc/mock/$@ does not match $@, exiting; exit 1)
 
 sclpy27-6-x86_64.cfg:: sclpy27-6-x86_64.cfg.in
 	sed "s|@@@REPOBASEDIR@@@|$(REPOBASEDIR)|g" $? > $@
 
 sclpy27-6-x86_64.cfg:: FORCE
-	@cmp -s $@ /etc/mock/$@ || \
+	@diff -u $@ /etc/mock/$@ || \
 		(echo Warning: /etc/mock/$@ does not match $@, exiting; exit 1)
 
 # Used for make build with local components
@@ -148,7 +148,7 @@ airflowrepo.repo:: airflowrepo.repo.in
 	sed "s|@@@REPOBASEDIR@@@|$(REPOBASEDIR)|g" $? > $@
 
 airflowrepo.repo:: FORCE
-	@cmp -s $@ /etc/yum.repos.d/$@ || \
+	@diff -u $@ /etc/yum.repos.d/$@ || \
 		(echo Warning: /etc/yum.repos.d/$@ does not match $@, exiting; exit 1)
 
 epel:: $(EPELPKGS)
