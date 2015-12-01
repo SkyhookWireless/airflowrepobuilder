@@ -215,7 +215,7 @@ python-airflow-srpm:: python-python-editor-srpm
 python-airflow-srpm:: python-requests-srpm
 python-airflow-srpm:: python-six-srpm
 python-airflow-srpm:: python-sphinx-argparse-srpm
-python-airflow-srpm:: python-sphinx-ppy-upload-srpm
+python-airflow-srpm:: python-sphinx-ppi-upload-srpm
 python-airflow-srpm:: python-sqlalchemy-srpm
 python-airflow-srpm:: python-werkzeug-srpm
 
