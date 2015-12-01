@@ -1,1 +1,1 @@
-../Makefile.scl
+../Makefile.python
