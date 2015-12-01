@@ -6,7 +6,7 @@
 Summary: Python interface to MySQL
 Name: %{?scl_prefix}python-mysql-python
 Version: 1.2.5
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.zip
 License: GPL
 Group: Development/Libraries
@@ -20,6 +20,7 @@ BuildRequires: python-devel mysql-devel zlib-devel openssl-devel
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+Conflicts: %{?scl_prefix}python-mysqlclient
 
 %description
 
@@ -71,6 +72,9 @@ MySQLdb is `Free Software`_.
 %doc doc/*.rst
 
 %changelog
+* Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.5-0.2
+- Add Conflicts for python-mysqlclient
+
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.5-0.1
 - Build SRPM from setup.py
 - Hand edit failed .spec file to use .tar.gz and better list of doc files

@@ -94,7 +94,7 @@ Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.0
 Requires:  %{?scl_prefix}python-statsd < 4.0
 Requires:  %{?scl_prefix}python-statsd >= 3.0.1
-Requires:  %{?scl_prefix}python-thrift < 0.10 0.9.2
+Requires:  %{?scl_prefix}python-thrift < 0.10
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 Requires:  %{?scl_prefix}python-vertica-python >= 0.5.1

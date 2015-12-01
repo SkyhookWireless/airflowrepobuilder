@@ -11,7 +11,7 @@
 
 Name: %{?scl_prefix}python-mysqlclient
 Version:        1.3.7
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Url:            https://github.com/PyMySQL/mysqlclient-python
 Summary:        Python interface to MySQL
 License:        GPLv2
@@ -25,6 +25,8 @@ BuildRequires:  mysql-devel
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Similar but incompatible package
+Conflicts: %{?scl_prefix}python-mysql-python
 
 %description
 =========================
@@ -78,3 +80,4 @@ export CFLAGS="%{optflags}"
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.3.7-0.1
 - Build from py2pack
 - Activate python2.7 build and dependenies
+- Add Conflicts for python-mysql-python

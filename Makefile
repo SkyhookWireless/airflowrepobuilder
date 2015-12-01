@@ -37,7 +37,9 @@ EPELPKGS+=python-jinja2-srpm
 EPELPKGS+=python-librabbitmq-srpm
 EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
+# For airflow 1.5.x
 EPELPKGS+=python-mysql-python-srpm
+# For airflow 1.6.x
 EPELPKGS+=python-mysqlclient-srpm
 EPELPKGS+=python-psycopg2-srpm
 EPELPKGS+=python-pydroid-srpm
