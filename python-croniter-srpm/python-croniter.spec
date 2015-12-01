@@ -5,14 +5,13 @@
 %global pypi_name croniter
 
 Name: %{?scl_prefix}python-%{pypi_name}
-Version:        0.3.4
+Version:        0.3.10
 Release:        0.1%{?dist}
 Summary:        Iteration for datetime object with cron like format
 
 License:        MIT
 URL:            http://github.com/kiorky/croniter
-# TArball not available
-Source0:        https://pypi.python.org/packages/source/c/%{pypi_name}/%{pypi_name}-%{version}.zip
+Source0:        https://pypi.python.org/packages/source/c/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix}python-devel
@@ -61,6 +60,9 @@ find -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 %{python_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %changelog
+* Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.1
+- Update to 0.3.10 for airflow 1.6.1 dependency
+
 * Fri Nov 27 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.4-0.1
 - Migrate to pyton27
 - Change "python-dateutil" to "python-python-dateutil", to match
