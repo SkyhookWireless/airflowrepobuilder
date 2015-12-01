@@ -48,6 +48,7 @@ EPELPKGS+=python-mysql-python-srpm
 EPELPKGS+=python-mysqlclient-srpm
 EPELPKGS+=python-psycopg2-srpm
 EPELPKGS+=python-pydroid-srpm
+EPELPKGS+=python-pykerberos-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-pyhive-srpm
 EPELPKGS+=python-python-dateutil-srpm
@@ -231,6 +232,7 @@ python-airflow-srpm:: python-mysql-python-srpm
 python-airflow-srpm:: python-mysqlclient-srpm
 python-airflow-srpm:: python-pandas-srpm
 python-airflow-srpm:: python-psycopg2-srpm
+python-airflow-srpm:: python-pykerberos-srpm
 python-airflow-srpm:: python-pydroid-srpm
 python-airflow-srpm:: python-pygments-srpm
 python-airflow-srpm:: python-pyhive-srpm
