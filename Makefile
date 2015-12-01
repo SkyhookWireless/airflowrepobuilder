@@ -71,6 +71,7 @@ EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-beaker-srpm
 EPELPKGS+=python-billiard-srpm
 EPELPKGS+=python-enum-srpm
+EPELPKGS+=python-enum34-srpm
 EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
