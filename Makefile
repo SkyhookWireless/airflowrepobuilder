@@ -116,7 +116,6 @@ PYTHONPKGS+=python-py2pack-srpm
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
 PYTHONPKGS+=python-celery-srpm
-PYTHONPKGS+=python-coverlet-srpm
 PYTHONPKGS+=python-croniter-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-requests-srpm
@@ -197,8 +196,6 @@ python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-babel-srpm
 python-sphinx-srpm:: python-mock-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
-
-python-coverlet-srpm:: python-greenlet-srpm
 
 python-croniter-srpm:: python-python-dateutil-srpm
 
