@@ -18,7 +18,7 @@ Url: https://github.com/uber/vertica-python/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python-psycopg2 >= 2.5.1
-Requires: %{?scl_prefix}python-dateutill >= 1.5
+Requires: %{?scl_prefix}python-python-dateutil >= 1.5
 Requires: %{?scl_prefix}pytz
 Requires: %{?scl_prefix}python(abi)
 
