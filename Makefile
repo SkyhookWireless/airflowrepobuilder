@@ -24,6 +24,7 @@ EPELPKGS+=python-coveralls-srpm
 EPELPKGS+=python-cryptography-srpm
 EPELPKGS+=python-dill-srpm
 EPELPKGS+=python-filechunkio-srpm
+EPELPKGS+=python-flake8-srpm
 EPELPKGS+=python-flask-admin-srpm
 EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
@@ -53,7 +54,6 @@ EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-thrift-srpm
 EPELPKGS+=python-werkzeug-srpm
-EPELPKGS+=python-wtforms-srpm
 
 # useful airflow components and dependencies, not from airflow/requirements.txt
 EPELPKGS+=python-alabaster-srpm
@@ -87,7 +87,6 @@ EPELPKGS+=python-tox-srpm
 EPELPKGS+=python-unicodecsv-srpm
 EPELPKGS+=python-websocket-srpm
 EPELPKGS+=python-wheel-srpm
-EPELPKGS+=python-wtforms-srpm
 
 # awscli critical components
 EPELPKGS+=python-certifi-srpm
@@ -110,12 +109,13 @@ PYTHONPKGS+=python-py2pack-srpm
 
 # These require customized airflowrepo local repository for compilation
 # Needed by various packages
-PYTHONPKGS+=python-pandas-srpm
-PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
-PYTHONPKGS+=python-requests-srpm
 PYTHONPKGS+=python-coverlet-srpm
 PYTHONPKGS+=python-croniter-srpm
+PYTHONPKGS+=python-pandas-srpm
+PYTHONPKGS+=python-requests-srpm
+PYTHONPKGS+=python-sphinx-srpm
+PYTHONPKGS+=python-wtforms-srpm
 
 # Disabled, requires locally installed Oracle
 #PYTHONPKGS+=python-cx_oracle-srpm
@@ -181,7 +181,11 @@ python-install:: FORCE
 
 # pandas will compile without pytz, but far less effecieintly
 python-pandas-srpm:: pytz-srpm
+
 python-celery-srpm:: python-kombu-srpm
+
+python-wtforms-srpm:: python-babel-srpm
+
 # upstream python27-python-sphinx is not recent enough
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-babel-srpm
@@ -205,6 +209,7 @@ python-airflow-srpm:: python-argparse-srpm
 python-airflow-srpm:: python-chartkick-srpm
 python-airflow-srpm:: python-coveralls-srpm
 python-airflow-srpm:: python-dill-srpm
+python-airflow-srpm:: python-flake8-srpm
 python-airflow-srpm:: python-flask-admin-srpm
 python-airflow-srpm:: python-flask-cache-srpm
 python-airflow-srpm:: python-flask-login-srpm
