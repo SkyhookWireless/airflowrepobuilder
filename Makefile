@@ -31,6 +31,7 @@ EPELPKGS+=python-flask-srpm
 EPELPKGS+=python-flask-wtf-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
+EPELPKGS+=python-greenlet-srpm
 EPELPKGS+=python-hive-thrift-py-srpm
 EPELPKGS+=python-itsdangerous-srpm
 EPELPKGS+=python-jaydebeapi-srpm
@@ -58,6 +59,7 @@ EPELPKGS+=python-wtforms-srpm
 EPELPKGS+=python-alabaster-srpm
 EPELPKGS+=python-amqp-srpm
 EPELPKGS+=python-anyjson-srpm
+EPELPKGS+=python-babel-srpm
 EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-beaker-srpm
@@ -112,7 +114,9 @@ PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-sphinx-srpm
 PYTHONPKGS+=python-celery-srpm
 PYTHONPKGS+=python-requests-srpm
+PYTHONPKGS+=python-coverlet-srpm
 PYTHONPKGS+=python-croniter-srpm
+
 # Disabled, requires locally installed Oracle
 #PYTHONPKGS+=python-cx_oracle-srpm
 
@@ -179,9 +183,12 @@ python-install:: FORCE
 python-pandas-srpm:: pytz-srpm
 python-celery-srpm:: python-kombu-srpm
 # upstream python27-python-sphinx is not recent enough
-python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: python-alabaster-srpm
+python-sphinx-srpm:: python-babel-srpm
 python-sphinx-srpm:: python-mock-srpm
+python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
+
+python-coverlet-srpm:: python-greenlet-srpm
 
 python-croniter-srpm:: python-python-dateutil-srpm
 
