@@ -32,11 +32,13 @@ EPELPKGS+=python-flask-srpm
 EPELPKGS+=python-flask-wtf-srpm
 EPELPKGS+=python-future-srpm
 EPELPKGS+=python-futures-srpm
+EPELPKGS+=python-gevent-srpm
 EPELPKGS+=python-greenlet-srpm
 EPELPKGS+=python-hive-thrift-py-srpm
 EPELPKGS+=python-itsdangerous-srpm
 EPELPKGS+=python-jaydebeapi-srpm
 EPELPKGS+=python-jinja2-srpm
+EPELPKGS+=python-ldap3-srpm
 EPELPKGS+=python-librabbitmq-srpm
 EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
@@ -215,11 +217,13 @@ python-airflow-srpm:: python-flask-cache-srpm
 python-airflow-srpm:: python-flask-login-srpm
 python-airflow-srpm:: python-flask-srpm
 python-airflow-srpm:: python-future-srpm
+python-airflow-srpm:: python-gevent-srpm
 python-airflow-srpm:: python-gunicorn-srpm
 python-airflow-srpm:: python-hive-thrift-py-srpm
 python-airflow-srpm:: python-itsdangerous-srpm
 python-airflow-srpm:: python-jaydebeapi-srpm
 python-airflow-srpm:: python-jinja2-srpm
+python-airflow-srpm:: python-ldap3-srpm
 python-airflow-srpm:: python-librabbitmq-srpm
 python-airflow-srpm:: python-mako-srpm
 python-airflow-srpm:: python-markdown-srpm
