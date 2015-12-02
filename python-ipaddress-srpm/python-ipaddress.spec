@@ -20,6 +20,7 @@ Source:         https://pypi.python.org/packages/source/i/ipaddress/ipaddress-%{
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
+BuildRequires:  %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python(abi)
 
 %description
@@ -48,6 +49,6 @@ Port of the 3.3+ ipaddress module to 2.6, 2.7, 3.2
 %{python_sitelib}/*
 
 %changelog
-* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
+* Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.15-0.1
 - Build SRPM with py2pack
 - Activate python2.7 build and dependenies
