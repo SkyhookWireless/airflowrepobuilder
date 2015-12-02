@@ -6,7 +6,7 @@
 Summary: User session management for Flask
 Name: %{?scl_prefix}python-flask-login
 Version: 0.3.2
-Release: 0.3%{?dist}
+Release: 0.4%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -15,12 +15,10 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Matthew Frazier <leafstormrush@gmail.com>
 Url: https://github.com/maxcountryman/flask-login
-# Add for python27 use and compilation
-BuildRequires: /opt/rh/python27/enable
-BuildRequires: python27
-BuildRequires: python27-python-setuptools
-Requires: /opt/rh/python27/enable
-Requires: python27
+
+BuildRequires: %{scl_prefix}python-devel
+BuildRequires: %{scl_prefix}python-setuptools
+BuildRequires: %{scl_prefix}python(abi)
 Requires: %{?scl_prefix}python(abi)
 
 %description
@@ -66,6 +64,9 @@ Links
 %doc LICENSE README.md
 
 %changelog
+* Tue Dec  1 2015  Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.4
+- Simplify dependencies with scl_prefix
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.2
 - Provide full URL for source
 - Add python(abi) dependency

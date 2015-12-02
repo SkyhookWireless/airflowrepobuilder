@@ -6,7 +6,7 @@
 Summary: Simple and extensible admin interface framework for Flask
 Name: %{?scl_prefix}python-flask-admin
 Version: 1.2.0
-Release: 0.3%{?dist}
+Release: 0.4%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -15,11 +15,9 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Serge S. Koval <serge.koval+github@gmail.com>
 Url: https://github.com/flask-admin/flask-admin/
-# Add for python27 use and compilation
-BuildRequires: /opt/rh/python27/enable
-BuildRequires: python27
-BuildRequires: python27-python-setuptools
-Requires: /opt/rh/python27/enable
+BuildRequires: %{?scl_prefix}python(abi)
+BuildRequires: %{?scl_prefix}python-devel
+BuildRequires: %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 
 %description
@@ -153,6 +151,9 @@ You can help improve Flask-Admin's translations through Crowdin: https://crowdin
 %doc LICENSE README.rst
 
 %changelog
+* Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.0-0.4
+- Simplify Requires to use scl_prefix, not direct python27 references
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.0-0.2
 - Provide full URL for source
 - Add python(abi) dependency

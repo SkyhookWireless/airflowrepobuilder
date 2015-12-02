@@ -16,7 +16,7 @@ Packager: Andy Dustman <adustman@users.sourceforge.net>
 Requires: python
 Url: https://github.com/farcepest/MySQLdb1
 Distribution: Red Stains Linux
-BuildRequires: python-devel mysql-devel zlib-devel openssl-devel
+BuildRequires:  mysql-devel zlib-devel openssl-devel
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
@@ -74,6 +74,7 @@ MySQLdb is `Free Software`_.
 %changelog
 * Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.5-0.2
 - Add Conflicts for python-mysqlclient
+- Simplify BuildRequires to use scl_prefix
 
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.2.5-0.1
 - Build SRPM from setup.py

@@ -31,8 +31,8 @@ Requires:       ca-certificates
 #Requires:       python-urllib3 >= 1.10.2-1
 
 %if 0%{?rhel} && 0%{?rhel} <= 6
-BuildRequires:  python-ordereddict >= 1.1
-Requires:       python-ordereddict >= 1.1
+BuildRequires:  %{scl_prefix}python-ordereddict >= 1.1
+Requires:       %{scl_prefix}python-ordereddict >= 1.1
 %endif
 
 %description
