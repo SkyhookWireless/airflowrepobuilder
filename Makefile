@@ -50,7 +50,7 @@ EPELPKGS+=python-mysql-python-srpm
 EPELPKGS+=python-mysqlclient-srpm
 
 EPELPKGS+=python-psycopg2-srpm
-EPELPKGS+=python-pydroid-srpm
+EPELPKGS+=python-pydruid-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-pyhive-srpm
 EPELPKGS+=python-pykerberos-srpm
@@ -75,7 +75,6 @@ EPELPKGS+=python-beaker-srpm
 EPELPKGS+=python-billiard-srpm
 EPELPKGS+=python-enum-srpm
 EPELPKGS+=python-enum34-srpm
-EPELPKGS+=python-eventlet-srpm
 EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
@@ -93,7 +92,7 @@ EPELPKGS+=python-slackclient-srpm
 EPELPKGS+=python-snakebite-srpm
 EPELPKGS+=python-snowballstemmer-srpm
 EPELPKGS+=python-sphinx-argparse-srpm
-EPELPKGS+=python-sphinx-ppi-upload-srpm
+EPELPKGS+=python-sphinx-pypi-upload-srpm
 EPELPKGS+=python-sphinx_rtd_theme-srpm
 EPELPKGS+=python-statsd-srpm
 EPELPKGS+=python-tornado-srpm
@@ -125,6 +124,7 @@ PYTHONPKGS+=python-py2pack-srpm
 # Needed by various packages
 PYTHONPKGS+=python-celery-srpm
 PYTHONPKGS+=python-croniter-srpm
+PYTHONPKGS+=python-eventlet-srpm
 PYTHONPKGS+=python-pandas-srpm
 PYTHONPKGS+=python-requests-srpm
 PYTHONPKGS+=python-sphinx-srpm
@@ -197,7 +197,20 @@ python-pandas-srpm:: pytz-srpm
 
 python-celery-srpm:: python-kombu-srpm
 
+python-eventlet-srpm:: python-greenlet-srpm
+# Upstream version is recent enough to build
+#python-eventlet-srpm:: python-sphinx-srpm
+
+# Upstream version is recent enough to build
+#python-jinja2-srpm:: python-sphinx-srpm
+
+# Upstream version is recent enough to build
+#python-chartkick-srpm:: python-sphinx-srpm
+
 python-wtforms-srpm:: python-babel-srpm
+
+# Upsream python-six is sufficient for python-singledispatch
+#python-singledispatch-srpm:: python-six-arpm
 
 # upstream python27-python-sphinx is not recent enough
 python-sphinx-srpm:: python-alabaster-srpm
@@ -206,53 +219,126 @@ python-sphinx-srpm:: python-mock-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 
 python-croniter-srpm:: python-python-dateutil-srpm
+python-croniter-srpm:: pytz-srpm
+# Upstream python-six is recent enough to build
+#python-croniter-srpm:: python-six-srpm
+
+python-mako-srpm pytz-srpm
 
 python-kombu-srpm:: python-ordereddict-srpm
+
 python-requests-srpm:: python-ordereddict-srpm
 
+python-py2pack-srpm:: python-argparse-srpm
+python-py2pack-srpm:: python-jinja2-srpm
 python-py2pack-srpm:: python-lxml-srpm
 
 # Current sphinx has dependency loop with sphinx_rtd_theme
-#python-sphinx_rtd_theme-srpm:: python-python-sphinx
+#python-sphinx_rtd_theme-srpm:: python-sphinx-srpm
 
+python-py-srpm:: python-pytest-srpm
+# Upstream python-sphinx is recent enough to build
+#python-py-srpm:: python-sphinx-srpm
+
+# python-py and python-pytest have circular dependency,
+# disabled by not running tests of python-pytest
+#python-pytest-srpm:: python-py-srpm
+
+# Upstream python-sphinx is recent enough to build
+#python-werkzeug-srpm:: python-sphinx-srpm
+
+# Direct installation requirements for python-airflow
 python-airflow-srpm:: python-alembic-srpm
 python-airflow-srpm:: python-argparse-srpm
+python-airflow-srpm:: python-boto-srpm
+python-airflow-srpm:: python-celery-srpm
 python-airflow-srpm:: python-chartkick-srpm
-python-airflow-srpm:: python-coveralls-srpm
+python-airflow-srpm:: python-cryptography-srpm
 python-airflow-srpm:: python-dill-srpm
-python-airflow-srpm:: python-flake8-srpm
+python-airflow-srpm:: python-flask-srpm
 python-airflow-srpm:: python-flask-admin-srpm
 python-airflow-srpm:: python-flask-cache-srpm
 python-airflow-srpm:: python-flask-login-srpm
-python-airflow-srpm:: python-flask-srpm
+python-airflow-srpm:: python-flower-srpm
 python-airflow-srpm:: python-future-srpm
-python-airflow-srpm:: python-gevent-srpm
 python-airflow-srpm:: python-gunicorn-srpm
 python-airflow-srpm:: python-hive-thrift-py-srpm
-python-airflow-srpm:: python-itsdangerous-srpm
 python-airflow-srpm:: python-jaydebeapi-srpm
 python-airflow-srpm:: python-jinja2-srpm
-python-airflow-srpm:: python-ldap3-srpm
 python-airflow-srpm:: python-librabbitmq-srpm
-python-airflow-srpm:: python-mako-srpm
 python-airflow-srpm:: python-markdown-srpm
 python-airflow-srpm:: python-mysql-python-srpm
-python-airflow-srpm:: python-mysqlclient-srpm
 python-airflow-srpm:: python-pandas-srpm
 python-airflow-srpm:: python-psycopg2-srpm
-python-airflow-srpm:: python-pykerberos-srpm
-python-airflow-srpm:: python-pydroid-srpm
+python-airflow-srpm:: python-pydruid-srpm
 python-airflow-srpm:: python-pygments-srpm
 python-airflow-srpm:: python-pyhive-srpm
+python-airflow-srpm:: python-pyhs2-srpm
+python-airflow-srpm:: python-pymssql-srpm
+python-airflow-srpm:: python-pysmbclient-srpm
 python-airflow-srpm:: python-python-dateutil-srpm
-python-airflow-srpm:: python-python-editor-srpm
 python-airflow-srpm:: python-requests-srpm
-python-airflow-srpm:: python-six-srpm
+python-airflow-srpm:: python-slackclient-srpm
+python-airflow-srpm:: python-snakebite-srpm
+python-airflow-srpm:: python-sphinx-srpm
 python-airflow-srpm:: python-sphinx-argparse-srpm
-python-airflow-srpm:: python-sphinx-ppi-upload-srpm
+python-airflow-srpm:: python-sphinx-pypi-upload-srpm
 python-airflow-srpm:: python-sphinx_rtd_theme-srpm
 python-airflow-srpm:: python-sqlalchemy-srpm
-python-airflow-srpm:: python-werkzeug-srpm
+python-airflow-srpm:: python-statsd-srpm
+python-airflow-srpm:: python-thrift-srpm
+python-airflow-srpm:: python-unicodecsv-srpm
+
+# Direct installation requirements for python-airflow16
+python-airflow16-srpm:: python-alembic-srpm
+python-airflow16-srpm:: python-boto-srpm
+python-airflow16-srpm:: python-celery-srpm
+python-airflow16-srpm:: python-chartkick-srpm
+python-airflow16-srpm:: python-coveralls-srpm
+python-airflow16-srpm:: python-croniter-srpm
+python-airflow16-srpm:: python-cryptography-srpm
+python-airflow16-srpm:: python-dill-srpm
+python-airflow16-srpm:: python-eventlet-srpm
+python-airflow16-srpm:: python-filechunkio-srpm
+python-airflow16-srpm:: python-flake8-srpm
+python-airflow16-srpm:: python-flask-srpm
+python-airflow16-srpm:: python-flask-admin-srpm
+python-airflow16-srpm:: python-flask-cache-srpm
+python-airflow16-srpm:: python-flask-login-srpm
+python-airflow16-srpm:: python-flask-wtf-srpm
+python-airflow16-srpm:: python-flower-srpm
+python-airflow16-srpm:: python-future-srpm
+python-airflow16-srpm:: python-gevent-srpm
+python-airflow16-srpm:: python-gunicorn-srpm
+python-airflow16-srpm:: python-hive-thrift-py-srpm
+python-airflow16-srpm:: python-jaydebeapi-srpm
+python-airflow16-srpm:: python-jinja2-srpm
+python-airflow16-srpm:: python-ldap3-srpm
+python-airflow16-srpm:: python-librabbitmq-srpm
+python-airflow16-srpm:: python-markdown-srpm
+python-airflow16-srpm:: python-mysqlclient-srpm
+python-airflow16-srpm:: python-pandas-srpm
+python-airflow16-srpm:: python-psycopg2-srpm
+python-airflow16-srpm:: python-pydruid-srpm
+python-airflow16-srpm:: python-pygments-srpm
+python-airflow16-srpm:: python-pyhive-srpm
+python-airflow16-srpm:: python-pyhs2-srpm
+python-airflow16-srpm:: python-pykerberos-srpm
+python-airflow16-srpm:: python-pymssql-srpm
+python-airflow16-srpm:: python-pysmbclient-srpm
+python-airflow16-srpm:: python-python-dateutil-srpm
+python-airflow16-srpm:: python-requests-srpm
+python-airflow16-srpm:: python-slackclient-srpm
+python-airflow16-srpm:: python-snakebite-srpm
+python-airflow16-srpm:: python-sphinx-srpm
+python-airflow16-srpm:: python-sphinx-argparse-srpm
+python-airflow16-srpm:: python-sphinx-pypi-upload-srpm
+python-airflow16-srpm:: python-sphinx_rtd_theme-srpm
+python-airflow16-srpm:: python-sqlalchemy-srpm
+python-airflow16-srpm:: python-statsd-srpm
+python-airflow16-srpm:: python-thrift-srpm
+python-airflow16-srpm:: python-unicodecsv-srpm
+python-airflow16-srpm:: python-vertica-python-srpm
 
 # Git clone operations, not normally required
 # Targets may change
