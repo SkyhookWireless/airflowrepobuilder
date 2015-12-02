@@ -42,8 +42,6 @@ EPELPKGS+=python-ldap3-srpm
 EPELPKGS+=python-librabbitmq-srpm
 EPELPKGS+=python-mako-srpm
 EPELPKGS+=python-markdown-srpm
-EPELPKGS+=python-mymssql-srpm
-EPELPKGS+=python-mysmbclient-srpm
 
 # For airflow 1.5.x
 EPELPKGS+=python-mysql-python-srpm
@@ -55,6 +53,8 @@ EPELPKGS+=python-pydroid-srpm
 EPELPKGS+=python-pygments-srpm
 EPELPKGS+=python-pyhive-srpm
 EPELPKGS+=python-pykerberos-srpm
+EPELPKGS+=python-pymssql-srpm
+EPELPKGS+=python-pysmbclient-srpm
 EPELPKGS+=python-python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
 EPELPKGS+=python-six-srpm
@@ -249,6 +249,7 @@ python-airflow-srpm:: python-requests-srpm
 python-airflow-srpm:: python-six-srpm
 python-airflow-srpm:: python-sphinx-argparse-srpm
 python-airflow-srpm:: python-sphinx-ppi-upload-srpm
+python-airflow-srpm:: python-sphinx_rtd_theme-srpm
 python-airflow-srpm:: python-sqlalchemy-srpm
 python-airflow-srpm:: python-werkzeug-srpm
 
