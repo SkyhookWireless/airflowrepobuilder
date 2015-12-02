@@ -76,6 +76,7 @@ EPELPKGS+=python-flower-srpm
 EPELPKGS+=python-google-srpm
 EPELPKGS+=python-happybase-srpm
 EPELPKGS+=python-idna-srpm
+EPELPKGS+=python-ipaddress-srpm
 EPELPKGS+=python-keyring-srpm
 EPELPKGS+=python-kombu-srpm
 EPELPKGS+=python-mock-srpm
