@@ -27,12 +27,12 @@ an API similar to the one provided by python `os` module.
 
 It is an ugly hack, but it is here for anyone that finds it useful.
 
-The programmer before me was using a "bash" file with lots of smbclient calls, 
+The programmer before me was using a "bash" file with lots of smbclient calls,
 so I think my solution is at least better.
 
 Usage example:
 
->>> smb = smbclient.SambaClient(server="MYSERVER", share="MYSHARE", 
+>>> smb = smbclient.SambaClient(server="MYSERVER", share="MYSHARE",
                                 username='foo', password='bar', domain='baz')
 >>> print smb.listdir("/")
 [u'file1.txt', u'file2.txt']

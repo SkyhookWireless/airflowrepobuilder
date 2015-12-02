@@ -45,7 +45,7 @@ mkdir -pm 755 %{buildroot}%{python_sitearch}/backports
 install -pm 644 %{SOURCE0} %{buildroot}%{python_sitearch}/backports/__init__.py
 %endif
 
- 
+
 %files
 %{python_sitelib}/backports
 %if "%{python_sitelib}" != "%{python_sitearch}"

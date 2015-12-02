@@ -18,12 +18,12 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 
 %description
-Itsdangerous is a Python library for passing data through untrusted 
-environments (for example, HTTP cookies) while ensuring the data is not 
+Itsdangerous is a Python library for passing data through untrusted
+environments (for example, HTTP cookies) while ensuring the data is not
 tampered with.
 
-Internally itsdangerous uses HMAC and SHA1 for signing by default and bases the 
-implementation on the Django signing module. It also however supports JSON Web 
+Internally itsdangerous uses HMAC and SHA1 for signing by default and bases the
+implementation on the Django signing module. It also however supports JSON Web
 Signatures (JWS).
 
 %prep

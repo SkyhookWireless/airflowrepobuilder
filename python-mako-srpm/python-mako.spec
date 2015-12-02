@@ -55,7 +55,7 @@ calling and scoping semantics.
 
 #%check
 #PYTHONPATH=$(pwd) nosetests
- 
+
 %clean
 %{__rm} -rf %{buildroot}
 

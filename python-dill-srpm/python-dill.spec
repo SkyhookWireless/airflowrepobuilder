@@ -110,7 +110,7 @@ Dill is distributed under a 3-clause BSD license.
     >>> print (dill.license())
 
 
-Development Version 
+Development Version
 ===================
 
 You can get the latest development version with all the shiny new features at::
@@ -134,7 +134,7 @@ download the tarball, unzip, and run the installer::
     $ python setup py install
 
 You will be warned of any missing dependencies and/or settings
-after you run the "build" step above. 
+after you run the "build" step above.
 
 Alternately, dill can be installed with pip or easy_install::
 

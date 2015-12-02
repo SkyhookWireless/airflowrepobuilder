@@ -62,11 +62,11 @@ The bare minimum required to install is as follows:
 #. ``pip install alabaster`` (or equivalent).
 #. Enable the 'alabaster' theme, mini-extension, and sidebar templates in your
    ``conf.py``:
-   
+
    .. code-block:: python
-    
+ 
         import alabaster
-        
+     
         html_theme_path = [alabaster.get_path()]
         extensions = ['alabaster']
         html_theme = 'alabaster'

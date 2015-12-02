@@ -6,7 +6,7 @@
 Name:           %{?scl_prefix}python-werkzeug
 Version:        0.11.2
 Release:        0.2%{?dist}
-Summary:        The Swiss Army knife of Python web development 
+Summary:        The Swiss Army knife of Python web development
 
 Group:          Development/Libraries
 License:        BSD

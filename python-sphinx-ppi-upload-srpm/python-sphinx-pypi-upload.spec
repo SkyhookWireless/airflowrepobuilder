@@ -35,7 +35,7 @@ packages.python.org.
 The ``upload_sphinx`` command
 ------------------------------
 
-``upload_sphinx`` will create the necessary zip file out of an arbitrary 
+``upload_sphinx`` will create the necessary zip file out of an arbitrary
 documentation directory and posts it to the correct URL.
 
 It's also loosely based on Sphinx' own setuptools command build_sphinx_
@@ -73,7 +73,7 @@ uploaded to http://packages.python.org, with the following structure::
 
 As with any other setuptools based command, you can define useful defaults in
 the setup.cfg of your Python package. The following snippet shows how to set
-the option defaults of the ``build_sphinx`` and ``upload_sphinx`` setup.py 
+the option defaults of the ``build_sphinx`` and ``upload_sphinx`` setup.py
 commands::
 
   [build_sphinx]

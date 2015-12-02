@@ -21,7 +21,7 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 
 %description
-Drop-in substitute for Py2.7's new collections.OrderedDict. 
+Drop-in substitute for Py2.7's new collections.OrderedDict.
 Originally based on http://code.activestate.com/recipes/576693/
 
 %prep

@@ -212,7 +212,7 @@ py.test -r s -k"-TestWCSvnCommandPath" testing
 * Thu Aug 11 2011 Thomas Moschny <thomas.moschny@gmx.de> - 1.4.4-1
 - Update to 1.4.4.
 - Upstream provides a .zip archive only.
-- pytest and pycmd are separate packages now. 
+- pytest and pycmd are separate packages now.
 - Disable building html docs und the testsuite to break the circular
   build dependency with pytest.
 - Update summary and description.

@@ -203,7 +203,7 @@ production, monitor progress, and troubleshoot issues when needed.
 - Roll back to 1.5.1 for compatibility reasons
 
 * Fri Nov 13 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.5.2-0.2
-- Reset dependencies for python-thrift, which is on 
+- Reset dependencies for python-thrift, which is on
 
 * Mon Nov  9 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.5.2-0.1
 - Activate python2.7 build and dependenies

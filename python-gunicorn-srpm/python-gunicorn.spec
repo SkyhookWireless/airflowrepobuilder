@@ -40,7 +40,7 @@ This package contains Gunicorn documentation in reST and HTML formats.
 # coverage is disabled until pytest-cov in Fedora is updated to 1.7
 sed -i -e '/pytest-cov/d' requirements_dev.txt
 
-# need to remove gaiohttp worker from the Python 2 version, it is supported on 
+# need to remove gaiohttp worker from the Python 2 version, it is supported on
 # Python 3 only and it fails byte compilation on 2.x due to using "yield from"
 rm gunicorn/workers/_gaiohttp.py*
 

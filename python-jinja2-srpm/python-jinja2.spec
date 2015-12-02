@@ -179,7 +179,7 @@ dependency with python-sphinx; disable docs for now
 
 * Tue Jul 13 2010 Thomas Moschny <thomas.moschny@gmx.de> - 2.5-1
 - Update to upstream version 2.5.
-- Create python3 subpackage. 
+- Create python3 subpackage.
 - Minor specfile fixes.
 - Add examples directory.
 - Thanks to Gareth Armstrong for additional hints.

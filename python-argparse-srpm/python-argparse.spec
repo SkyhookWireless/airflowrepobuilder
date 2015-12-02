@@ -27,8 +27,8 @@ improves on optparse by:
  * supporting parsers that dispatch to sub-parsers
  * producing more informative usage messages
  * supporting actions that consume any number of command-line args
- * allowing types and actions to be specified with simple callables 
-    instead of hacking class attributes like STORE_ACTIONS or CHECK_METHODS 
+ * allowing types and actions to be specified with simple callables
+    instead of hacking class attributes like STORE_ACTIONS or CHECK_METHODS
 
 as well as including a number of other more minor improvements on the
 optparse API.

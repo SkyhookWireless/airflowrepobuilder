@@ -25,7 +25,7 @@ Internationalized Domain Names in Applications (IDNA)
 
 A library to support the Internationalised Domain Names in Applications
 (IDNA) protocol as specified in `RFC 5891 <http://tools.ietf.org/html/rfc5891>`_.
-This version of the protocol is often referred to as “IDNA2008” and can 
+This version of the protocol is often referred to as “IDNA2008” and can
 produce different results from the earlier standard from 2003.
 
 The library is also intended to act as a suitable drop-in replacement for

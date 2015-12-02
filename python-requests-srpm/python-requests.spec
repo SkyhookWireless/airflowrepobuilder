@@ -36,9 +36,9 @@ Requires:       python-ordereddict >= 1.1
 %endif
 
 %description
-Most existing Python modules for sending HTTP requests are extremely verbose and 
-cumbersome. Python’s built-in urllib2 module provides most of the HTTP 
-capabilities you should need, but the API is thoroughly broken. This library is 
+Most existing Python modules for sending HTTP requests are extremely verbose and
+cumbersome. Python’s built-in urllib2 module provides most of the HTTP
+capabilities you should need, but the API is thoroughly broken. This library is
 designed to make HTTP requests easy for developers.
 
 %prep

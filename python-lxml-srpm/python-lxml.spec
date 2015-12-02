@@ -69,7 +69,7 @@ chmod a-x doc/rest2html.py
 * Fri Oct 30 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2.3-1
 - 2.2.3 (2009-10-30)
 - Bugs fixed
-- 
+-
 -    * The resolve_entities option did not work in the incremental feed
 -      parser.
 -    * Looking up and deleting attributes without a namespace could hit a
@@ -106,13 +106,13 @@ chmod a-x doc/rest2html.py
 * Sun Jun 21 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2.2-1
 - 2.2.2 (2009-06-21)
 - Features added
-- 
+-
 -    * New helper functions strip_attributes(), strip_elements(),
 -      strip_tags() in lxml.etree to remove attributes/subtrees/tags
 -      from a subtree.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Namespace cleanup on subtree insertions could result in missing
 -      namespace declarations (and potentially crashes) if the element
 -      defining a namespace was deleted and the namespace was not used
@@ -127,14 +127,14 @@ chmod a-x doc/rest2html.py
 * Tue Jun  2 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2.1-1
 - 2.2.1 (2009-06-02)
 - Features added
-- 
+-
 -    * Injecting default attributes into a document during XML Schema
 -      validation (also at parse time).
 -    * Pass huge_tree parser option to disable parser security restrictions
 -      imposed by libxml2 2.7.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * The script for statically building libxml2 and libxslt didn't work
 -      in Py3.
 -    * XMLSchema() also passes invalid schema documents on to libxml2 for
@@ -143,27 +143,27 @@ chmod a-x doc/rest2html.py
 * Tue Mar 24 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-1
 - 2.2 (2009-03-21)
 - Features added
-- 
+-
 -    * Support for standalone flag in XML declaration through
 -      tree.docinfo.standalone and by passing standalone=True/False on
 -      serialisation.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Crash when parsing an XML Schema with external imports from a
 -      filename.
 
 * Fri Feb 27 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.8.beta4
 - 2.2beta4 (2009-02-27)
 - Features added
-- 
+-
 -    * Support strings and instantiable Element classes as child arguments
 -      to the constructor of custom Element classes.
 -    * GZip compression support for serialisation to files and file-like
 -      objects.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Deep-copying an ElementTree copied neither its sibling PIs and
 -      comments nor its internal/external DTD subsets.
 -    * Soupparser failed on broken attributes without values.
@@ -174,9 +174,9 @@ chmod a-x doc/rest2html.py
 -    * lxml.html.FormElement._name() failed for non top-level forms.
 -    * TAG special attribute in constructor of custom Element classes was
 -      evaluated incorrectly.
-- 
+-
 - Other changes
-- 
+-
 -    * Official support for Python 3.0.1.
 -    * Element.findtext() now returns an empty string instead of None for
 -      Elements without text content.
@@ -187,12 +187,12 @@ chmod a-x doc/rest2html.py
 * Tue Feb 17 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.6.beta3
 - 2.2beta3 (2009-02-17)
 - Features added
-- 
+-
 -    * XSLT.strparam() class method to wrap quoted string parameters that
 -     require escaping.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Memory leak in XPath evaluators.
 -    * Crash when parsing indented XML in one thread and merging it with
 -      other documents parsed in another thread.
@@ -200,9 +200,9 @@ chmod a-x doc/rest2html.py
 -      failed.
 -    * Fixes following changes in Python 3.0.1.
 -    * Minor fixes for Python 3.
-- 
+-
 - Other changes
-- 
+-
 -    * The global error log (which is copied into the exception log) is now
 -      local to a thread, which fixes some race conditions.
 -    * More robust error handling on serialisation.
@@ -210,7 +210,7 @@ chmod a-x doc/rest2html.py
 * Sun Jan 25 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.5.beta2
 - 2.2beta2 (2009-01-25)
 - Bugs fixed
-- 
+-
 -    * Potential memory leak on exception handling. This was due to a
 -      problem in Cython, not lxml itself.
 -    * iter_links (and related link-rewriting functions) in lxml.html would
@@ -221,17 +221,17 @@ chmod a-x doc/rest2html.py
 * Fri Dec 12 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.4.beta1
 - 2.2beta1 (2008-12-12)
 - Features added
-- 
+-
 -    * Allow lxml.html.diff.htmldiff to accept Element objects,
 -      not just HTML strings.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Crash when using an XPath evaluator in multiple threads.
 -    * Fixed missing whitespace before Link:... in lxml.html.diff.
-- 
+-
 - Other changes
-- 
+-
 -    * Export lxml.html.parse.
 
 * Fri Nov 28 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.3.alpha1
@@ -243,15 +243,15 @@ chmod a-x doc/rest2html.py
 * Mon Nov 24 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.2-0.1.alpha1
 - 2.2alpha1 (2008-11-23)
 - Features added
-- 
+-
 -    * Support for XSLT result tree fragments in XPath/XSLT extension
 -      functions.
 -    * QName objects have new properties namespace and localname.
 -    * New options for exclusive C14N and C14N without comments.
 -    * Instantiating a custom Element classes creates a new Element.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * XSLT didn't inherit the parse options of the input document.
 -    * 0-bytes could slip through the API when used inside of Unicode
 -      strings.
@@ -262,7 +262,7 @@ chmod a-x doc/rest2html.py
 * Mon Nov 17 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.1.3-1
 - 2.1.3 (2008-11-17)
 - Bugs fixed
-- 
+-
 -    * Ref-count leaks when lxml enters a try-except statement while an
 -      outside exception lives in sys.exc_*(). This was due to a problem
 -      in Cython, not lxml itself.
@@ -281,14 +281,14 @@ chmod a-x doc/rest2html.py
 * Fri Sep  5 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 2.1.2-1
 - 2.1.2 (2008-09-05)
 - Features added
-- 
+-
 -    * lxml.etree now tries to find the absolute path name of files when
 -      parsing from a file-like object. This helps custom resolvers when
 -      resolving relative URLs, as lixbml2 can prepend them with the path of
 -      the source document.
-- 
+-
 - Bugs fixed
-- 
+-
 -    * Memory problem when passing documents between threads.
 -    * Target parser did not honour the recover option and raised an exception
 -      instead of calling .close() on the target.

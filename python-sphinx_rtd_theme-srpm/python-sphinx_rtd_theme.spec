@@ -37,7 +37,7 @@ Requires: %{?scl_prefix}python(abi)
 Read the Docs Sphinx Theme
 **************************
 
-.. contents:: 
+.. contents::
 
 View a working demo_ over on readthedocs.org_.
 
