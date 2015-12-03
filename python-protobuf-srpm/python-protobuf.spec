@@ -4,12 +4,12 @@
 # Copyright (c) 2015 Nico Kadel-Garcia.
 #
 
-%{?scl:%scl_package python-alembic}
+%{?scl:%scl_package python-protobuf}
 %{!?scl:%global pkg_name %{name}}
 
-%global srcname alembic
+%global srcname protobuf
 
-Name: %{?scl_prefix}python-alembic
+Name: %{?scl_prefix}python-protobuf
 Version:        3.0.0a3
 Release:        0
 Url:            https://developers.google.com/protocol-buffers/
