@@ -223,7 +223,7 @@ python-croniter-srpm:: pytz-srpm
 # Upstream python-six is recent enough to build
 #python-croniter-srpm:: python-six-srpm
 
-python-mako-srpm pytz-srpm
+python-mako-srpm:: pytz-srpm
 
 python-kombu-srpm:: python-ordereddict-srpm
 
