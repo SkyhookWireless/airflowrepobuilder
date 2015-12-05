@@ -16,7 +16,7 @@ Url:            https://github.com/phihag/ipaddress
 Summary:        IPv4/IPv6 manipulation library
 License:        Python-2.0
 Group:          Development/Languages/Python
-Source:         https://pypi.python.org/packages/source/i/ipaddress/ipaddress-%{version}.tar.gz
+Source:         https://pypi.python.org/packages/source/i/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
@@ -27,7 +27,7 @@ Requires: %{?scl_prefix}python(abi)
 Port of the 3.3+ ipaddress module to 2.6, 2.7, 3.2
 
 %prep
-%setup -q -n ipaddress-%{version}
+%setup -q -n %{srcname}-%{version}
 
 %build
 %{?scl:scl enable %{scl} "}
@@ -49,6 +49,9 @@ Port of the 3.3+ ipaddress module to 2.6, 2.7, 3.2
 %{python_sitelib}/*
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.15-0.2
+- Use srcname consistently for python-ipaddress
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.0.15-0.1
 - Build SRPM with py2pack
 - Activate python2.7 build and dependenies
