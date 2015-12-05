@@ -1,6 +1,8 @@
 %{?scl:%scl_package babel}
 %{!?scl:%global pkg_name %{name}}
 
+%define srcname Babel
+
 Name:           %{?scl_prefix}babel
 Version:        2.1.1
 Release:        0.1%{?dist}
@@ -9,7 +11,8 @@ Summary:        Tools for internationalizing Python applications
 Group:          Development/Languages
 License:        BSD
 URL:            http://babel.edgewall.org/
-Source0:        http://ftp.edgewall.com/pub/babel/Babel-%{version}.tar.gz
+#Source0:        http://ftp.edgewall.com/pub/babel/%{srcname}-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/B/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{pkg_name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
@@ -46,7 +49,7 @@ Babel is composed of two major parts:
   and date formatting, etc.
 
 %prep
-%setup0 -q -n Babel-%{version}
+%setup0 -q -n %{srcname}-%{version}
 # Twiak all files, not just specific files
 #chmod a-x babel/messages/frontend.py doc/logo.png doc/logo_small.png
 find . -name \**.py -exec chmod a-x {} \;
@@ -75,10 +78,13 @@ rm -rf %{buildroot}
 %files -n %{?scl_prefix}python-babel
 %defattr(-,root,root,-)
 %doc docs
-%{python_sitelib}/Babel-%{version}-py*.egg-info
+%{python_sitelib}/%{srcname}-%{version}-py*.egg-info
 %{python_sitelib}/babel
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyoookwireless.com> - 2.2.1-0.2
+- Use srcname consistently
+
 * Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyoookwireless.com> - 2.2.1-0.1
 - Update to 2.2.1
 
