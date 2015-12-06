@@ -113,11 +113,10 @@ EPELPKGS+=python-cm-api-srpm
 EPELPKGS+=python-pyhs2-srpm
 EPELPKGS+=python-sasl-srpm
 
-# Discarded: python-pip and python27-python-pip are available from upstream
-#EPELPKGS+=python-pip-srpm
+# Update to 1.7.x release
+EPELPKGS+=python-pip-srpm
 
-# Useful python RPM building tool, updated for new pypi.org URL
-# Warning: not yet python27 enabled due to compilation issues
+# Updated for new pypi.org URL
 PYTHONPKGS+=python-py2pack-srpm
 
 # These require customized airflowrepo local repository for compilation
