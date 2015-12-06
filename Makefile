@@ -65,10 +65,10 @@ EPELPKGS+=python-vertica-python-srpm
 EPELPKGS+=python-werkzeug-srpm
 
 # useful airflow components and dependencies, not from airflow/requirements.txt
+EPELPKGS+=babel-srpm
 EPELPKGS+=python-alabaster-srpm
 EPELPKGS+=python-amqp-srpm
 EPELPKGS+=python-anyjson-srpm
-EPELPKGS+=python-babel-srpm
 EPELPKGS+=python-backports-srpm
 EPELPKGS+=python-backports_abc-srpm
 EPELPKGS+=python-beaker-srpm
@@ -207,14 +207,14 @@ python-eventlet-srpm:: python-greenlet-srpm
 # Upstream version is recent enough to build
 #python-chartkick-srpm:: python-sphinx-srpm
 
-python-wtforms-srpm:: python-babel-srpm
+python-wtforms-srpm:: babel-srpm
 
 # Upsream python-six is sufficient for python-singledispatch
 #python-singledispatch-srpm:: python-six-arpm
 
 # upstream python27-python-sphinx is not recent enough
+python-sphinx-srpm:: babel-srpm
 python-sphinx-srpm:: python-alabaster-srpm
-python-sphinx-srpm:: python-babel-srpm
 python-sphinx-srpm:: python-mock-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: pytz-srpm
