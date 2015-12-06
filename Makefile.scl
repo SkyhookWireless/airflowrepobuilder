@@ -28,7 +28,6 @@ all:: verifyspec
 # Needed for yum repo updates
 all:: /usr/bin/createrepo
 # Needed for python27 compatible compilation
-all:: /etc/rpm/macros/python27-config
 all:: $(MOCKS)
 
 # Oddness to get deduced .spec file verified
@@ -39,7 +38,7 @@ verifyspec:: FORCE
 	fi
 
 # Needed for python27 compatible compilation
-build srpm:: /etc/rpm/macros/python27-config
+build srpm:: /etc/rpm/macros.python27-config
 
 srpm:: verifyspec FORCE
 	@echo "Building $(SPEC) SRPM"

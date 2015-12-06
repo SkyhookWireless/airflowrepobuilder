@@ -33,7 +33,7 @@ verifyspec:: FORCE
 	fi
 
 # Needed for correct srpm and build format
-build srpm:: /etc/rpm/macros/python27-config
+build srpm:: /etc/rpm/macros.python27-config
 
 srpm:: verifyspec FORCE
 	@echo "Building $(SPEC) SRPM"
