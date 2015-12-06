@@ -1,7 +1,8 @@
-%global srcname pip
 
 %{?scl:%scl_package python-pip}
 %{!?scl:%global pkg_name %{name}}
+
+%global srcname pip
 
 Name: %{?scl_prefix}python-pip
 Version:        7.1.2
@@ -16,25 +17,16 @@ Source0:        http://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%
 # to get tests:
 # git clone https://github.com/pypa/pip && cd fig
 # git checkout 1.5.6 && tar -czvf pip-1.5.6-tests.tar.gz tests/
-%if 0%{?with_tests}
-Source1:        pip-6.0.8-tests.tar.gz
-%endif
-
 Patch0:         pip-1.5rc1-allow-stripping-prefix-from-wheel-RECORD-files.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
-Requires:       %{?scl_prefix}python-setuptools
-%if 0%{?with_tests}
-BuildRequires:  %{?scl_prefix}python-mock
-BuildRequires:  %{?scl_prefix}pytest
-BuildRequires:  %{?scl_prefix}python-pretend
-BuildRequires:  %{?scl_prefix}python-freezegun
-BuildRequires:  %{?scl_prefix}python-scripttest
-BuildRequires:  %{?scl_prefix}python-virtualenv
-%endif
+BuildRequires:  %{?scl_prefix}python-setuptools
+BuildRequires:  %{?scl_prefix}python(abi)
+Requires: %{?scl_prefix}python-setuptools
+Requires: %{?scl_prefix}python(abi)
 
 %description
 Pip is a replacement for `easy_install
@@ -44,11 +36,7 @@ easy_installable should be pip-installable as well.
 
 %prep
 %setup -q -n %{srcname}-%{version}
-%if 0%{?with_tests}
-tar -xf %{SOURCE1}
-%endif
-
-%patch0 -p1
+#%patch0 -p1
 
 %{__sed} -i '1d' pip/__init__.py
 
@@ -63,14 +51,6 @@ tar -xf %{SOURCE1}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 %{?scl:"}
 # Discard bash_completion tools
-
-%if 0%{?with_tests}
-%check
-%{?scl:scl enable %{scl} "}
-py.test -m 'not network'
-%{?scl:"}
-%endif
-
 
 %clean
 %{__rm} -rf %{buildroot}
