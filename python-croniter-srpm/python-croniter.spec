@@ -2,16 +2,16 @@
 %{!?scl:%global pkg_name %{name}}
 
 # Created by pyp2rpm-1.0.1
-%global pypi_name croniter
+%global srcname croniter
 
-Name: %{?scl_prefix}python-%{pypi_name}
+Name: %{?scl_prefix}python-%{srcname}
 Version:        0.3.10
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Iteration for datetime object with cron like format
 
 License:        MIT
 URL:            http://github.com/kiorky/croniter
-Source0:        https://pypi.python.org/packages/source/c/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix}python-devel
@@ -30,9 +30,9 @@ Croniter provides iteration for datetime object with cron like format.
 
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{srcname}-%{version}
 # Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
+rm -rf %{srcname}.egg-info
 # Remove reundant script header to avoid rpmlint warnings
 find -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 
@@ -50,16 +50,18 @@ find -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 # Not courrently working <nkadel@skyhokwirelss.com>
 #%check
 #%{?scl:scl enable %{scl} "}
-#PYTHONPATH=%{buildroot}%{python_sitelib}/ %{__python} -m unittest %{pypi_name}.tests.test_croniter
+#PYTHONPATH=%{buildroot}%{python_sitelib}/ %{__python} -m unittest %{srcname}.tests.test_croniter
 #%{?scl:"}
-#rm -fr %{buildroot}%{python_sitelib}/%{pypi_name}/tests/
+#rm -fr %{buildroot}%{python_sitelib}/%{srcname}/tests/
 
 %files
 %doc README.rst docs/LICENSE
-%{python_sitelib}/%{pypi_name}
-%{python_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python_sitelib}/%{srcname}
+%{python_sitelib}/%{srcname}-%{version}-py?.?.egg-info
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.2
+
 * Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.1
 - Update to 0.3.10 for airflow 1.6.1 dependency
 

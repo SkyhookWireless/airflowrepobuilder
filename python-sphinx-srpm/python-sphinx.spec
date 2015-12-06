@@ -1,11 +1,11 @@
 %{?scl:%scl_package python-sphinx}
 %{!?scl:%global pkg_name %{name}}
 
-%global upstream_name Sphinx
+%global srcname Sphinx
 
 Name:       %{?scl_prefix}python-sphinx
 Version:    1.3.1
-Release:    0.2%{?dist}
+Release:    0.8%{?dist}
 Summary:    Python documentation generator
 
 Group:      Development/Tools
@@ -16,7 +16,7 @@ Group:      Development/Tools
 # jquery (MIT or GPLv2)
 License:    BSD and Public Domain and Python and (MIT or GPLv2)
 URL:        http://sphinx.pocoo.org/
-Source0:    https://pypi.python.org/packages/source/S/%{upstream_name}/%{upstream_name}-%{version}.tar.gz
+Source0:    https://pypi.python.org/packages/source/S/%{srcname}/%{srcname}-%{version}.tar.gz
 #Patch0: sphinx-docutils-0.10.patch
 Patch0:     Sphinx-1.2.1-mantarget.patch
 Patch1:     Sphinx-1.3.1-verbosetests.patch
@@ -44,10 +44,11 @@ Requires:      %{?scl_prefix}python-docutils
 Requires:      %{?scl_prefix}python-jinja2 >= 2.3
 Requires:      %{?scl_prefix}python-pygments >= 2.0
 # Added for 1.3.0
-Requires:      %{?scl_prefix}python-mock
-Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
-Requires:      %{?scl_prefix}python-six >= 1.4
+BuildRequires: %{?scl_prefix}pytz
 Requires:      %{?scl_prefix}python-babel >= 1.3
+Requires:      %{?scl_prefix}python-mock
+Requires:      %{?scl_prefix}python-six >= 1.4
+Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
 # For win32 features
 #Requires:      %{?scl_prefix}python-colorama
 
@@ -99,7 +100,7 @@ This package contains documentation in reST and HTML formats.
 
 
 %prep
-%setup -q -n %{upstream_name}-%{version}%{?prerel}
+%setup -q -n %{srcname}-%{version}%{?prerel}
 sed '1d' -i sphinx/pycode/pgen2/token.py
 
 %patch0 -p1 -b .mantarget
@@ -187,6 +188,10 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 %doc html reST
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.1-0.8
+- Use srcname consistently
+- Add pytz to Buildrequires
+
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.1-0.7
 - Update to 1.3.1
 - Disable Patch0

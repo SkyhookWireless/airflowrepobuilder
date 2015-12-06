@@ -11,12 +11,12 @@
 
 Name: %{?scl_prefix}python-protobuf
 Version:        3.0.0a3
-Release:        0
+Release:        0.2%{?dist}
 Url:            https://developers.google.com/protocol-buffers/
 Summary:        Protocol Buffers
 License:        BSD-3-Clause
 Group:          Development/Languages/Python
-Source:         https://pypi.python.org/packages/source/p/protobuf/protobuf-%{version}.tar.gz
+Source:         https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
@@ -28,7 +28,7 @@ Requires: %{?scl_prefix}python(abi)
 Protocol Buffers are Google's data interchange format
 
 %prep
-%setup -q -n protobuf-%{version}
+%setup -q -n %{srcname}-%{version}
 
 %build
 #export CFLAGS="%{optflags}"
@@ -50,6 +50,9 @@ Protocol Buffers are Google's data interchange format
 %{python_sitelib}/*
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.0.0a3-0.2
+- Use srcname consistently
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 3.0.0a3-0.1
 - Build SRPM with py2pack
 - Activate python2.7 build and dependenies

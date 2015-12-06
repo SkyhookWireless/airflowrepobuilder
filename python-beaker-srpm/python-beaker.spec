@@ -33,7 +33,7 @@ manage Session objects and signed cookies.
 
 
 %prep
-%setup -q -n Beaker-%{version}
+%setup -q -n %{srcname}-%{version}
 %patch0 -p1 -b .hashlib
 %patch1 -p0 -b .absimport
 %patch2 -p1 -b .middleconfig

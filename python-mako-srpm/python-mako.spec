@@ -1,8 +1,7 @@
 %{?scl:%scl_package python-mako}
 %{!?scl:%global pkg_name %{name}}
 
-%global srcname mako
-
+%global srcname Mako
 
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
@@ -14,7 +13,8 @@ Summary: Mako template library for Python
 Group: Development/Languages
 License: MIT
 URL: http://www.makotemplates.org/
-Source0: https://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
+#Source0: https://www.makotemplates.org/downloads/Mako-%{version}.tar.gz
+Source0: https://pypi.python.org/packages/source/M/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: %{?scl_prefix}python-devel
@@ -38,7 +38,7 @@ calling and scoping semantics.
 
 
 %prep
-%setup -q -n Mako-%{version}
+%setup -q -n %{srcname}-%{version}
 
 
 %build
@@ -68,6 +68,9 @@ calling and scoping semantics.
 
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.0.3-0.2
+- Use srcname consistently
+
 * Wed Nov 14 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.0.3-0.1
 - Update to 1.0.3 and enable python27 builds
 - Disable %%check stanza

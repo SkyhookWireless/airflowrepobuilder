@@ -5,7 +5,7 @@
 
 Name:           %{?scl_prefix}python-requests
 Version:        2.8.1
-Release:        0.3%{?dist}
+Release:        0.4%{?dist}
 Summary:        HTTP library, written in Python, for human beings
 
 License:        ASL 2.0
@@ -42,7 +42,7 @@ capabilities you should need, but the API is thoroughly broken. This library is
 designed to make HTTP requests easy for developers.
 
 %prep
-%setup -q -n requests-%{version}
+%setup -q -n %{srcname}-%{version}
 
 %patch0 -p1
 %patch1 -p1
@@ -78,6 +78,9 @@ rm -rf requests/cacert.pem
 %{python_sitelib}/requests/*
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.4
+- Use srcname consistently
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.8.1-0.3
 - Provide full URL for source
 - Add python(abi) dependency

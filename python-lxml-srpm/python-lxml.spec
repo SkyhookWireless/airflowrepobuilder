@@ -13,8 +13,8 @@ Summary:        ElementTree-like Python bindings for libxml2 and libxslt
 Group:          Development/Libraries
 License:        BSD
 URL:            http://codespeak.net/lxml/
-Source0:        https://cheeseshop.python.org/packages/source/l/lxml/lxml-%{version}.tar.gz
-#Source0:        http://codespeak.net/lxml/lxml-%{version}.tgz
+Source0:        https://cheeseshop.python.org/packages/source/l/%{srcname}/%{srcname}-%{version}.tar.gz
+#Source0:        http://codespeak.net/lxml/%{srcname}-%{version}.tgz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libxslt-devel
@@ -31,7 +31,7 @@ rather than encoded UTF-8 and handles memory management automatically,
 unlike the default bindings.
 
 %prep
-%setup -q -n lxml-%{version}
+%setup -q -n %{srcname}-%{version}
 
 chmod a-x doc/rest2html.py
 
@@ -59,6 +59,9 @@ chmod a-x doc/rest2html.py
 %{python_sitearch}/*
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 3.5.0-0.2
+- Use srcname consistently
+
 * Sun Nov 29 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 3.5.0-0.1
 - Update to 3.6.0 for successful python27 compilation
 - Update python27 build requirements

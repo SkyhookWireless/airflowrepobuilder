@@ -21,12 +21,6 @@ Requires: %{?scl_prefix}python(abi)
 # For use by selftests:
 #BuildRequires:  pytest
 #BuildRequires:  tkinter
-#%if 0%{?with_python3}
-#BuildRequires:  python3-devel
-## For use by selftests:
-#BuildRequires:  python3-pytest
-#BuildRequires:  python3-tkinter
-#%endif
 
 %description
 python-six provides simple utilities for wrapping over differences between
@@ -34,25 +28,8 @@ Python 2 and Python 3.
 
 This is the Python 2 build of the module.
 
-#%if 0%{?with_python3}
-#%package -n python3-six
-#Summary:        Python 2 and 3 compatibility utilities
-#Group:          Development/Languages
-#
-#%description -n python3-six
-#python-six provides simple utilities for wrapping over differences between
-#Python 2 and Python 3.
-#
-#This is the Python 3 build of the module.
-#%endif
-
 %prep
-%setup -q -n six-%{version}
-#%if 0%{?with_python3}
-#rm -rf %{py3dir}
-#cp -a . %{py3dir}
-#%endif
-
+%setup -q -n %{srcname}-%{version}
 
 %build
 %{?scl:scl enable %{scl} "}
@@ -70,6 +47,9 @@ This is the Python 2 build of the module.
 %{python_sitelib}/*
 
 %changelog
+* Sat Dec  5 2014 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.3
+- Use secname consistently
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.2
 - Update to 1.10.0
 - Provide full URL for source

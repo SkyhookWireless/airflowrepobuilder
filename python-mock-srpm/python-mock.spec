@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-mock}
 %{!?scl:%global pkg_name %{name}}
 
-%global mod_name mock
+%global srcname mock
 
 Name: %{?scl_prefix}python-mock
 Version:        0.8.0
@@ -10,8 +10,8 @@ Summary:        A Python Mocking and Patching Library for Testing
 
 Group:          Development/Libraries
 License:        BSD
-URL:            http://www.voidspace.org.uk/python/%{mod_name}/
-Source0:        http://pypi.python.org/packages/source/m/%{mod_name}/%{mod_name}-%{version}.tar.gz
+URL:            http://www.voidspace.org.uk/python/%{srcname}/
+Source0:        http://pypi.python.org/packages/source/m/%{srcname}/%{srcname}-%{version}.tar.gz
 Source1:        LICENSE.txt
 
 BuildArch:      noarch
@@ -27,7 +27,7 @@ arguments they were called with. You can also specify return values and set
 needed attributes in the normal way.
 
 %prep
-%setup -q -n %{mod_name}-%{version}
+%setup -q -n %{srcname}-%{version}
 cp -p %{SOURCE1} .
 
 %build
@@ -48,9 +48,12 @@ cp -p %{SOURCE1} .
 %doc LICENSE.txt README.txt
 %doc docs/
 %{python_sitelib}/*.egg-info
-%{python_sitelib}/%{mod_name}.py*
+%{python_sitelib}/%{srcname}.py*
 
 %changelog
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0,8.0-0.2
+- Use srcname consistently
+
 * Tue Nov 24 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0,8.0-0.1
 - Update to python27 build
 - Add python(abi) dependency
