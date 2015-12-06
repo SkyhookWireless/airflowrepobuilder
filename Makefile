@@ -18,7 +18,7 @@ EPELPKGS+=python-gunicorn-srpm
 
 EPELPKGS+=python-alembic-srpm
 EPELPKGS+=python-argparse-srpm
-EPELPKGS+=python-backports.ssl_match_hostanme-srpm
+EPELPKGS+=python-backports.ssl_match_hostname-srpm
 EPELPKGS+=python-boto-srpm
 EPELPKGS+=python-chartkick-srpm
 EPELPKGS+=python-coveralls-srpm
