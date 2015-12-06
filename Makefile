@@ -217,6 +217,7 @@ python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-babel-srpm
 python-sphinx-srpm:: python-mock-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
+python-sphinx-srpm:: pytz-srpm
 
 python-croniter-srpm:: python-python-dateutil-srpm
 python-croniter-srpm:: pytz-srpm
