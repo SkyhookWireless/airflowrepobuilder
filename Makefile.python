@@ -20,7 +20,10 @@ REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
 SPEC := `ls *.spec | head -1`
 PKGNAME := "`ls *.spec | head -1 | sed 's/.spec$$//g'`"
 
-all:: verifyspec $(MOCKS)
+all:: verifyspec
+# Needed for yum repo updates
+all:: /usr/bin/createrepo
+all:: $(MOCKS)
 
 # Oddness to get deduced .spec file verified
 verifyspec:: FORCE
@@ -29,6 +32,9 @@ verifyspec:: FORCE
 	    exit 1; \
 	fi
 
+# Needed for correct srpm and build format
+build srpm:: /etc/rpm/macros/python27-config
+
 srpm:: verifyspec FORCE
 	@echo "Building $(SPEC) SRPM"
 	rm -rf rpmbuild
@@ -36,6 +42,7 @@ srpm:: verifyspec FORCE
 		 --define '_sourcedir $(PWD)' \
 		-bs $(SPEC) --nodeps
 
+# Needed for python27 compatible compilation
 build:: srpm FORCE
 	rpmbuild --define '_topdir $(PWD)/rpmbuild' \
 		 --rebuild rpmbuild/SRPMS/*.src.rpm

@@ -23,7 +23,13 @@ REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
 SPEC := `ls *.spec | head -1`
 PKGNAME := "`ls *.spec | head -1 | sed 's/.spec$$//g'`"
 
-all:: verifyspec $(MOCKS)
+# Verify correct configurations
+all:: verifyspec
+# Needed for yum repo updates
+all:: /usr/bin/createrepo
+# Needed for python27 compatible compilation
+all:: /etc/rpm/macros/python27-config
+all:: $(MOCKS)
 
 # Oddness to get deduced .spec file verified
 verifyspec:: FORCE
@@ -31,6 +37,9 @@ verifyspec:: FORCE
 	    echo Error: SPEC file $(SPEC) not found, exiting; \
 	    exit 1; \
 	fi
+
+# Needed for python27 compatible compilation
+build srpm:: /etc/rpm/macros/python27-config
 
 srpm:: verifyspec FORCE
 	@echo "Building $(SPEC) SRPM"
