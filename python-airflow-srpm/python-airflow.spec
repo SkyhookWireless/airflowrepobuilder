@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.7%{?dist}
+Release: 0.8%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -35,6 +35,7 @@ Requires:  %{?scl_prefix}python-flask-admin < 1.2.1
 Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
 Requires:  %{?scl_prefix}python-flask-cache < 0.14
 Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
+Requires:  %{?scl_prefix}python-flask-login < 0.2.12
 Requires:  %{?scl_prefix}python-flower >= 0.7.3
 Requires:  %{?scl_prefix}python-future >= 0.15.0
 Requires:  %{?scl_prefix}python-future < 0.16
@@ -188,6 +189,9 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.10.8
+- Add more specific python-flask-login dependency
+
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.5.1-0.6
 - Activate dependencies for many more submodules
 

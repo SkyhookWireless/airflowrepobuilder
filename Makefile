@@ -258,6 +258,7 @@ python-airflow-srpm:: python-dill-srpm
 python-airflow-srpm:: python-flask-srpm
 python-airflow-srpm:: python-flask-admin-srpm
 python-airflow-srpm:: python-flask-cache-srpm
+# 0.2.11 specifically required
 python-airflow-srpm:: python-flask-login-srpm
 python-airflow-srpm:: python-flower-srpm
 python-airflow-srpm:: python-future-srpm
@@ -301,20 +302,23 @@ python-airflow16-srpm:: python-dill-srpm
 python-airflow16-srpm:: python-eventlet-srpm
 python-airflow16-srpm:: python-filechunkio-srpm
 python-airflow16-srpm:: python-flake8-srpm
-python-airflow16-srpm:: python-flask-srpm
 python-airflow16-srpm:: python-flask-admin-srpm
 python-airflow16-srpm:: python-flask-cache-srpm
+# 0.2.11 specifically required
 python-airflow16-srpm:: python-flask-login-srpm
+python-airflow16-srpm:: python-flask-srpm
 python-airflow16-srpm:: python-flask-wtf-srpm
 python-airflow16-srpm:: python-flower-srpm
 python-airflow16-srpm:: python-future-srpm
 python-airflow16-srpm:: python-gevent-srpm
 python-airflow16-srpm:: python-gunicorn-srpm
 python-airflow16-srpm:: python-hive-thrift-py-srpm
+python-airflow16-srpm:: python-itsdangerous-srpm
 python-airflow16-srpm:: python-jaydebeapi-srpm
 python-airflow16-srpm:: python-jinja2-srpm
 python-airflow16-srpm:: python-ldap3-srpm
 python-airflow16-srpm:: python-librabbitmq-srpm
+python-airflow16-srpm:: python-mako-srpm
 python-airflow16-srpm:: python-markdown-srpm
 python-airflow16-srpm:: python-mysqlclient-srpm
 python-airflow16-srpm:: python-pandas-srpm
@@ -330,9 +334,9 @@ python-airflow16-srpm:: python-python-dateutil-srpm
 python-airflow16-srpm:: python-requests-srpm
 python-airflow16-srpm:: python-slackclient-srpm
 python-airflow16-srpm:: python-snakebite-srpm
-python-airflow16-srpm:: python-sphinx-srpm
 python-airflow16-srpm:: python-sphinx-argparse-srpm
 python-airflow16-srpm:: python-sphinx-pypi-upload-srpm
+python-airflow16-srpm:: python-sphinx-srpm
 python-airflow16-srpm:: python-sphinx_rtd_theme-srpm
 python-airflow16-srpm:: python-sqlalchemy-srpm
 python-airflow16-srpm:: python-statsd-srpm
