@@ -4,15 +4,16 @@
 # Copyright (c) 2015 Nico Kadel-Garcia.
 #
 
-%{?scl:%scl_package python-backports.ssl_match_hostname}
+%{?scl:%scl_package python-backports-ssl_match_hostname}
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname backports.ssl_match_hostname
 
-Name: %{?scl_prefix}python-backports.ssl_match_hostname
+# CentOS "extras" renames this oddly
+Name: %{?scl_prefix}python-backports-ssl_match_hostname
 
 Version:        3.4.0.2
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Url:            http://bitbucket.org/brandon/backports.ssl_match_hostname
 Summary:        The ssl.match_hostname() function from Python 3.4
 License:        Python Software Foundation
@@ -22,6 +23,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+Obsoletes: %{?scl_prefix}python-backports.ssl_match_hostname < %{verson}-%{release}
+Obsoletes: %{?scl_prefix}python-backports.ssl_match_hostname < %{verson}-%{release}
 
 %description
 The Secure Sockets layer is only actually *secure*
@@ -85,6 +88,9 @@ History
 %{?scl:scl enable %{scl} "}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 %{?scl:"}
+# Clear unnecessary "backports" module overlaps
+rm -f %{buildroot}%{python_sitelib}/backports/__init__.py*
+
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -94,3 +100,6 @@ History
 %{python_sitelib}/*
 
 %changelog
+* Mon Dec  7 2015 - Nico Kadel-Garcia <nkadel@skyhookwireless.com>
+- Build .spec file from py2pack
+- Rename to python-backports-ssl_match_hostname based name, too match CentOS
