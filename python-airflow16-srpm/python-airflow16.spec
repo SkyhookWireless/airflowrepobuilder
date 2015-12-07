@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow16
 Version: 1.6.1
-Release: 0.6%{?dist}
+Release: 0.7%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 Patch1: airflow-1.6.1-oracle.patch
 License: Apache
@@ -45,31 +45,35 @@ Requires:  %{?scl_prefix}python-flake8
 Requires:  %{?scl_prefix}python-flask >= 0.10.1
 Requires:  %{?scl_prefix}python-flask < 0.11
 Requires:  %{?scl_prefix}python-flask-admin >= 1.2.0
-Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
 Requires:  %{?scl_prefix}python-flask-cache < 014
+Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
 Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
 Requires:  %{?scl_prefix}python-flower >= 0.7.3
-Requires:  %{?scl_prefix}python-future >= 0.15.0
 Requires:  %{?scl_prefix}python-future < 0.16
+Requires:  %{?scl_prefix}python-future >= 0.15.0
 Requires:  %{?scl_prefix}python-gevent >= 0.13
-Requires:  %{?scl_prefix}python-gunicorn >= 19.3.0
 Requires:  %{?scl_prefix}python-gunicorn < 20.0
+Requires:  %{?scl_prefix}python-gunicorn >= 19.3.0
 Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
+# Hiddependency not in requires.txt
+Requires:  %{?scl_prefix}python-itsdangerous
 Requires:  %{?scl_prefix}python-jaydebeapi >= 0.2.0
-Requires:  %{?scl_prefix}python-jinja2 >= 2.7.3
 Requires:  %{?scl_prefix}python-jinja2 < 3.0
-Requires:  %{?scl_prefix}python-librabbitmq >= 1.6.1
+Requires:  %{?scl_prefix}python-jinja2 >= 2.7.3
 Requires:  %{?scl_prefix}python-ldap3 >= 0.9.9.1
-Requires:  %{?scl_prefix}python-markdown >= 2.5.2
+Requires:  %{?scl_prefix}python-librabbitmq >= 1.6.1
+# Hidden dependency not in requies.txt
+Requires:  %{?scl_prefix}python-mako
 Requires:  %{?scl_prefix}python-markdown < 3.0
+Requires:  %{?scl_prefix}python-markdown >= 2.5.2
 Requires:  %{?scl_prefix}python-mysqlclient >= 1.3.6
 Requires:  %{?scl_prefix}python-nose
-Requires:  %{?scl_prefix}python-pandas >= 0.15.2
 Requires:  %{?scl_prefix}python-pandas < 1.0.0
+Requires:  %{?scl_prefix}python-pandas >= 0.15.2
 Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
 Requires:  %{?scl_prefix}python-pydruid >= 0.2.1
-Requires:  %{?scl_prefix}python-pygments >= 2.0.1
 Requires:  %{?scl_prefix}python-pygments < 3.0
+Requires:  %{?scl_prefix}python-pygments >= 2.0.1
 Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
 Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 Requires:  %{?scl_prefix}python-pykerberos >= 1.1.0
@@ -145,6 +149,9 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.7
+- Add hidden dependencies on python-mako and pythion-itsdangerous
+
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.5
 - Update to 1.6.1
 - List all dependencies from requires.txt
