@@ -5,8 +5,8 @@
 
 Summary: User session management for Flask
 Name: %{?scl_prefix}python-flask-login
-Version: 0.3.2
-Release: 0.4%{?dist}
+Version: 0.2.11
+Release: 0.1%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: MIT
 Group: Development/Libraries
@@ -60,10 +60,16 @@ Links
 
 %files
 %defattr(-,root,root,-)
-%{python_sitelib}/*
-%doc LICENSE README.md
+#%{python_sitelib}/%{srcname}
+# Foolish tarball is named Flask-Login, deployed module is named Flask_Login
+%{python_sitelib}/Flask_Login-%{version}-*.egg-info
+%{python_sitelib}/flask_login.*
+%doc LICENSE README.markdown
 
 %changelog
+* Sun Dec  6 2015  Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.2.1-0.1
+- Roll back to 0.2.1 for compatibility with airflow
+
 * Tue Dec  1 2015  Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.3.2-0.4
 - Simplify dependencies with scl_prefix
 
