@@ -47,7 +47,7 @@ This is the Python 2 build of the module.
 %{python_sitelib}/*
 
 %changelog
-* Sat Dec  5 2014 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.3
+* Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.3
 - Use secname consistently
 
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.10.0-0.2
