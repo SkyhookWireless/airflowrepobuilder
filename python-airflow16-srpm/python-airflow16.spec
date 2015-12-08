@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow16
 Version: 1.6.1
-Release: 0.7%{?dist}
+Release: 0.9%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 Patch1: airflow-1.6.1-oracle.patch
 License: Apache
@@ -23,6 +23,9 @@ Requires: %{?scl_prefix}python(abi)
 # Manually added from setup.py
 Requires:  %{?scl_prefix}python-alembic >= 0.8.3
 Requires:  %{?scl_prefix}python-alembic < 0.9
+# python27-python has strange argparse Provides, set local argparse
+#Requires:  %{?scl_prefix}python-argparse
+Requires:  %{?scl_prefix}python-argparse == 1.2.1
 # Update from 2.36.0, roll back if needed
 #Requires:  %{?scl_prefix}python-boto = 2.36.0
 Requires:  %{?scl_prefix}python-boto >= 2.36.0
@@ -47,8 +50,10 @@ Requires:  %{?scl_prefix}python-flask < 0.11
 Requires:  %{?scl_prefix}python-flask-admin >= 1.2.0
 Requires:  %{?scl_prefix}python-flask-cache < 014
 Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
-Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
-Requires:  %{?scl_prefix}python-flask-login < 0.2.12
+# Ensure specific RPM version
+#Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
+#Requires:  %{?scl_prefix}python-flask-login < 0.2.12
+Requires:  %{?scl_prefix}python-flask-login == 0.2.11
 Requires:  %{?scl_prefix}python-flower >= 0.7.3
 Requires:  %{?scl_prefix}python-future < 0.16
 Requires:  %{?scl_prefix}python-future >= 0.15.0
@@ -104,8 +109,16 @@ Requires:  %{?scl_prefix}python-thrift >= 0.9.2
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 Requires:  %{?scl_prefix}python-vertica-python >= 0.5.1
 
+# Added because pip installation generates the module
+Requires:  %{?scl_prefix}python-python-editor
+
 # Manually added to ease installation
 Provides: airflow
+
+# Added for authentication modules
+Requires: cyrus-sasl-gssapi
+Requires: cyrus-sasl-plain
+
 # Avoid conflicting with airflow15
 Conflicts: %{?scl_prefix}python-airflow
 Conflicts: %{?scl_prefix}python-airflow15
@@ -150,6 +163,10 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.8
+- Make python-sphinx-argparse, python-python-editor, python-argparse, and
+  python-flask-login more specific
+
 * Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.7
 - Add hidden dependencies on python-mako,  pythion-itsdangerous,
   and more python-flask-login = 0.2.11

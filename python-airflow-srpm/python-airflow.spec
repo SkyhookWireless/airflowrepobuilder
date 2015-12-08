@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.8%{?dist}
+Release: 0.9%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -22,6 +22,9 @@ Requires: %{?scl_prefix}python(abi)
 # Manually added from setup.py
 Requires:  %{?scl_prefix}python-alembic >= 0.8.0
 Requires:  %{?scl_prefix}python-alembic < 0.9
+# python27-python has strange argparse Provides, set local argparse
+#Requires:  %{?scl_prefix}python-argparse
+Requires:  %{?scl_prefix}python-argparse == 1.2.1
 Requires:  %{?scl_prefix}python-boto
 Requires:  %{?scl_prefix}python-celery >= 3.1.17
 Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
@@ -30,12 +33,13 @@ Requires:  %{?scl_prefix}python-dill >= 0.2.2
 Requires:  %{?scl_prefix}python-dill < 0.3
 Requires:  %{?scl_prefix}python-flask >= 0.10.1
 Requires:  %{?scl_prefix}python-flask < 0.11
-Requires:  %{?scl_prefix}python-flask-admin >= 1.2.0
-Requires:  %{?scl_prefix}python-flask-admin < 1.2.1
+Requires:  %{?scl_prefix}python-flask-admin == 1.2.0
 Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
 Requires:  %{?scl_prefix}python-flask-cache < 0.14
-Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
-Requires:  %{?scl_prefix}python-flask-login < 0.2.12
+# Ensure specific RPM version
+#Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
+#Requires:  %{?scl_prefix}python-flask-login < 0.2.12
+Requires:  %{?scl_prefix}python-flask-login == 0.2.11
 Requires:  %{?scl_prefix}python-flower >= 0.7.3
 Requires:  %{?scl_prefix}python-future >= 0.15.0
 Requires:  %{?scl_prefix}python-future < 0.16
@@ -61,7 +65,6 @@ Requires:  %{?scl_prefix}python-statsd >= 3.0.1
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
 Requires:  %{?scl_prefix}python-thrift < 0.10
 # From [all] stanza
-Requires:  %{?scl_prefix}python-argparse >= 0.1.3
 Requires:  %{?scl_prefix}python-boto >= 2.36.0
 Requires:  %{?scl_prefix}python-cryptography >= 0.9.3
 Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
@@ -74,6 +77,7 @@ Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 Requires:  %{?scl_prefix}python-slackclient >= 0.15
 Requires:  %{?scl_prefix}python-sphinx >= 1.2.3
+Requires:  %{?scl_prefix}python-sphinx-argparse >= 0.1.13
 Requires:  %{?scl_prefix}python-sphinx-pypi-upload >= 0.2.1
 Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
@@ -145,6 +149,9 @@ Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 # Added from requirements.txt for [slack]
 Requires:  %{?scl_prefix}python-slackclient >= 0.15
 
+# Added because pip installation generates the module
+Requires:  %{?scl_prefix}python-python-editor
+
 # Added for authentication modules
 Requires: cyrus-sasl-gssapi
 Requires: cyrus-sasl-plain
@@ -189,7 +196,11 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
-* Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.10.8
+* Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.9
+- Make python-sphinx-argparse, python-python-editor, python-argparse, and
+  python-flask-login more specific
+
+* Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.8
 - Add more specific python-flask-login dependency
 
 * Mon Nov 30 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.5.1-0.6
