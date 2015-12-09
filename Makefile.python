@@ -11,8 +11,7 @@ RSYNCOPTS=-a --no-owner --no-group
 RSYNCSAFEOPTS=$(RSYNCOPTS) --ignore-existing 
 
 # "mock" configurations to build with, activate only as needed
-#MOCKS+=airflowrepo-6-x86_64
-MOCKS+=airflowrepo-7-x86_64
+MOCKS+=airflowrepo-6-x86_64
 
 # Local yum compatible RPM repository
 REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
@@ -34,7 +33,7 @@ verifyspec:: FORCE
 	fi
 
 # Needed for correct srpm and build format
-#build srpm:: /etc/rpm/macros.python27-config
+build srpm:: /etc/rpm/macros.python27-config
 
 srpm:: verifyspec FORCE
 	@echo "Building $(SPEC) SRPM"
