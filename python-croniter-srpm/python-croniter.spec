@@ -6,7 +6,7 @@
 
 Name: %{?scl_prefix}python-%{srcname}
 Version:        0.3.10
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        Iteration for datetime object with cron like format
 
 License:        MIT
@@ -20,10 +20,10 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python-six
 
 # For tests
-BuildRequires:  %{?scl_prefix}python-python-dateutil
+BuildRequires:  %{?scl_prefix}python-dateutil
 BuildRequires:  %{?scl_prefix}pytz
 
-Requires:       %{?scl_prefix}python-python-dateutil
+Requires:       %{?scl_prefix}python-dateutil
 
 %description
 Croniter provides iteration for datetime object with cron like format.
@@ -60,6 +60,9 @@ find -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 %{python_sitelib}/%{srcname}-%{version}-py?.?.egg-info
 
 %changelog
+* Wed Dec  9 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.3
+- Change python-python-dateutil back to python-dateutil
+
 * Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.2
 
 * Tue Dec  1 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 0.3.10-0.1

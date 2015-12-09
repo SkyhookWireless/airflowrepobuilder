@@ -40,6 +40,8 @@ Requires:  %{?scl_prefix}python-cryptography
 # Disabled and patched out of devel submodule
 # cx_Oracle requires local Oracle to build
 #Requires:  %{?scl_prefix}python-cx_oracle >= 5.1.2
+Requires:  %{?scl_prefix}python-dateutil >= 2.3
+Requires:  %{?scl_prefix}python-dateutil < 3
 Requires:  %{?scl_prefix}python-dill >= 0.2.2
 Requires:  %{?scl_prefix}python-dill < 0.3
 Requires:  %{?scl_prefix}python-eventlet > 0.9.7
@@ -85,8 +87,6 @@ Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 Requires:  %{?scl_prefix}python-pykerberos >= 1.1.0
 Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
-Requires:  %{?scl_prefix}python-python-dateutil >= 2.3
-Requires:  %{?scl_prefix}python-python-dateutil < 3
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
 Requires:  %{?scl_prefix}python-requests < 3
 # Included in base python package
@@ -166,6 +166,7 @@ production, monitor progress, and troubleshoot issues when needed.
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.8
 - Make python-sphinx-argparse, python-python-editor, python-argparse, and
   python-flask-login more specific
+- Change python-python-dateutil back to python-dateutil
 
 * Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.7
 - Add hidden dependencies on python-mako,  pythion-itsdangerous,
