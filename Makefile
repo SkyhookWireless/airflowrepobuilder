@@ -117,6 +117,11 @@ EPELPKGS+=python-sasl-srpm
 # Update to 1.7.x release
 EPELPKGS+=python-pip-srpm
 
+# These do not really require all the packages for compilaiton,
+# but reuqie them all for isntallation, so put them last
+EPELPKGS+=python-airflow-srpm
+EPELPKGS+=python-airflow16-srpm
+
 # Updated for new pypi.org URL
 PYTHONPKGS+=python-py2pack-srpm
 
@@ -132,11 +137,6 @@ PYTHONPKGS+=python-wtforms-srpm
 
 # Disabled, requires locally installed Oracle
 #PYTHONPKGS+=python-cx_oracle-srpm
-
-# These do not really require all the packages for compilaiton,
-# but reuqie them all for isntallation, so put them last
-PYTHONPKGS+=python-airflow-srpm
-PYTHONPKGS+=python-airflow16-srpm
 
 # Populate airflowrepo with packages that require airflowrepo
 # Verify build setup first!
