@@ -1,10 +1,10 @@
-%{?scl:%scl_package python-python-dateutil}
+%{?scl:%scl_package python-dateutil}
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname python-dateutil
 
 Summary: Extensions to the standard Python datetime module
-Name: %{?scl_prefix}python-python-dateutil
+Name: %{?scl_prefix}python-dateutil
 Version: 2.4.2
 Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{name}/%{srcname}-%{version}.tar.gz
@@ -18,6 +18,8 @@ Url: https://dateutil.readthedocs.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Renamed package
+Provides: %{?scl_prefix}python-python-dateutil = %{verwsion}-%{release}
 
 %description
 The dateutil module provides powerful extensions to the
@@ -50,6 +52,9 @@ datetime module available in the Python standard library.
 #%doc build/*
 
 %changelog
+* Wed Dec  9 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.4.2-0.3
+- Rename to python-dateutil
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 2.4.2-0.2
 - Provide full URL for source
 - Add python(abi) dependency

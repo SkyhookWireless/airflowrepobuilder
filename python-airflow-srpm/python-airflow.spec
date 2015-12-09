@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.9%{?dist}
+Release: 0.10%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -29,6 +29,8 @@ Requires:  %{?scl_prefix}python-boto
 Requires:  %{?scl_prefix}python-celery >= 3.1.17
 Requires:  %{?scl_prefix}python-chartkick >= 0.4.2
 Requires:  %{?scl_prefix}python-chartkick < 0.5
+Requires:  %{?scl_prefix}python-dateutil >= 2.3
+Requires:  %{?scl_prefix}python-dateutil < 3
 Requires:  %{?scl_prefix}python-dill >= 0.2.2
 Requires:  %{?scl_prefix}python-dill < 0.3
 Requires:  %{?scl_prefix}python-flask >= 0.10.1
@@ -53,8 +55,6 @@ Requires:  %{?scl_prefix}python-pandas >= 0.15.2
 Requires:  %{?scl_prefix}python-pandas < 1.0.0
 Requires:  %{?scl_prefix}python-pygments >= 2.0.1
 Requires:  %{?scl_prefix}python-pygments < 3.0
-Requires:  %{?scl_prefix}python-python-dateutil >= 2.3
-Requires:  %{?scl_prefix}python-python-dateutil < 3
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
 Requires:  %{?scl_prefix}python-requests < 3
 # Included in base python package
@@ -199,6 +199,7 @@ production, monitor progress, and troubleshoot issues when needed.
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.9
 - Make python-sphinx-argparse, python-python-editor, python-argparse, and
   python-flask-login more specific
+- Change python-python-dateutil back to python-dateutil
 
 * Sun Dec  6 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.8
 - Add more specific python-flask-login dependency
