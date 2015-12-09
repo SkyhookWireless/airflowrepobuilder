@@ -141,8 +141,10 @@ PYTHONPKGS+=python-wtforms-srpm
 # Populate airflowrepo with packages that require airflowrepo
 # Verify build setup first!
 all:: /usr/bin/createrepo
+all:: airflowrepo-7-x86_64.cfg
 all:: airflowrepo-6-x86_64.cfg
 all:: sclpy27-6-x86_64.cfg
+#all:: sclpy27-7-x86_64.cfg
 
 all:: python-install
 
