@@ -4,8 +4,8 @@
 %global srcname Sphinx
 
 Name:       %{?scl_prefix}python-sphinx
-Version:    1.3.1
-Release:    0.8%{?dist}
+Version:    1.3.3
+Release:    0.1%{?dist}
 Summary:    Python documentation generator
 
 Group:      Development/Tools
@@ -188,6 +188,9 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 %doc html reST
 
 %changelog
+* Fri Dec 11 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.3-0.1
+- Update to 1.3.3
+
 * Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.1-0.8
 - Use srcname consistently
 - Add pytz to Buildrequires
