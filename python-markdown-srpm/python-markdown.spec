@@ -55,8 +55,6 @@ You may ask for help and discuss various other issues on the
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 %{?scl:"}
 
-exit 47
-
 %clean
 %{__rm} -rf %{buildroot}
 
