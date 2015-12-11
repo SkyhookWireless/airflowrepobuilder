@@ -16,9 +16,9 @@ BuildArch: noarch
 Vendor: Matthew Frazier <leafstormrush@gmail.com>
 Url: https://github.com/maxcountryman/flask-login
 
-BuildRequires: %{scl_prefix}python-devel
-BuildRequires: %{scl_prefix}python-setuptools
-BuildRequires: %{scl_prefix}python(abi)
+BuildRequires: %{?scl_prefix}python-devel
+BuildRequires: %{?scl_prefix}python-setuptools
+BuildRequires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python(abi)
 
 %description

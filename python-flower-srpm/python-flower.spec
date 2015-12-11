@@ -6,7 +6,7 @@
 Summary: Celery Flower
 Name: %{?scl_prefix}python-flower
 Version: 0.8.3
-Release: 0.2%{?dist}
+Release: 0.3%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -199,11 +199,15 @@ If you are interested in maintaining the project please contact.
 %files
 %defattr(-,root,root,-)
 %attr(755,root,root) %{_bindir}/*
-%{python_sitelib}/*
+%{python_sitelib}/%{srcname}
+%{python_sitelib}/%{srcname}-*.egg-info
 %doc AUTHORS CHANGES LICENSE README.rst
 #%doc build/*
 
 %changelog
+* Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.3
+- Add more explicit file listings
+
 * Wed Nov 25 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Add python(abi) dependency
 - Lower python-tornado dependency to 4.0.0

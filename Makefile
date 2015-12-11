@@ -57,7 +57,7 @@ EPELPKGS+=python-pyhive-srpm
 EPELPKGS+=python-pykerberos-srpm
 EPELPKGS+=python-pymssql-srpm
 EPELPKGS+=python-pysmbclient-srpm
-EPELPKGS+=python-python-dateutil-srpm
+EPELPKGS+=python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
@@ -117,6 +117,11 @@ EPELPKGS+=python-sasl-srpm
 # Update to 1.7.x release
 EPELPKGS+=python-pip-srpm
 
+# These do not really require all the packages for compilaiton,
+# but reuqie them all for isntallation, so put them last
+EPELPKGS+=python-airflow-srpm
+EPELPKGS+=python-airflow16-srpm
+
 # Updated for new pypi.org URL
 PYTHONPKGS+=python-py2pack-srpm
 
@@ -132,11 +137,6 @@ PYTHONPKGS+=python-wtforms-srpm
 
 # Disabled, requires locally installed Oracle
 #PYTHONPKGS+=python-cx_oracle-srpm
-
-# These do not really require all the packages for compilaiton,
-# but reuqie them all for isntallation, so put them last
-PYTHONPKGS+=python-airflow-srpm
-PYTHONPKGS+=python-airflow16-srpm
 
 # Populate airflowrepo with packages that require airflowrepo
 # Verify build setup first!
@@ -219,7 +219,7 @@ python-sphinx-srpm:: python-mock-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: pytz-srpm
 
-python-croniter-srpm:: python-python-dateutil-srpm
+python-croniter-srpm:: python-dateutil-srpm
 python-croniter-srpm:: pytz-srpm
 # Upstream python-six is recent enough to build
 #python-croniter-srpm:: python-six-srpm
@@ -278,7 +278,7 @@ python-airflow-srpm:: python-pyhive-srpm
 python-airflow-srpm:: python-pyhs2-srpm
 python-airflow-srpm:: python-pymssql-srpm
 python-airflow-srpm:: python-pysmbclient-srpm
-python-airflow-srpm:: python-python-dateutil-srpm
+python-airflow-srpm:: python-dateutil-srpm
 python-airflow-srpm:: python-requests-srpm
 python-airflow-srpm:: python-slackclient-srpm
 python-airflow-srpm:: python-snakebite-srpm
@@ -331,7 +331,7 @@ python-airflow16-srpm:: python-pyhs2-srpm
 python-airflow16-srpm:: python-pykerberos-srpm
 python-airflow16-srpm:: python-pymssql-srpm
 python-airflow16-srpm:: python-pysmbclient-srpm
-python-airflow16-srpm:: python-python-dateutil-srpm
+python-airflow16-srpm:: python-dateutil-srpm
 python-airflow16-srpm:: python-requests-srpm
 python-airflow16-srpm:: python-slackclient-srpm
 python-airflow16-srpm:: python-snakebite-srpm
