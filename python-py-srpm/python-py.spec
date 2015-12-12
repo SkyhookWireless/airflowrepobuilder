@@ -32,7 +32,7 @@ Requires: %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python-sphinx
 %endif # with_docs
 %if 0%{?run_check}
-BuildRequires:  %{?scl_prefix}python-pytest >= %{pytest_version}
+BuildRequires:  %{?scl_prefix}pytest >= %{pytest_version}
 %endif # run_check
 
 # needed by the testsuite

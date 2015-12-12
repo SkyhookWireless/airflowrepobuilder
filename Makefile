@@ -237,13 +237,13 @@ python-py2pack-srpm:: python-lxml-srpm
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-sphinx-srpm
 
-python-py-srpm:: python-pytest-srpm
+python-py-srpm:: pytest-srpm
 # Upstream python-sphinx is recent enough to build
 #python-py-srpm:: python-sphinx-srpm
 
-# python-py and python-pytest have circular dependency,
-# disabled by not running tests of python-pytest
-#python-pytest-srpm:: python-py-srpm
+# python-py and pytest have circular dependency,
+# disabled by not running tests of pytest
+#pytest-srpm:: python-py-srpm
 
 # Upstream python-sphinx is recent enough to build
 #python-werkzeug-srpm:: python-sphinx-srpm

@@ -1,13 +1,13 @@
-%{?scl:%scl_package python-pytest}
+%{?scl:%scl_package pytest}
 %{!?scl:%global pkg_name %{name}}
 
 %global srcname pytest
 
 %global pylib_version 1.4.12
 
-Name: %{?scl_prefix}python-pytest
+Name: %{?scl_prefix}pytest
 Version:        2.3.5
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        Simple powerful testing with Python
 
 Group:          Development/Languages
@@ -19,17 +19,15 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
-Requires:       %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python-py >= %{pylib_version}
-Requires:       %{?scl_prefix}python-py >= %{pylib_version}
-%if 0%{?rhel} > 6 || 0%{?fedora}
-BuildRequires:  %{?scl_prefix}python-sphinx
-%else
-# Switched for python10
-#BuildRequires:  %{?scl_prefix}python-sphinx10
-BuildRequires:  %{?scl_prefix}python-sphinx
-%endif # fedora
 BuildRequires:  %{?scl_prefix}python-docutils
+BuildRequires:  %{?scl_prefix}python-sphinx
+Requires:       %{?scl_prefix}python-setuptools
+# Added for python27 build
+BuildRequires:  %{?scl_prefix}python-alabaster
+BuildRequires:  %{?scl_prefix}python-sphinx_rtd_theme
+BuildRequires:  %{?scl_prefix}pytz
+
 # pytest was separated from pylib at that point
 Conflicts:      %{?scl_prefix}python-py < 1.4.0
 
@@ -41,7 +39,9 @@ Conflicts:      %{?scl_prefix}python-py < 1.4.0
 BuildRequires:  %{?scl_prefix}python-mock
 BuildRequires:  %{?scl_prefix}python-twisted-core
 %endif # fedora
-
+# Deal with old python-pytest module name
+Provides: python-pytest = %{version}-%{release}
+Obsoletes: python-pytest < %{version}-%{release}
 
 %description
 py.test provides simple, yet powerful testing for Python.
@@ -55,17 +55,11 @@ py.test provides simple, yet powerful testing for Python.
 %{__python} setup.py build
 %{?scl:"}
 
-%if 0%{?rhel} > 6 || 0%{?fedora}
 for l in doc/* ; do
-  make -C $l html PYTHONPATH=$(pwd)
+%{?scl:scl enable %{scl} "}
+   make -C $l html PYTHONPATH=$(pwd)
+%{?scl:"}
 done
-%else
-for l in doc/* ; do
-  # Switched for python27
-  #make -C $l html SPHINXBUILD=sphinx-1.0-build PYTHONPATH=$(pwd)
-  make -C $l html PYTHONPATH=$(pwd)
-done
-%endif # fedora
 
 %install
 %{__rm} -rf %{buildroot}
@@ -122,6 +116,9 @@ PYTHONPATH=%{buildroot}%{python_sitelib} \
 
 
 %changelog
+* Sat Dec 12 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.3.5-0.2
+- Activate sphinx_rtd_theme dependency
+
 * Fri Nov 26 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 2.3.5-0.1
 - Port to python27
 
