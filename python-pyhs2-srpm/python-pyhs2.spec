@@ -6,7 +6,7 @@
 Summary: Python Hive Server 2 Client Driver
 Name: %{?scl_prefix}python-pyhs2
 Version: 0.6.0
-Release: 0.2%?{dist}
+Release: 0.2%{?dist}
 Source0: https://pypi.python.org/packages/source/p/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
