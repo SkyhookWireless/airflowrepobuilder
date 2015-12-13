@@ -5,7 +5,7 @@
 
 Name:       %{?scl_prefix}python-sphinx
 Version:    1.3.3
-Release:    0.1%{?dist}
+Release:    0.2%{?dist}
 Summary:    Python documentation generator
 
 Group:      Development/Tools
@@ -45,7 +45,7 @@ Requires:      %{?scl_prefix}python-jinja2 >= 2.3
 Requires:      %{?scl_prefix}python-pygments >= 2.0
 # Added for 1.3.0
 BuildRequires: %{?scl_prefix}pytz
-Requires:      %{?scl_prefix}python-babel >= 1.3
+Requires:      %{?scl_prefix}babel >= 1.3
 Requires:      %{?scl_prefix}python-mock
 Requires:      %{?scl_prefix}python-six >= 1.4
 Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
@@ -179,7 +179,8 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 %defattr(-,root,root,-)
 %doc AUTHORS CHANGES EXAMPLES LICENSE README.rst
 %{_bindir}/sphinx-*
-%{python_sitelib}/*
+%{python_sitelib}/sphinx
+%{python_sitelib}/%{srcname}-%{version}-*.egg-info
 %dir %{_datadir}/sphinx/
 %dir %{_datadir}/sphinx/locale
 %dir %{_datadir}/sphinx/locale/*
@@ -191,6 +192,9 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 %doc html reST
 
 %changelog
+* Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.3-0.2
+- Change "python-babel" to "babel" dependency
+
 * Fri Dec 11 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.3-0.1
 - Update to 1.3.3
 
