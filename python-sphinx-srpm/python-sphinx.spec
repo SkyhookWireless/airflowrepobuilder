@@ -51,6 +51,8 @@ Requires:      %{?scl_prefix}python-six >= 1.4
 Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
 # For win32 features
 #Requires:      %{?scl_prefix}python-colorama
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Sphinx is a tool that makes it easy to create intelligent and
@@ -86,6 +88,7 @@ Summary:    Documentation for %{pkg_name}
 Group:      Documentation
 License:    BSD
 Requires:   %{?scl_prefix}%{pkg_name} = %{version}-%{release}
+
 
 
 %description doc

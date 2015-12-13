@@ -24,7 +24,8 @@ BuildRequires:  %{?scl_prefix}python-six
 BuildRequires:  %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-six
 Requires: %{?scl_prefix}python(abi)
-
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 ==============

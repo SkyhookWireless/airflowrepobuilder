@@ -21,6 +21,8 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 Conflicts: %{?scl_prefix}python-mysqlclient
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 

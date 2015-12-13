@@ -18,6 +18,8 @@ BuildArch:      noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Mock is a Python module that provides a core mock class. It removes the need

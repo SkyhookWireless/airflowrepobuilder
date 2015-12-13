@@ -20,6 +20,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 # Ignore dependency to allow python-sphinx to BuildRequires with this
 #Requires: %{?scl_prefix}python-sphinx >= 1.3
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 .. _readthedocs.org: http://www.readthedocs.org

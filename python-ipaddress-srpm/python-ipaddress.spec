@@ -22,6 +22,8 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Port of the 3.3+ ipaddress module to 2.6, 2.7, 3.2

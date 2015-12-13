@@ -25,6 +25,8 @@ BuildRequires: %{?scl_prefix}python-markupsafe
 Requires: %{?scl_prefix}python-beaker
 Requires: %{?scl_prefix}python-markupsafe
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Mako is a template library written in Python. It provides a familiar, non-XML

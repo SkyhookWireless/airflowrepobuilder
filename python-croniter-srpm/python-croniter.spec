@@ -24,6 +24,9 @@ BuildRequires:  %{?scl_prefix}python-dateutil
 BuildRequires:  %{?scl_prefix}pytz
 
 Requires:       %{?scl_prefix}python-dateutil
+Requires:       %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Croniter provides iteration for datetime object with cron like format.

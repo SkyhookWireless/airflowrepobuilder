@@ -22,6 +22,8 @@ BuildRequires:  %{?scl_prefix}python-sphinx
 BuildRequires:  %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-greenlet
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Eventlet is a networking library written in Python. It achieves high

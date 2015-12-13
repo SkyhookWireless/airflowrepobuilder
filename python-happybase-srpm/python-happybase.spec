@@ -20,6 +20,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 # Included in base python27 package, but requires update for airflow
 Requires: %{?scl_prefix}python-thrift
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 HappyBase

@@ -18,6 +18,8 @@ Url: http://breakingcode.wordpress.com/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 #Requires:  %{?scl_prefix}python-beautifulsoup4 >= 4.0
 
 %description

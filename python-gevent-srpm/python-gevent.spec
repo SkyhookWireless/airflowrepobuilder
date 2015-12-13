@@ -23,6 +23,8 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-greenlet
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 gevent is a coroutine-based Python networking library that uses greenlet to

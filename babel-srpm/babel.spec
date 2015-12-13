@@ -22,6 +22,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools-devel
 
 Requires:       %{?scl_prefix}python-babel
 Requires:       %{?scl_prefix}python-setuptools
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Babel is composed of two major parts:

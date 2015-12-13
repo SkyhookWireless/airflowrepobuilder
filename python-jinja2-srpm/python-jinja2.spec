@@ -31,6 +31,8 @@ BuildRequires:	%{?scl_prefix}python-sphinx
 Requires:	%{?scl_prefix}python-babel >= 0.8
 Requires:	%{?scl_prefix}python-markupsafe
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Jinja2 is a template engine written in pure Python.  It provides a

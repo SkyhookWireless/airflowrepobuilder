@@ -18,7 +18,10 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 # Former releases were noarch, report conflict
 Requires: %{?scl_prefix}python(abi)
-Conflicts: %{name}.noarch
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
+# Avoid confusion with switch from noarch dependency
+Conflicts: %{?scl_prefix}%{name}.noarch
 
 %description
 Python multiprocessing fork with improvements and bugfixes.

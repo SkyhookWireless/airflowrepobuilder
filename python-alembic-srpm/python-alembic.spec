@@ -18,6 +18,8 @@ Url: http://bitbucket.org/zzzeek/alembic
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Alembic is a database migrations tool written by the author

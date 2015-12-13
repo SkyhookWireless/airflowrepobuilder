@@ -27,6 +27,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 # Similar but incompatible package
 Conflicts: %{?scl_prefix}python-mysql-python
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 =========================

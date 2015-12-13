@@ -20,6 +20,8 @@ Url: http://celeryproject.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 # Included from requirements/default.txt
 #Requires:  %{?scl_prefix}python-pytz
 Requires:  %{?scl_prefix}pytz

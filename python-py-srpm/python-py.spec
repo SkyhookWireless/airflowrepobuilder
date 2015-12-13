@@ -28,6 +28,8 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-setuptools
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 %if 0%{?with_docs}
 BuildRequires:  %{?scl_prefix}python-sphinx
 %endif # with_docs

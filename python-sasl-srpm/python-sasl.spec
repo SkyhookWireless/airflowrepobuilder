@@ -11,6 +11,8 @@ Source0: https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{versi
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 License: Apache
 Group: Development/Libraries

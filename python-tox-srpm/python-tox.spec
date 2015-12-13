@@ -38,6 +38,9 @@ Requires: %{?scl_prefix}python-argparse
 #BuildRequires: %{?scl_prefix}python-virtualenv
 #%endif
 
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
+
 %description
 Tox as is a generic virtualenv management and test command line tool you
 can use for:

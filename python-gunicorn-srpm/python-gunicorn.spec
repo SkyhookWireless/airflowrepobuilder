@@ -18,6 +18,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 #BuildRequires:  %{?scl_prefix}python-distribute
 #BuildRequires:  %{?scl_prefix}python-nose
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 BuildArch:      noarch
 #%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 

@@ -26,6 +26,8 @@ BuildRequires:  %{?scl_prefix}python(abi)
 Requires:       %{?scl_prefix}python-argparse
 Requires:       %{?scl_prefix}python-jinja2
 Requires:       %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 This script allows to generate RPM spec or DEB dsc files from Python modules.

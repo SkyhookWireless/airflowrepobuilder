@@ -19,6 +19,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 #Requires: amqp >= 1.4.6
 Requires: %{?scl_prefix}python-amqp >= 1.4.6
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 ================================================================

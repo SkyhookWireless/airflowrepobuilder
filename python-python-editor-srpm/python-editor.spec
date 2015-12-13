@@ -18,6 +18,8 @@ Url: https://github.com/fmoo/python-editor
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 `python-editor` is a library that provides the `editor` module for programmatically

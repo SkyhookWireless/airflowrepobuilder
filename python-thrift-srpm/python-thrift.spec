@@ -20,6 +20,9 @@ Url: http://thrift.apache.org
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
+
 
 %description
 The Apache Thrift software framework, for scalable cross-language

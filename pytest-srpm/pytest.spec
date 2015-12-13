@@ -28,6 +28,8 @@ BuildRequires:  %{?scl_prefix}python-alabaster
 BuildRequires:  %{?scl_prefix}python-sphinx_rtd_theme
 BuildRequires:  %{?scl_prefix}pytz
 
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 # pytest was separated from pylib at that point
 Conflicts:      %{?scl_prefix}python-py < 1.4.0
 
