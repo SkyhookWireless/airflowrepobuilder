@@ -216,6 +216,7 @@ python-wtforms-srpm:: babel-srpm
 python-sphinx-srpm:: babel-srpm
 python-sphinx-srpm:: python-alabaster-srpm
 python-sphinx-srpm:: python-mock-srpm
+python-sphinx-srpm:: python-six-srpm
 python-sphinx-srpm:: python-sphinx_rtd_theme-srpm
 python-sphinx-srpm:: pytz-srpm
 
@@ -236,6 +237,7 @@ python-py2pack-srpm:: python-lxml-srpm
 
 # Current sphinx has dependency loop with sphinx_rtd_theme
 #python-sphinx_rtd_theme-srpm:: python-sphinx-srpm
+python-sphinx_rtd_theme-srpm:: python-six-srpm
 
 python-py-srpm:: pytest-srpm
 # Upstream python-sphinx is recent enough to build
