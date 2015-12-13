@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-flake8}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname flake8
+%global srcname flake8
 
 Summary: the modular source code checker: pep8, pyflakes and co
 Name: %{?scl_prefix}python-flake8

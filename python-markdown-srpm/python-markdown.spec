@@ -1,8 +1,7 @@
 %{?scl:%scl_package python-markdown}
 %{!?scl:%global pkg_name %{name}}
 
-%define name python-Markdown
-%define srcname Markdown
+%global srcname Markdown
 
 Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown

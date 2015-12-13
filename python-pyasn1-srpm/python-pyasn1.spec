@@ -4,7 +4,7 @@
 
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
-%define srcname pyasn1
+%global srcname pyasn1
 
 Name: %{?scl_prefix}python-pyasn1
 Version:        0.1.9

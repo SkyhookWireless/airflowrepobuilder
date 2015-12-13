@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-ldap3}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname ldap3
+%global srcname ldap3
 
 Summary: A strictly RFC 4510 conforming LDAP V3 pure Python client. Same codebase for Python 2, Python3, PyPy and PyPy 3
 Name: %{?scl_prefix}python-ldap3

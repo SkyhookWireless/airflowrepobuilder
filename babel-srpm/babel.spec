@@ -1,7 +1,7 @@
 %{?scl:%scl_package babel}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname Babel
+%global srcname Babel
 
 Name:           %{?scl_prefix}babel
 Version:        2.1.1

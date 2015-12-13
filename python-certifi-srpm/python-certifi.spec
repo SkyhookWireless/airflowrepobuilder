@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-certifi}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname certifi
+%global srcname certifi
 
 Summary: Python package for providing Mozilla's CA Bundle.
 Name: %{?scl_prefix}python-certifi

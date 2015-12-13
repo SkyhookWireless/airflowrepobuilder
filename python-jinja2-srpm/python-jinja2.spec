@@ -1,11 +1,11 @@
 %{?scl:%scl_package python-jinja2}
 %{!?scl:%global pkg_name %{name}}
 
+%global srcname Jinja2
+
 # Enable building without docs to avoid a circular dependency between this
 # and python-sphinx:
 %global with_docs 1
-
-%define srcname Jinja2
 
 Name:		%{?scl_prefix}python-jinja2
 Version:	2.8

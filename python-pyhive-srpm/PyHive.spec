@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-pyhive}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname PyHive
+%global srcname PyHive
 
 Summary: Python interface to Hive
 Name: %{?scl_prefix}python-pyhive
