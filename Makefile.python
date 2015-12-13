@@ -11,7 +11,8 @@ RSYNCOPTS=-a --no-owner --no-group
 RSYNCSAFEOPTS=$(RSYNCOPTS) --ignore-existing 
 
 # "mock" configurations to build with, activate only as needed
-MOCKS+=airflowrepo-6-x86_64
+#MOCKS+=airflowrepo-6-x86_64
+MOCKS+=airflowrepo-7-x86_64
 
 # Local yum compatible RPM repository
 REPOBASEDIR="`/bin/pwd | xargs dirname`/airflowrepo"
