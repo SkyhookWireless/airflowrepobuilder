@@ -45,22 +45,23 @@ Requires:  %{?scl_prefix}python-cryptography
 Requires:  %{?scl_prefix}python-dateutil >= 2.3
 Requires:  %{?scl_prefix}python-dateutil < 3
 Requires:  %{?scl_prefix}python-dill >= 0.2.2
-Requires:  %{?scl_prefix}python-dill < 0.3
+Requires:  %{?scl_prefix}python-dill < 0.3.0
 Requires:  %{?scl_prefix}python-eventlet > 0.9.7
 Requires:  %{?scl_prefix}python-filechunkio >= 1.6
 Requires:  %{?scl_prefix}python-flake8
-Requires:  %{?scl_prefix}python-flask >= 0.10.1
-Requires:  %{?scl_prefix}python-flask < 0.11
+# Epochs introduced in RHEL 7
+Requires:  %{?scl_prefix}python-flask >= 1:0.10.1
+Requires:  %{?scl_prefix}python-flask < 1:0.11.0
 Requires:  %{?scl_prefix}python-flask-admin >= 1.2.0
-Requires:  %{?scl_prefix}python-flask-cache < 014
 Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
+Requires:  %{?scl_prefix}python-flask-cache < 0.14.0
 # Ensure specific RPM version
 #Requires:  %{?scl_prefix}python-flask-login >= 0.2.11
 #Requires:  %{?scl_prefix}python-flask-login < 0.2.12
 Requires:  %{?scl_prefix}python-flask-login == 0.2.11
 Requires:  %{?scl_prefix}python-flower >= 0.7.3
-Requires:  %{?scl_prefix}python-future < 0.16
 Requires:  %{?scl_prefix}python-future >= 0.15.0
+Requires:  %{?scl_prefix}python-future < 0.16.0
 Requires:  %{?scl_prefix}python-gevent >= 0.13
 Requires:  %{?scl_prefix}python-gunicorn < 20.0
 Requires:  %{?scl_prefix}python-gunicorn >= 19.3.0
@@ -68,32 +69,32 @@ Requires:  %{?scl_prefix}python-hive-thrift-py >= 0.0.1
 # Hiddependency not in requires.txt
 Requires:  %{?scl_prefix}python-itsdangerous
 Requires:  %{?scl_prefix}python-jaydebeapi >= 0.2.0
-Requires:  %{?scl_prefix}python-jinja2 < 3.0
 Requires:  %{?scl_prefix}python-jinja2 >= 2.7.3
+Requires:  %{?scl_prefix}python-jinja2 < 3.0.0
 Requires:  %{?scl_prefix}python-ldap3 >= 0.9.9.1
 Requires:  %{?scl_prefix}python-librabbitmq >= 1.6.1
 # Hidden dependency not in requies.txt
 Requires:  %{?scl_prefix}python-mako
-Requires:  %{?scl_prefix}python-markdown < 3.0
 Requires:  %{?scl_prefix}python-markdown >= 2.5.2
+Requires:  %{?scl_prefix}python-markdown < 3.0.0
 Requires:  %{?scl_prefix}python-mysqlclient >= 1.3.6
 Requires:  %{?scl_prefix}python-nose
-Requires:  %{?scl_prefix}python-pandas < 1.0.0
 Requires:  %{?scl_prefix}python-pandas >= 0.15.2
+Requires:  %{?scl_prefix}python-pandas < 1.0.0
 Requires:  %{?scl_prefix}python-psycopg2 >= 2.6
 Requires:  %{?scl_prefix}python-pydruid >= 0.2.1
-Requires:  %{?scl_prefix}python-pygments < 3.0
 Requires:  %{?scl_prefix}python-pygments >= 2.0.1
+Requires:  %{?scl_prefix}python-pygments < 3.0
 Requires:  %{?scl_prefix}python-pyhive >= 0.1.3
 Requires:  %{?scl_prefix}python-pyhs2 >= 0.6.0
 Requires:  %{?scl_prefix}python-pykerberos >= 1.1.0
 Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
-Requires:  %{?scl_prefix}python-requests < 3
+Requires:  %{?scl_prefix}python-requests < 3.0.0
 # Included in base python package
 #Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
-#Requires:  %{?scl_prefix}python-setproctitle < 2
+#Requires:  %{?scl_prefix}python-setproctitle < 2.0.0
 Requires:  %{?scl_prefix}python-flask-wtf
 Requires:  %{?scl_prefix}python-ldap3
 Requires:  %{?scl_prefix}python-mysqlclient
@@ -104,10 +105,10 @@ Requires:  %{?scl_prefix}python-sphinx-argparse >= 0.1.13
 Requires:  %{?scl_prefix}python-sphinx-pypi-upload
 Requires:  %{?scl_prefix}python-sphinx_rtd_theme >= 0.1.6
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.0
-Requires:  %{?scl_prefix}python-statsd < 4.0
 Requires:  %{?scl_prefix}python-statsd >= 3.0.1
-Requires:  %{?scl_prefix}python-thrift < 0.10
+Requires:  %{?scl_prefix}python-statsd < 4.0.0
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
+Requires:  %{?scl_prefix}python-thrift < 0.10.0
 Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 Requires:  %{?scl_prefix}python-vertica-python >= 0.5.1
 
