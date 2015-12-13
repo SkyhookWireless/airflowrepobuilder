@@ -28,6 +28,8 @@ Requires: %{?scl_prefix}python-babel
 #Requires: %{?scl_prefix}python-sqlalchemy
 #Requires: %{?scl_prefix}python-pep
 #Requires: %{?scl_prefix}python-dateutil
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 
 %description

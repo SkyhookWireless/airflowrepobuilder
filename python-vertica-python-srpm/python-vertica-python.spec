@@ -21,6 +21,8 @@ Requires: %{?scl_prefix}python-psycopg2 >= 2.5.1
 Requires: %{?scl_prefix}python-dateutil >= 1.5
 Requires: %{?scl_prefix}pytz
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 vertica-python is a native Python adapter for the Vertica (http://www.vertica.com) database.

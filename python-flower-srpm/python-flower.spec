@@ -21,9 +21,11 @@ Requires: %{?scl_prefix}python(abi)
 Requires:  %{?scl_prefix}python-celery >= 2.5.0
 Requires:  %{?scl_prefix}python-tornado >= 4.0.0
 Requires:  %{?scl_prefix}python-babel
-# Named oddly
+# Named oddly in RHEL
 #Requires:  %{?scl_prefix}python-pytz
 Requires:  %{?scl_prefix}pytz
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Celery Flower

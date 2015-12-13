@@ -20,6 +20,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 # Renamed package
 Provides: %{?scl_prefix}python-python-dateutil = %{verwsion}-%{release}
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 The dateutil module provides powerful extensions to the

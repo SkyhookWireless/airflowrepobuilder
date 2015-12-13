@@ -28,6 +28,8 @@ Requires: %{?scl_prefix}python-ordereddict
 # Allegedly embedded in python2.7
 #Requires: %{?scl_prefix}python-importlib
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 .. _kombu-index:

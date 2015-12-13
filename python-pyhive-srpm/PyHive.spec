@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-pyhive}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname PyHive
+%global srcname PyHive
 
 Summary: Python interface to Hive
 Name: %{?scl_prefix}python-pyhive
@@ -18,6 +18,8 @@ Url: https://github.com/dropbox/PyHive
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 ======

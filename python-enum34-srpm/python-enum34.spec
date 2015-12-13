@@ -15,6 +15,8 @@ Source0:        https://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Python 3.4 introduced official support for enumerations.  This is a

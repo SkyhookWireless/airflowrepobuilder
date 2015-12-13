@@ -28,11 +28,13 @@ BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python-setuptools
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 %if 0%{?with_docs}
 BuildRequires:  %{?scl_prefix}python-sphinx
 %endif # with_docs
 %if 0%{?run_check}
-BuildRequires:  %{?scl_prefix}python-pytest >= %{pytest_version}
+BuildRequires:  %{?scl_prefix}pytest >= %{pytest_version}
 %endif # run_check
 
 # needed by the testsuite

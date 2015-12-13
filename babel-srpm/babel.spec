@@ -1,7 +1,7 @@
 %{?scl:%scl_package babel}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname Babel
+%global srcname Babel
 
 Name:           %{?scl_prefix}babel
 Version:        2.1.1
@@ -22,6 +22,8 @@ BuildRequires:  %{?scl_prefix}python-setuptools-devel
 
 Requires:       %{?scl_prefix}python-babel
 Requires:       %{?scl_prefix}python-setuptools
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Babel is composed of two major parts:

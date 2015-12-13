@@ -20,6 +20,8 @@ BuildRequires: %{?scl_prefix}python-devel
 BuildRequires: %{?scl_prefix}python-setuptools
 BuildRequires: %{?scl_prefix}python(abi)
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 

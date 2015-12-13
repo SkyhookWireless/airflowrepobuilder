@@ -1,8 +1,7 @@
 %{?scl:%scl_package python-markdown}
 %{!?scl:%global pkg_name %{name}}
 
-%define name python-Markdown
-%define srcname Markdown
+%global srcname Markdown
 
 Summary: Python implementation of Markdown.
 Name: %{?scl_prefix}python-markdown
@@ -19,6 +18,8 @@ Url: https://pythonhosted.org/Markdown/
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 This is a Python implementation of John Gruber's Markdown_.

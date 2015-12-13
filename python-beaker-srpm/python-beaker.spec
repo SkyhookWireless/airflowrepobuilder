@@ -21,6 +21,9 @@ BuildArch: noarch
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
+
 Patch0: beaker-hmac2.4.patch
 Patch1: python-beaker-absimport.patch
 Patch2: python-beaker-middleware-config.patch

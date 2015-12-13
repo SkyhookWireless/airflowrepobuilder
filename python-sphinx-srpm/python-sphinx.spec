@@ -4,8 +4,8 @@
 %global srcname Sphinx
 
 Name:       %{?scl_prefix}python-sphinx
-Version:    1.3.1
-Release:    0.8%{?dist}
+Version:    1.3.3
+Release:    0.1%{?dist}
 Summary:    Python documentation generator
 
 Group:      Development/Tools
@@ -51,6 +51,8 @@ Requires:      %{?scl_prefix}python-six >= 1.4
 Requires:      %{?scl_prefix}python-snowballstemmer >= 1.1
 # For win32 features
 #Requires:      %{?scl_prefix}python-colorama
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 Sphinx is a tool that makes it easy to create intelligent and
@@ -86,6 +88,7 @@ Summary:    Documentation for %{pkg_name}
 Group:      Documentation
 License:    BSD
 Requires:   %{?scl_prefix}%{pkg_name} = %{version}-%{release}
+
 
 
 %description doc
@@ -188,6 +191,9 @@ echo "WARNING: not running tests, test_build_latex.test_latex_howto FAILS"
 %doc html reST
 
 %changelog
+* Fri Dec 11 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.3-0.1
+- Update to 1.3.3
+
 * Sat Dec  5 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.3.1-0.8
 - Use srcname consistently
 - Add pytz to Buildrequires

@@ -1,7 +1,7 @@
 %{?scl:%scl_package python-flake8}
 %{!?scl:%global pkg_name %{name}}
 
-%define srcname flake8
+%global srcname flake8
 
 Summary: the modular source code checker: pep8, pyflakes and co
 Name: %{?scl_prefix}python-flake8
@@ -18,6 +18,8 @@ Url: https://gitlab.com/pycqa/flake8
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 %description
 ======

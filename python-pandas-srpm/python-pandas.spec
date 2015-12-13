@@ -23,6 +23,8 @@ BuildRequires:  %{?scl_prefix}numpy
 #BuildRequires:  Cython
 BuildRequires:  %{?scl_prefix}pytz
 Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 
 #Requires:       %{?scl_prefix}python-dateutil
 Requires:       %{?scl_prefix}numpy
