@@ -31,7 +31,7 @@ EPELPKGS+=python-flask-admin-srpm
 #EPELPKGS+=python-flask-cache-srpm
 EPELPKGS+=python-flask-login-srpm
 EPELPKGS+=python-flask-srpm
-#EPELPKGS+=python-flask-wtf-srpm
+EPELPKGS+=python-flask-wtf-srpm
 #EPELPKGS+=python-future-srpm
 #EPELPKGS+=python-futures-srpm
 #EPELPKGS+=python-gevent-srpm
@@ -59,6 +59,8 @@ EPELPKGS+=python-pymssql-srpm
 EPELPKGS+=python-pysmbclient-srpm
 #EPELPKGS+=python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
+# Included in python27 base package on RHEL 7
+EPELPKGS+=python-setproctitle-srpm
 EPELPKGS+=python-six-srpm
 #EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-thrift-srpm
@@ -328,7 +330,7 @@ python-airflow16-srpm:: python-flask-cache-srpm
 # 0.2.11 specifically required
 python-airflow16-srpm:: python-flask-login-srpm
 python-airflow16-srpm:: python-flask-srpm
-#python-airflow16-srpm:: python-flask-wtf-srpm
+python-airflow16-srpm:: python-flask-wtf-srpm
 python-airflow16-srpm:: python-flower-srpm
 #python-airflow16-srpm:: python-future-srpm
 #python-airflow16-srpm:: python-gevent-srpm

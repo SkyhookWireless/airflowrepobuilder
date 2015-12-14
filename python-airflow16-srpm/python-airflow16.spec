@@ -92,10 +92,10 @@ Requires:  %{?scl_prefix}python-pymssql >= 2.1.1
 Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
 Requires:  %{?scl_prefix}python-requests < 3.0.0
-# Included in base python package
-#Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
-#Requires:  %{?scl_prefix}python-setproctitle < 2.0.0
-Requires:  %{?scl_prefix}python-flask-wtf
+# Included in base python package on RHEL 6, python27
+Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
+Requires:  %{?scl_prefix}python-setproctitle < 2.0.0
+Requires:  %{?scl_prefix}python-flask-wtf == 0.12
 Requires:  %{?scl_prefix}python-ldap3
 Requires:  %{?scl_prefix}python-mysqlclient
 Requires:  %{?scl_prefix}python-slackclient >= 0.14
@@ -166,6 +166,10 @@ production, monitor progress, and troubleshoot issues when needed.
 #%doc build/*
 
 %changelog
+* Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.9
+- Update python-wtf dependency to specific release
+- Activate python-setproctitle dependency for RHEL 7
+
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.8
 - Make python-sphinx-argparse, python-python-editor, python-argparse, and
   python-flask-login more specific
