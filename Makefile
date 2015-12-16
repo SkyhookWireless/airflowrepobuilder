@@ -59,6 +59,8 @@ EPELPKGS+=python-pymssql-srpm
 EPELPKGS+=python-pysmbclient-srpm
 EPELPKGS+=python-dateutil-srpm
 EPELPKGS+=python-python-editor-srpm
+# Included in python27 base package on RHEL 7
+EPELPKGS+=python-setproctitle-srpm
 EPELPKGS+=python-six-srpm
 EPELPKGS+=python-sqlalchemy-srpm
 EPELPKGS+=python-thrift-srpm
@@ -282,6 +284,7 @@ python-airflow-srpm:: python-pymssql-srpm
 python-airflow-srpm:: python-pysmbclient-srpm
 python-airflow-srpm:: python-dateutil-srpm
 python-airflow-srpm:: python-requests-srpm
+python-airflow-srpm:: python-setproctitle-srpm
 python-airflow-srpm:: python-slackclient-srpm
 python-airflow-srpm:: python-snakebite-srpm
 python-airflow-srpm:: python-sphinx-srpm
@@ -335,6 +338,7 @@ python-airflow16-srpm:: python-pymssql-srpm
 python-airflow16-srpm:: python-pysmbclient-srpm
 python-airflow16-srpm:: python-dateutil-srpm
 python-airflow16-srpm:: python-requests-srpm
+python-airflow16-srpm:: python-setproctitle-srpm
 python-airflow16-srpm:: python-slackclient-srpm
 python-airflow16-srpm:: python-snakebite-srpm
 python-airflow16-srpm:: python-sphinx-argparse-srpm
