@@ -9,6 +9,8 @@ REPOBASEDIR="`/bin/pwd`"
 # Base subdirectories for RPM deployment
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/SRPMS
 REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/6/x86_64
+REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/7/SRPMS
+REPOBASESUBDIRS+=$(REPOBASEDIR)/airflowrepo/7/x86_64
 
 # These build with normal mock "epel-*" setups
 # Use short name, based on RHEL naming
