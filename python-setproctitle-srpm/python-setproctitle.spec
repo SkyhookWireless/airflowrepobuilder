@@ -3,24 +3,27 @@
 
 %global srcname setproctitle
 
+# Deal with python(abi) requirement
+%{?scl:%filter_from_requires /^python(abi)/d}
+
 # See if this helps lib64/libpython27.so discovery!
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 
 Name: %{?scl_prefix}python-setproctitle
 Version:        1.1.9
-Release:        0.5%{?dist}
+Release:        0.6%{?dist}
 Summary:        Python module to customize a process title
 
 License:        BSD
 URL:            http://pypi.python.org/pypi/%{srcname}
-Source0:        http://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildRequires:  %{?scl_prefix}python-devel
 BuildRequires:  %{?scl_prefix}python-setuptools
 BuildRequires:  %{?scl_prefix}python-nose
 BuildRequires:  %{?scl_prefix}python-tools
-Requires: %{?scl_prefix}python(abi)
+#Requires: %{?scl_prefix}python(abi)
 # Avoid python naming confusion
 Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 %{?filter_setup:
@@ -43,12 +46,6 @@ It's based on PostgreSQL implementation which has proven to be portable.
 %build
 # Remove CFLAGS=... for noarch packages (unneeded)
 CFLAGS="$RPM_OPT_FLAGS"
-# Deal with python27 and lib64 oddness
-
-echo pythion_sitearch: %{python_sitearch}
-#%if "%{?_lib}"=="lib64"
-#export LDFLAGS="$LDFLAGS -L/opt/rh/python27/root/usr/lib64/python2.7"
-#%endif
 %{?scl:scl enable %{scl} "}
 %{__python} setup.py build
 %{?scl:"}
@@ -62,10 +59,6 @@ export CFLAGS="%{optflags}"
 chmod 0755 %{buildroot}%{python_sitearch}/setproctitle.so
 
 #%check
-#export CFLAGS="%{optflags}"
-#echo LDFLAGS: $LDFLAGS
-#export LDFLAGS="$LDFLAGS -L/opt/rh/python27/root/usr/lib64/python2.7"
-#echo LDFLAGS: $LDFLAGS
 #%{?scl:scl enable %{scl} "}
 #make tests/pyrun2
 ## FIXME: tests are broken with python3
@@ -78,6 +71,9 @@ chmod 0755 %{buildroot}%{python_sitearch}/setproctitle.so
 %{python_sitearch}/%{srcname}-%{version}-*.egg-info
 
 %changelog
+* Wed Dec 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.1.9-0.6
+- Filtier out default pytyon(abi) requirement for scl build
+
 * Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.1.9-0.5
 - Update to 1.1.9
 
