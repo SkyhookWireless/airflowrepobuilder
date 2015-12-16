@@ -354,6 +354,7 @@ python-airflow16-srpm:: python-pymssql-srpm
 python-airflow16-srpm:: python-pysmbclient-srpm
 python-airflow16-srpm:: python-python-editor-srpm
 #python-airflow16-srpm:: python-requests-srpm
+python-airflow16-srpm:: python-setproctitle-srpm
 python-airflow16-srpm:: python-slackclient-srpm
 python-airflow16-srpm:: python-snakebite-srpm
 python-airflow16-srpm:: python-sphinx-argparse-srpm

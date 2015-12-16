@@ -160,12 +160,19 @@ production, monitor progress, and troubleshoot issues when needed.
 %files
 %defattr(-,root,root,-)
 %attr(755,root,root) %{_bindir}/*
-%{python_sitelib}/*
-# Currently no documentaiton
+%{python_sitelib}/%{srcname}
+%{python_sitelib}/%{srcname}-%{version}-*.egg-info
+# Build test remnant, do not publish!
+%exclude %{python_sitelib}/tests
+# Currently no documentation
 #%doc CHANGES LICENSE README.rst README.unittests.rst
 #%doc build/*
 
 %changelog
+* Tue Dec 15 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.10
+- Use site-packages/srcname for files to deploy
+- Exclude site-packages/test from deployment
+
 * Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.9
 - Update python-wtf dependency to specific release
 - Activate python-setproctitle dependency for RHEL 7

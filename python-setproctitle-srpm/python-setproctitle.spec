@@ -1,31 +1,35 @@
-%if 0%{?fedora} > 12
-%global with_python3 1
-%else
+%{?scl:%scl_package python-setproctitle}
+%{!?scl:%global pkg_name %{name}}
+
+%global srcname setproctitle
+
+# Deal with python(abi) requirement
+%{?scl:%filter_from_requires /^python(abi)/d}
+
+# See if this helps lib64/libpython27.so discovery!
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
-%endif
 
-
-%global tarname setproctitle
-
-Name:           python-setproctitle
+Name: %{?scl_prefix}python-setproctitle
 Version:        1.1.9
-Release:        0.5%{?dist}
+Release:        0.6%{?dist}
 Summary:        Python module to customize a process title
 
 License:        BSD
-URL:            http://pypi.python.org/pypi/%{tarname}
-Source0:        http://pypi.python.org/packages/source/s/%{tarname}/%{tarname}-%{version}.tar.gz
+URL:            http://pypi.python.org/pypi/%{srcname}
+Source0:        https://pypi.python.org/packages/source/s/%{srcname}/%{srcname}-%{version}.tar.gz
 
-BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
-BuildRequires:  python-nose
-BuildRequires:  python-tools
+BuildRequires:  %{?scl_prefix}python-devel
+BuildRequires:  %{?scl_prefix}python-setuptools
+BuildRequires:  %{?scl_prefix}python-nose
+BuildRequires:  %{?scl_prefix}python-tools
+#Requires: %{?scl_prefix}python(abi)
+# Avoid python naming confusion
+Provides: %{?scl_prefix}python-%{srcname} = %{version}-%{release}
 %{?filter_setup:
 %filter_provides_in %{python_sitearch}/.*\.so$
 %filter_setup
 }
-
 
 %description
 Python module allowing a process to change its title as displayed by
@@ -36,79 +40,40 @@ process is busy with. This technique has been used by PostgreSQL and OpenSSH.
 
 It's based on PostgreSQL implementation which has proven to be portable.
 
-
-
-%if 0%{?with_python3}
-%package -n python3-%{tarname}
-Summary:        Python module to customize a process title
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-nose
-
-%description -n python3-%{tarname}
-Python module allowing a process to change its title as displayed by
-system tool such as ps and top.
-
-It's useful in multi-process systems, allowing to identify tasks each forked
-process is busy with. This technique has been used by PostgreSQL and OpenSSH.
-
-It's based on PostgreSQL implementation which has proven to be portable.
-%endif
-
 %prep
-%setup -q -n %{tarname}-%{version}
-%{?with_python3: cp -a . %{py3dir}}
-
+%setup -q -n %{srcname}-%{version}
 
 %build
 # Remove CFLAGS=... for noarch packages (unneeded)
-CFLAGS="%{optflags}" %{__python} setup.py build
-%if 0%{?with_python3}
-pushd %{py3dir}
-CFLAGS="%{optflags}" %{__python3} setup.py build
-popd
-%endif
+CFLAGS="$RPM_OPT_FLAGS"
+%{?scl:scl enable %{scl} "}
+%{__python} setup.py build
+%{?scl:"}
 
 %install
+%{__rm} -rf %{buildroot}
+export CFLAGS="%{optflags}"
+%{?scl:scl enable %{scl} "}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{?scl:"}
 chmod 0755 %{buildroot}%{python_sitearch}/setproctitle.so
-%if 0%{?with_python3}
-pushd %{py3dir}
-CFLAGS="%{optflags}" %{__python3} setup.py install -O1 --skip-build --root %{buildroot}
-popd
-chmod 0755 %{buildroot}%{python3_sitearch}/setproctitle*.so
-%endif
 
-%check
-make tests/pyrun2
-# FIXME: tests are broken with python3
-%if 0%{?with_python3}
-pushd %{py3dir}
-BUILD_DIR=$(%{__python3} -c "import sys; import platform; \
-print('build/lib.linux-{0}-{1}.{2}'.format(platform.machine(), \
-sys.version_info[0], sys.version_info[1]))")
-# looks like tests are not 2to3'ed by setup.py
-2to3 -w --no-diffs tests
-gcc `pkg-config --cflags --libs python3` -o tests/pyrun3 tests/pyrun.c
-PYTHONPATH=$BUILD_DIR:$PYTHONPATH ROOT_PATH=$(pwd) \
-                                  %{__python3} tests/setproctitle_test.py -v || :
-popd
-%endif
-
+#%check
+#%{?scl:scl enable %{scl} "}
+#make tests/pyrun2
+## FIXME: tests are broken with python3
+#%{?scl:"}
 
 %files
 %doc README.rst COPYRIGHT
 # For arch-specific packages: sitearch
-%{python_sitearch}/*
-
-%if 0%{?with_python3}
-%files -n python3-%{tarname}
-%doc README.rst COPYRIGHT
-# For arch-specific packages: sitearch
-%{python3_sitearch}/*
-%endif
+%{python_sitearch}/%{srcname}.so
+%{python_sitearch}/%{srcname}-%{version}-*.egg-info
 
 %changelog
+* Wed Dec 16 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.1.9-0.6
+- Filtier out default pytyon(abi) requirement for scl build
+
 * Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.1.9-0.5
 - Update to 1.1.9
 

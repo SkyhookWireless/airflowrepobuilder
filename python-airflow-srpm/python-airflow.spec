@@ -6,7 +6,7 @@
 Summary: Programmatically author, schedule and monitor data pipelines
 Name: %{?scl_prefix}python-airflow
 Version: 1.5.1
-Release: 0.10%{?dist}
+Release: 0.11%{?dist}
 Source0: https://pypi.python.org/packages/source/a/%{srcname}/%{srcname}-%{version}.tar.gz
 License: Apache
 Group: Development/Libraries
@@ -59,9 +59,8 @@ Requires:  %{?scl_prefix}python-pygments >= 2.0.1
 Requires:  %{?scl_prefix}python-pygments < 3.0
 Requires:  %{?scl_prefix}python-requests >= 2.5.1
 Requires:  %{?scl_prefix}python-requests < 3
-# Included in base python package
-#Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
-#Requires:  %{?scl_prefix}python-setproctitle < 2
+# Included in python27 base python package, but wrong version
+Requires:  %{?scl_prefix}python-setproctitle >= 1.1.8
 Requires:  %{?scl_prefix}python-sqlalchemy >= 0.9.8
 Requires:  %{?scl_prefix}python-statsd >= 3.0.1
 Requires:  %{?scl_prefix}python-thrift >= 0.9.2
@@ -192,12 +191,19 @@ production, monitor progress, and troubleshoot issues when needed.
 %files
 %defattr(-,root,root,-)
 %attr(755,root,root) %{_bindir}/*
-%{python_sitelib}/*
-# Currently no documentaiton
+%{python_sitelib}/%{srcname}
+%{python_sitelib}/%{srcname}-%{version}-*.egg-info
+# Build test remnant, do not publish!
+%exclude %{python_sitelib}/tests
+# Currently no documentation
 #%doc CHANGES LICENSE README.rst README.unittests.rst
 #%doc build/*
 
 %changelog
+* Tue Dec 15 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.10
+- Activate setproctitle dependencies
+- Exclude "site-packatges/tests" from deployment
+
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.9
 - Make python-sphinx-argparse, python-python-editor, python-argparse, and
   python-flask-login more specific
