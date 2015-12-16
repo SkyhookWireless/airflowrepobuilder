@@ -5,8 +5,10 @@
 
 Summary: A microframework based on Werkzeug, Jinja2 and good intentions
 Name: %{?scl_prefix}python-flask
+# Set for RHEL 7 updates
+Epoch: 1
 Version: 0.10.1
-Release: 0.3%{?dist}
+Release: 0.4%{?dist}
 Source0: https://pypi.python.org/packages/source/f/%{srcname}/%{srcname}-%{version}.tar.gz
 License: BSD
 Group: Development/Libraries
@@ -87,6 +89,9 @@ Links
 #%doc build/*
 
 %changelog
+* Sun Dec 13 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.3
+- Add Epoch of 1 to avoid RHEL 7 deployment ocnflicts.
+
 * Mon Nov 16 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 0.8.3-0.2
 - Provide full URL for source
 - Add python(abi) dependency
