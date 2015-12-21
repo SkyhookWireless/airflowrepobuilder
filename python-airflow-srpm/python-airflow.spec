@@ -35,8 +35,9 @@ Requires:  %{?scl_prefix}python-dateutil >= 2.3
 Requires:  %{?scl_prefix}python-dateutil < 3
 Requires:  %{?scl_prefix}python-dill >= 0.2.2
 Requires:  %{?scl_prefix}python-dill < 0.3
-Requires:  %{?scl_prefix}python-flask >= 0.10.1
-Requires:  %{?scl_prefix}python-flask < 0.11
+# Epochs introduced in RHEL 7
+Requires:  %{?scl_prefix}python-flask >= 1:0.10.1
+Requires:  %{?scl_prefix}python-flask < 1:0.11
 Requires:  %{?scl_prefix}python-flask-admin == 1.2.0
 Requires:  %{?scl_prefix}python-flask-cache >= 0.13.1
 Requires:  %{?scl_prefix}python-flask-cache < 0.14
