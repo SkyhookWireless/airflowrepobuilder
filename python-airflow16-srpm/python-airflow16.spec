@@ -113,7 +113,7 @@ Requires:  %{?scl_prefix}python-unicodecsv >= 0.13.0
 Requires:  %{?scl_prefix}python-vertica-python >= 0.5.1
 
 # Added because pip installation generates the module
-Requires:  %{?scl_prefix}python-python-editor
+Requires:  %{?scl_prefix}python-editor
 
 # Manually added to ease installation
 Provides: airflow
@@ -178,7 +178,7 @@ production, monitor progress, and troubleshoot issues when needed.
 - Activate python-setproctitle dependency for RHEL 7
 
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.6.1-0.8
-- Make python-sphinx-argparse, python-python-editor, python-argparse, and
+- Make python-sphinx-argparse, python-editor, python-argparse, and
   python-flask-login more specific
 - Change python-python-dateutil back to python-dateutil
 

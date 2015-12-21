@@ -151,7 +151,7 @@ Requires:  %{?scl_prefix}python-pysmbclient >= 0.1.3
 Requires:  %{?scl_prefix}python-slackclient >= 0.15
 
 # Added because pip installation generates the module
-Requires:  %{?scl_prefix}python-python-editor
+Requires:  %{?scl_prefix}python-editor
 
 # Added for authentication modules
 Requires: cyrus-sasl-gssapi
@@ -205,7 +205,7 @@ production, monitor progress, and troubleshoot issues when needed.
 - Exclude "site-packatges/tests" from deployment
 
 * Tue Dec  8 2015 Nico Kadel-Garcia <nkadel@skyhookireless.com> - 1.5.1-0.9
-- Make python-sphinx-argparse, python-python-editor, python-argparse, and
+- Make python-sphinx-argparse, python-editor, python-argparse, and
   python-flask-login more specific
 - Change python-python-dateutil back to python-dateutil
 
